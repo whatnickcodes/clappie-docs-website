@@ -2349,8 +2349,17 @@ const html = (title, content, pageName = null, isHomepage = false, hasNotes = fa
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Clappie - Turn Claude Code into a 24/7 autonomous personal agent with a single skill file. Terminal UIs, background tasks, phone integration, and more.">
+  <meta name="description" content="Turn Claude Code into a 24/7 mobile personal agent. Emails, manage, and access from your phone — all from one skill file.">
   <meta name="theme-color" content="#d97757">
+  <meta property="og:title" content="${title} - Clappie">
+  <meta property="og:description" content="Turn Claude Code into a 24/7 mobile personal agent. Emails, manage, and access from your phone — all from one skill file.">
+  <meta property="og:image" content="https://clappie.ai/img/share.png">
+  <meta property="og:url" content="https://clappie.ai">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${title} - Clappie">
+  <meta name="twitter:description" content="Turn Claude Code into a 24/7 mobile personal agent. Emails, manage, and access from your phone — all from one skill file.">
+  <meta name="twitter:image" content="https://clappie.ai/img/share.png">
   <title>${title} - Clappie</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'><rect fill='%23ff8ec6' x='22' y='0' width='20' height='30'/><rect fill='%23ff8ec6' x='78' y='0' width='20' height='30'/><rect fill='%23ff8ec6' x='10' y='20' width='100' height='90' rx='20'/><rect fill='%231a1918' x='32' y='50' width='18' height='24'/><rect fill='%231a1918' x='70' y='50' width='18' height='24'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
