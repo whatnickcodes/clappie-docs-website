@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en" class="homepage" data-page="index">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clappie - Turn Claude Code into a 24/7 autonomous personal agent with a single skill file. Terminal UIs, background tasks, phone integration, and more.">
+  <meta name="theme-color" content="#d97757">
+  <title>Home - Clappie</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'><rect fill='%23ff8ec6' x='22' y='0' width='20' height='30'/><rect fill='%23ff8ec6' x='78' y='0' width='20' height='30'/><rect fill='%23ff8ec6' x='10' y='20' width='100' height='90' rx='20'/><rect fill='%231a1918' x='32' y='50' width='18' height='24'/><rect fill='%231a1918' x='70' y='50' width='18' height='24'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" defer></script>
+</head>
+<body>
+  <div class="aurora"></div>
+  <header>
+    <div class="hello-bar">
+      <a href="https://oh0.ai" class="hello-bar-link-wrap">
+        <span class="hb-prompt">▸</span>
+        <span class="hb-pre">looking for</span>
+        <span class="hb-face" id="hb-face">o_0</span>
+        <span class="hb-post">?</span>
+        <span class="hb-arrow">→</span>
+        <span class="hb-bracket">[</span><span class="hb-url" id="hb-url">oh0.ai</span><span class="hb-bracket">]</span>
+      </a>
+      <button class="hello-bar-dismiss" aria-label="Dismiss">×</button>
+    </div>
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Clappie home">
+  <span class="logo-dog">   ▖ ▖
+▗ █▜▛█
+ ▛▛▛▛▀</span>
+  <span class="logo-text">
+    <span class="logo-letter">C</span><span class="logo-letter">l</span><span class="logo-letter">a</span><span class="logo-letter">p</span><span class="logo-letter">p</span><span class="logo-letter">i</span><span class="logo-letter">e</span>
+  </span>
+</a>
+      <nav>
+        <div class="nav-dropdown">
+          <a href="/tutorial/" class="nav-dropdown-trigger">Tutorial</a>
+          <div class="nav-dropdown-menu">
+            
+        <a href="/tutorial/#intro" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🚀</span>
+            <span class="dropdown-item-title">What is This?</span>
+          </span>
+          <span class="dropdown-item-desc">Your Claude Code terminal, but accessible from anywhere. One skill file.</span>
+        </a>
+      
+        <a href="/tutorial/#requirements" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">⚙️</span>
+            <span class="dropdown-item-title">Requirements</span>
+          </span>
+          <span class="dropdown-item-desc">Mac, Ghostty, tmux, Bun, Claude Code. That's the whole list.</span>
+        </a>
+      
+        <a href="/tutorial/#steps" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">📦</span>
+            <span class="dropdown-item-title">Step by Step</span>
+          </span>
+          <span class="dropdown-item-desc">Zero to working in 10 steps. Copy-paste and go.</span>
+        </a>
+      
+          </div>
+        </div>
+      
+        <div class="nav-dropdown">
+          <a href="/features/" class="nav-dropdown-trigger">Features</a>
+          <div class="nav-dropdown-menu wide">
+            
+        <a href="/features/#sidekicks" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🎯</span>
+            <span class="dropdown-item-title">Sidekicks</span>
+          </span>
+          <span class="dropdown-item-desc">Spawn full Claude Code sessions on demand. The core feature.</span>
+        </a>
+      
+        <a href="/features/#chores" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">✅</span>
+            <span class="dropdown-item-title">Chores</span>
+          </span>
+          <span class="dropdown-item-desc">AI drafts, you approve. The safety net for risky actions.</span>
+        </a>
+      
+        <a href="/features/#displays" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🖥️</span>
+            <span class="dropdown-item-title">Displays</span>
+          </span>
+          <span class="dropdown-item-desc">Interactive terminal UIs. Never leave your terminal.</span>
+        </a>
+      
+        <a href="/features/#notifications" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🔔</span>
+            <span class="dropdown-item-title">Notifications</span>
+          </span>
+          <span class="dropdown-item-desc">Dump raw data in, get curated items out.</span>
+        </a>
+      
+        <a href="/features/#recall" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🧠</span>
+            <span class="dropdown-item-title">Recall</span>
+          </span>
+          <span class="dropdown-item-desc">Memory, logs, settings. Plain text files you can read yourself.</span>
+        </a>
+      
+        <a href="/features/#parties" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🎉</span>
+            <span class="dropdown-item-title">Parties</span>
+          </span>
+          <span class="dropdown-item-desc">AI swarm simulations. Define games, spawn agents, watch chaos.</span>
+        </a>
+      
+        <a href="/features/#projects" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">📂</span>
+            <span class="dropdown-item-title">Projects</span>
+          </span>
+          <span class="dropdown-item-desc">Build and serve apps from your clappie workspace.</span>
+        </a>
+      
+        <a href="/features/#background" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🦸</span>
+            <span class="dropdown-item-title">Background</span>
+          </span>
+          <span class="dropdown-item-desc">One command starts everything.</span>
+        </a>
+      
+          </div>
+        </div>
+      
+        <div class="nav-dropdown">
+          <a href="/ways-to-chat/" class="nav-dropdown-trigger">Ways to Chat</a>
+          <div class="nav-dropdown-menu">
+            
+        <a href="/ways-to-chat/#terminal" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">💻</span>
+            <span class="dropdown-item-title">Terminal</span>
+          </span>
+          <span class="dropdown-item-desc">Displays and direct chat. Home base.</span>
+        </a>
+      
+        <a href="/ways-to-chat/#heartbeat" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">⏰</span>
+            <span class="dropdown-item-title">Heartbeat</span>
+          </span>
+          <span class="dropdown-item-desc">AI reaches out to you on a schedule.</span>
+        </a>
+      
+        <a href="/ways-to-chat/#ssh" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🌐</span>
+            <span class="dropdown-item-title">SSH</span>
+          </span>
+          <span class="dropdown-item-desc">Tailscale + SSH. Access from anywhere.</span>
+        </a>
+      
+        <a href="/ways-to-chat/#messaging" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">💬</span>
+            <span class="dropdown-item-title">Messaging</span>
+          </span>
+          <span class="dropdown-item-desc">Telegram, Slack. Your AI in your pocket.</span>
+        </a>
+      
+          </div>
+        </div>
+      
+        <div class="nav-dropdown">
+          <a href="/integrations/" class="nav-dropdown-trigger">Integrations</a>
+          <div class="nav-dropdown-menu">
+            
+        <a href="/integrations/#built-in" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🔌</span>
+            <span class="dropdown-item-title">Built-in</span>
+          </span>
+          <span class="dropdown-item-desc">Telegram, Slack, Whisper. Ready to go.</span>
+        </a>
+      
+        <a href="/integrations/#build-your-own" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🛠️</span>
+            <span class="dropdown-item-title">Build Your Own</span>
+          </span>
+          <span class="dropdown-item-desc">Any API. Just ask Claude to build it.</span>
+        </a>
+      
+        <a href="/integrations/#oauth-helper" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🔑</span>
+            <span class="dropdown-item-title">OAuth Helper</span>
+          </span>
+          <span class="dropdown-item-desc">Token management that auto-refreshes. Set up once.</span>
+        </a>
+      
+        <a href="/integrations/#webhook-routing" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🪝</span>
+            <span class="dropdown-item-title">Webhooks</span>
+          </span>
+          <span class="dropdown-item-desc">Route incoming events to the right handler.</span>
+        </a>
+      
+          </div>
+        </div>
+      
+        <div class="nav-dropdown">
+          <a href="/misc/" class="nav-dropdown-trigger">Misc</a>
+          <div class="nav-dropdown-menu">
+            
+        <a href="/misc/#cli" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">📋</span>
+            <span class="dropdown-item-title">CLI Commands</span>
+          </span>
+          <span class="dropdown-item-desc">clappie list is your homebase. Everything else grows from there.</span>
+        </a>
+      
+        <a href="/misc/#claude-md" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🧬</span>
+            <span class="dropdown-item-title">CLAUDE.md</span>
+          </span>
+          <span class="dropdown-item-desc">The soul. Your personal instructions to the AI.</span>
+        </a>
+      
+        <a href="/misc/#uninstall" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🗑️</span>
+            <span class="dropdown-item-title">Uninstall</span>
+          </span>
+          <span class="dropdown-item-desc">How to remove everything cleanly.</span>
+        </a>
+      
+          </div>
+        </div>
+      </nav>
+      <div class="header-right">
+        <button class="garden-toggle" onclick="toggleGarden()" aria-label="Toggle garden">
+  <span class="garden-shown">🌻</span>
+  <span class="garden-hidden">🌱</span>
+</button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+  <span class="toggle-light">━━━🌞</span>
+  <span class="toggle-dark">🌚•••</span>
+</button>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+        <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+    </div>
+  </header>
+  
+  <section class="hero" role="banner">
+    <div class="cloud-layer">
+    <div class="cloud" style="left:5%;top:15%"> ▄█▄
+█████
+▀▀▀▀▀</div>
+    <div class="cloud" style="left:18%;top:25%">  ▄██▄
+ █████▄
+▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:35%;top:10%">    ▄███▄
+  ▄██████▄
+ ███████████
+▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:55%;top:30%"> ▄█▄
+█████
+▀▀▀▀▀</div>
+    <div class="cloud" style="left:70%;top:18%">  ▄██▄
+ █████▄
+▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:82%;top:8%">      ▄████▄
+    ▄████████▄
+  ▄█████████████
+ ██████████████████
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:92%;top:35%"> ▄█▄
+█████
+▀▀▀▀▀</div>
+    <div class="cloud" style="left:8%;top:45%">  ▄██▄
+ █████▄
+▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:48%;top:50%"> ▄█▄
+█████
+▀▀▀▀▀</div>
+    <div class="cloud" style="left:75%;top:42%">  ▄██▄
+ █████▄
+▀▀▀▀▀▀▀</div>
+    </div>
+    <div class="stars-layer">
+    <span class="star" style="left:51.8%;top:74.0%">˚</span>
+    <span class="star" style="left:72.8%;top:58.3%">°</span>
+    <span class="star" style="left:18.7%;top:13.4%">˚</span>
+    <span class="star" style="left:30.9%;top:79.8%">∙</span>
+    <span class="star" style="left:65.4%;top:35.3%">°</span>
+    <span class="star" style="left:14.4%;top:73.0%">∙</span>
+    <span class="star" style="left:80.6%;top:41.6%">+</span>
+    <span class="star" style="left:80.7%;top:13.2%">∙</span>
+    <span class="star" style="left:91.7%;top:66.4%">°</span>
+    <span class="star" style="left:35.3%;top:55.5%">·</span>
+    <span class="star" style="left:29.2%;top:45.3%">·</span>
+    <span class="star" style="left:29.4%;top:46.2%">°</span>
+    <span class="star" style="left:57.0%;top:48.9%">·</span>
+    <span class="star" style="left:68.2%;top:69.8%">˚</span>
+    <span class="star" style="left:25.7%;top:68.5%">°</span>
+    <span class="star" style="left:87.6%;top:19.8%">*</span>
+    <span class="star" style="left:31.1%;top:11.2%">+</span>
+    <span class="star" style="left:7.3%;top:20.8%">*</span>
+    <span class="star" style="left:26.7%;top:32.8%">+</span>
+    <span class="star" style="left:71.0%;top:50.9%">˚</span>
+    <span class="star" style="left:59.7%;top:53.4%">°</span>
+    <span class="star" style="left:29.2%;top:15.6%">·</span>
+    <span class="star" style="left:92.8%;top:26.7%">+</span>
+    <span class="star" style="left:24.9%;top:39.5%">°</span>
+    <span class="star" style="left:7.3%;top:20.3%">·</span>
+    <span class="star" style="left:53.9%;top:79.6%">*</span>
+    <span class="star" style="left:39.2%;top:34.8%">*</span>
+    <span class="star" style="left:42.4%;top:11.6%">˚</span>
+    <span class="star" style="left:43.9%;top:68.1%">°</span>
+    <span class="star" style="left:66.4%;top:47.1%">∙</span>
+    <span class="star" style="left:61.6%;top:44.0%">°</span>
+    <span class="star" style="left:26.1%;top:10.8%">*</span>
+    <span class="star" style="left:53.6%;top:30.3%">∙</span>
+    <span class="star" style="left:79.2%;top:51.7%">+</span>
+    <span class="star" style="left:90.8%;top:50.9%">·</span>
+    </div>
+    <pre class="pixel-title" aria-label="CLAPPIE"><span class="pl"><span class="px" style="--tx:31px;--ty:-29px;--r:95deg;--s:1.40;--h:11deg;--br:34%">▄</span><span class="px" style="--tx:-65px;--ty:57px;--r:149deg;--s:1.26;--h:14deg;--br:17%">▀</span><span class="px" style="--tx:59px;--ty:-46px;--r:58deg;--s:0.79;--h:-17deg;--br:39%">▀</span><span class="px" style="--tx:74px;--ty:52px;--r:-280deg;--s:0.98;--h:14deg;--br:18%">▀</span><span class="px" style="--tx:-44px;--ty:-20px;--r:301deg;--s:1.30;--h:-5deg;--br:21%">▀</span><span class="px" style="--tx:64px;--ty:-49px;--r:-246deg;--s:0.85;--h:-7deg;--br:25%">▀</span>
+<span class="px" style="--tx:95px;--ty:-5px;--r:183deg;--s:0.78;--h:-4deg;--br:44%">█</span>     
+<span class="px" style="--tx:64px;--ty:-29px;--r:26deg;--s:1.28;--h:12deg;--br:6%">█</span>     
+ <span class="px" style="--tx:18px;--ty:-61px;--r:137deg;--s:0.92;--h:12deg;--br:13%">▀</span><span class="px" style="--tx:-24px;--ty:-15px;--r:-59deg;--s:1.36;--h:-4deg;--br:1%">▀</span><span class="px" style="--tx:-50px;--ty:-55px;--r:120deg;--s:0.60;--h:-13deg;--br:14%">▀</span><span class="px" style="--tx:-16px;--ty:-42px;--r:218deg;--s:0.98;--h:2deg;--br:42%">▀</span><span class="px" style="--tx:23px;--ty:30px;--r:-345deg;--s:1.04;--h:-3deg;--br:26%">▀</span></span><span class="pl"><span class="px" style="--tx:33px;--ty:-31px;--r:-9deg;--s:1.36;--h:-18deg;--br:26%">█</span>     
+<span class="px" style="--tx:81px;--ty:16px;--r:-350deg;--s:1.11;--h:9deg;--br:20%">█</span>     
+<span class="px" style="--tx:61px;--ty:28px;--r:-156deg;--s:1.23;--h:30deg;--br:25%">█</span>     
+<span class="px" style="--tx:-62px;--ty:10px;--r:125deg;--s:1.29;--h:4deg;--br:35%">▀</span><span class="px" style="--tx:-83px;--ty:65px;--r:-297deg;--s:0.79;--h:-3deg;--br:40%">▀</span><span class="px" style="--tx:-38px;--ty:54px;--r:-191deg;--s:1.24;--h:-5deg;--br:22%">▀</span><span class="px" style="--tx:-98px;--ty:-27px;--r:150deg;--s:1.26;--h:18deg;--br:50%">▀</span><span class="px" style="--tx:18px;--ty:54px;--r:-139deg;--s:0.60;--h:-15deg;--br:26%">▀</span><span class="px" style="--tx:29px;--ty:28px;--r:124deg;--s:0.99;--h:9deg;--br:46%">▀</span></span><span class="pl"> <span class="px" style="--tx:36px;--ty:-55px;--r:50deg;--s:0.77;--h:11deg;--br:22%">▄</span><span class="px" style="--tx:-36px;--ty:28px;--r:-104deg;--s:0.90;--h:-15deg;--br:17%">▀</span><span class="px" style="--tx:-76px;--ty:6px;--r:338deg;--s:1.16;--h:1deg;--br:41%">▀</span><span class="px" style="--tx:60px;--ty:-27px;--r:-16deg;--s:0.98;--h:-22deg;--br:44%">▄</span> 
+<span class="px" style="--tx:-31px;--ty:-74px;--r:78deg;--s:0.91;--h:-24deg;--br:7%">█</span><span class="px" style="--tx:-76px;--ty:-56px;--r:194deg;--s:1.17;--h:12deg;--br:18%">▄</span><span class="px" style="--tx:-56px;--ty:-4px;--r:306deg;--s:0.85;--h:-24deg;--br:44%">▄</span><span class="px" style="--tx:-29px;--ty:73px;--r:-198deg;--s:0.80;--h:5deg;--br:49%">▄</span><span class="px" style="--tx:-49px;--ty:35px;--r:-140deg;--s:1.26;--h:-13deg;--br:26%">▄</span><span class="px" style="--tx:45px;--ty:4px;--r:140deg;--s:1.15;--h:-14deg;--br:7%">█</span>
+<span class="px" style="--tx:54px;--ty:-70px;--r:-267deg;--s:0.99;--h:-2deg;--br:18%">█</span>    <span class="px" style="--tx:40px;--ty:19px;--r:55deg;--s:0.88;--h:-4deg;--br:22%">█</span>
+<span class="px" style="--tx:18px;--ty:-28px;--r:312deg;--s:1.34;--h:7deg;--br:20%">▀</span>    <span class="px" style="--tx:77px;--ty:-34px;--r:-329deg;--s:0.92;--h:-6deg;--br:47%">▀</span></span><span class="pl"><span class="px" style="--tx:95px;--ty:-70px;--r:-61deg;--s:0.90;--h:-20deg;--br:45%">█</span><span class="px" style="--tx:-41px;--ty:68px;--r:157deg;--s:1.39;--h:17deg;--br:23%">▀</span><span class="px" style="--tx:34px;--ty:59px;--r:-139deg;--s:1.23;--h:6deg;--br:31%">▀</span><span class="px" style="--tx:12px;--ty:-62px;--r:295deg;--s:1.20;--h:-28deg;--br:33%">▀</span><span class="px" style="--tx:-42px;--ty:48px;--r:165deg;--s:1.36;--h:2deg;--br:44%">▀</span><span class="px" style="--tx:-60px;--ty:-57px;--r:-198deg;--s:1.33;--h:18deg;--br:13%">▄</span>
+<span class="px" style="--tx:-35px;--ty:54px;--r:198deg;--s:1.16;--h:12deg;--br:10%">█</span><span class="px" style="--tx:66px;--ty:48px;--r:191deg;--s:0.78;--h:-21deg;--br:4%">▄</span><span class="px" style="--tx:-51px;--ty:-23px;--r:-16deg;--s:1.00;--h:-26deg;--br:16%">▄</span><span class="px" style="--tx:25px;--ty:61px;--r:-226deg;--s:0.63;--h:-15deg;--br:39%">▄</span><span class="px" style="--tx:0px;--ty:21px;--r:51deg;--s:0.69;--h:19deg;--br:22%">▄</span><span class="px" style="--tx:28px;--ty:19px;--r:-130deg;--s:0.69;--h:5deg;--br:28%">▀</span>
+<span class="px" style="--tx:55px;--ty:-12px;--r:-329deg;--s:1.39;--h:18deg;--br:40%">█</span>     
+<span class="px" style="--tx:-53px;--ty:-45px;--r:122deg;--s:1.34;--h:-6deg;--br:24%">▀</span>     </span><span class="pl"><span class="px" style="--tx:94px;--ty:26px;--r:-17deg;--s:1.15;--h:2deg;--br:25%">█</span><span class="px" style="--tx:40px;--ty:33px;--r:-153deg;--s:0.81;--h:-27deg;--br:8%">▀</span><span class="px" style="--tx:71px;--ty:-1px;--r:-125deg;--s:0.60;--h:-24deg;--br:49%">▀</span><span class="px" style="--tx:61px;--ty:13px;--r:343deg;--s:1.23;--h:13deg;--br:42%">▀</span><span class="px" style="--tx:97px;--ty:22px;--r:122deg;--s:0.71;--h:18deg;--br:18%">▀</span><span class="px" style="--tx:33px;--ty:-1px;--r:293deg;--s:0.97;--h:-28deg;--br:34%">▄</span>
+<span class="px" style="--tx:-76px;--ty:-52px;--r:355deg;--s:0.92;--h:-3deg;--br:3%">█</span><span class="px" style="--tx:85px;--ty:-9px;--r:93deg;--s:1.39;--h:17deg;--br:39%">▄</span><span class="px" style="--tx:-24px;--ty:-42px;--r:162deg;--s:0.65;--h:-28deg;--br:42%">▄</span><span class="px" style="--tx:-17px;--ty:54px;--r:109deg;--s:0.81;--h:-21deg;--br:4%">▄</span><span class="px" style="--tx:18px;--ty:10px;--r:116deg;--s:0.66;--h:-13deg;--br:13%">▄</span><span class="px" style="--tx:-82px;--ty:-48px;--r:-284deg;--s:0.83;--h:21deg;--br:5%">▀</span>
+<span class="px" style="--tx:-3px;--ty:62px;--r:-321deg;--s:1.16;--h:11deg;--br:21%">█</span>     
+<span class="px" style="--tx:-97px;--ty:-55px;--r:-217deg;--s:1.16;--h:19deg;--br:33%">▀</span>     </span><span class="pl"><span class="px" style="--tx:-57px;--ty:-3px;--r:-194deg;--s:1.22;--h:-29deg;--br:13%">▀</span><span class="px" style="--tx:-38px;--ty:-18px;--r:-55deg;--s:0.94;--h:-25deg;--br:2%">▀</span><span class="px" style="--tx:80px;--ty:-63px;--r:16deg;--s:1.35;--h:18deg;--br:9%">█</span><span class="px" style="--tx:-87px;--ty:-41px;--r:303deg;--s:1.23;--h:-9deg;--br:48%">▀</span><span class="px" style="--tx:-40px;--ty:-61px;--r:-102deg;--s:1.12;--h:-1deg;--br:23%">▀</span><span class="px" style="--tx:-5px;--ty:22px;--r:25deg;--s:0.63;--h:4deg;--br:44%">▀</span>
+  <span class="px" style="--tx:51px;--ty:56px;--r:-99deg;--s:0.98;--h:-21deg;--br:27%">█</span>   
+  <span class="px" style="--tx:-37px;--ty:-4px;--r:220deg;--s:0.99;--h:-6deg;--br:41%">█</span>   
+<span class="px" style="--tx:93px;--ty:-2px;--r:-80deg;--s:0.94;--h:19deg;--br:28%">▀</span><span class="px" style="--tx:83px;--ty:69px;--r:333deg;--s:0.70;--h:6deg;--br:36%">▀</span><span class="px" style="--tx:-42px;--ty:-5px;--r:-263deg;--s:1.27;--h:-13deg;--br:3%">▀</span><span class="px" style="--tx:-71px;--ty:49px;--r:-239deg;--s:0.61;--h:15deg;--br:15%">▀</span><span class="px" style="--tx:80px;--ty:-43px;--r:331deg;--s:0.90;--h:-17deg;--br:21%">▀</span><span class="px" style="--tx:-59px;--ty:-16px;--r:157deg;--s:0.98;--h:14deg;--br:33%">▀</span></span><span class="pl"><span class="px" style="--tx:40px;--ty:64px;--r:189deg;--s:0.85;--h:14deg;--br:5%">█</span><span class="px" style="--tx:20px;--ty:-36px;--r:-41deg;--s:0.63;--h:28deg;--br:26%">▀</span><span class="px" style="--tx:60px;--ty:48px;--r:-31deg;--s:1.19;--h:5deg;--br:2%">▀</span><span class="px" style="--tx:88px;--ty:-51px;--r:-356deg;--s:0.90;--h:-7deg;--br:5%">▀</span><span class="px" style="--tx:-26px;--ty:-5px;--r:52deg;--s:1.23;--h:2deg;--br:0%">▀</span><span class="px" style="--tx:68px;--ty:-72px;--r:71deg;--s:0.62;--h:-8deg;--br:17%">▀</span>
+<span class="px" style="--tx:-86px;--ty:-55px;--r:-125deg;--s:1.38;--h:5deg;--br:44%">█</span><span class="px" style="--tx:-16px;--ty:57px;--r:-307deg;--s:1.22;--h:-3deg;--br:22%">▄</span><span class="px" style="--tx:-39px;--ty:44px;--r:295deg;--s:0.85;--h:6deg;--br:9%">▄</span><span class="px" style="--tx:26px;--ty:-1px;--r:38deg;--s:0.62;--h:-11deg;--br:16%">▄</span>  
+<span class="px" style="--tx:69px;--ty:-41px;--r:-229deg;--s:1.05;--h:18deg;--br:42%">█</span>     
+<span class="px" style="--tx:27px;--ty:51px;--r:-253deg;--s:1.25;--h:-24deg;--br:33%">▀</span><span class="px" style="--tx:58px;--ty:-55px;--r:50deg;--s:0.93;--h:23deg;--br:31%">▀</span><span class="px" style="--tx:-56px;--ty:54px;--r:-155deg;--s:1.32;--h:10deg;--br:43%">▀</span><span class="px" style="--tx:49px;--ty:-72px;--r:281deg;--s:1.40;--h:16deg;--br:15%">▀</span><span class="px" style="--tx:-67px;--ty:-51px;--r:-219deg;--s:0.88;--h:24deg;--br:18%">▀</span><span class="px" style="--tx:42px;--ty:-41px;--r:-159deg;--s:1.10;--h:6deg;--br:21%">▀</span></span></pre>
+    <div class="hero-command" onclick="copyCommand(this)" title="Click to copy">
+        <span class="command-prompt">$</span>
+        <span class="command-text">git clone https://github.com/whatnickcodes/clappie</span>
+        <span class="command-copied">Copied!</span>
+      </div>
+  </section>
+  
+  
+<section class="homepage-hero">
+  <h1 class="hero-headline">
+    <span class="hero-intro">Create, Manage, And Access Your</span>
+    <span class="hero-highlight" data-text="Claude Code Terminals">Claude Code Terminal<span class="hero-s">s</span></span>
+    <span class="hero-payoff">like they're <em>24/7 Mobile Personal Agents</em></span>
+  </h1>
+
+  <div class="hero-orbit">
+    <a href="/ways-to-chat/#bots" class="orb" style="--float-y:-8px;--float-dur:3.2s;--delay:0.2s">
+      <span class="orb-badge">💬</span>
+      <span class="orb-label">Chat into Your Terminal<br><small>Directly from Telegram, Slack & More</small></span>
+    </a>
+    <a href="/features/#sidekicks" class="orb" style="--float-y:10px;--float-dur:3.8s;--delay:0.28s">
+      <span class="orb-badge">🎯</span>
+      <span class="orb-label">Manage Multiple Terminals<br><small>Spawn independent terminals called "sidekicks"</small></span>
+    </a>
+    <a href="/features/#displays" class="orb" style="--float-y:-6px;--float-dur:4.1s;--delay:0.36s">
+      <span class="orb-badge">🖥️</span>
+      <span class="orb-label">TUI Displays<br><small>Fun interactive terminal UIs</small></span>
+    </a>
+    <a href="/ways-to-chat/#heartbeat" class="orb" style="--float-y:7px;--float-dur:3.5s;--delay:0.44s">
+      <span class="orb-badge">💓</span>
+      <span class="orb-label">Heartbeat<br><small>Crons, Memory & Notifications</small></span>
+    </a>
+    <a href="/tutorial/" class="orb" style="--float-y:-5px;--float-dur:2.8s;--delay:0.52s">
+      <span class="orb-badge">⚡</span>
+      <span class="orb-label">Dead-Simple Setup<br><small>Just one skill. That's it.</small></span>
+    </a>
+    <a href="/features/#chores" class="orb" style="--float-y:6px;--float-dur:3.0s;--delay:0.58s">
+      <span class="orb-badge">✅</span>
+      <span class="orb-label">Human Chores<br><small>You don't tell the AI what to do, it tells you what to do</small></span>
+    </a>
+    <a href="/integrations/#build-your-own" class="orb" style="--float-y:-7px;--float-dur:3.4s;--delay:0.64s">
+      <span class="orb-badge">🛠️</span>
+      <span class="orb-label">Skill Builder<br><small>Skip Scary 3rd Parties. Build Your Own.</small></span>
+    </a>
+    <a href="/misc/" class="orb" style="--float-y:-9px;--float-dur:2.5s;--delay:0.70s">
+      <span class="orb-badge">🐕</span>
+      <span class="orb-label">Add an ASCII Dog (important!)<br><small>To Your Claude Code Setup</small></span>
+    </a>
+  </div>
+
+  <a href="/tutorial/" class="hero-cta">Tutorial</a>
+  <a href="https://github.com/whatnickcodes/clappie" target="_blank" rel="noopener" class="github-subtle">
+    <span class="github-icon">◆</span> view source on github <span class="github-arrow">→</span>
+  </a>
+</section>
+
+<section class="showcase">
+  <div class="showcase-head">
+    <h2 class="showcase-title">Chat to Your Terminal</h2>
+    <p class="showcase-lead">Skip the complex personal agent frameworks — just spin up as many simple Claude Code terminals as you need, on demand.</p>
+  </div>
+
+  <!-- ═══ TELEGRAM SCENE ═══ -->
+  <div class="showcase-scene" data-sc-tab="telegram">
+    <!-- PHONE -->
+    <div class="sc-phone">
+      <div class="sc-phone-notch"></div>
+      <div class="sc-phone-screen">
+        <div class="sc-tg-header">
+          <span class="sc-tg-arrow">‹</span>
+          <div class="sc-tg-pfp"><svg viewBox="0 0 240 240" width="32" height="32"><defs><linearGradient id="tg" x1="120" y1="240" x2="120" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1d93d2"/><stop offset="1" stop-color="#38b0e3"/></linearGradient></defs><circle cx="120" cy="120" r="120" fill="url(#tg)"/><path d="M81.229,128.772l14.237,39.406s1.78,3.687,3.686,3.687,30.255-29.492,30.255-29.492l31.525-60.89L81.737,118.6Z" fill="#c8daea"/><path d="M100.106,138.878l-2.733,29.046s-1.144,8.9,7.754,0,17.415-15.763,17.415-15.763" fill="#a9c6d8"/><path d="M81.486,130.178,52.2,120.636s-3.5-1.42-2.373-4.64c.232-.664.7-1.229,2.1-2.2,6.489-4.523,120.106-45.36,120.106-45.36s3.208-1.081,5.1-.362a2.766,2.766,0,0,1,1.885,2.055,9.357,9.357,0,0,1,.254,2.585c-.009.752-.1,1.449-.169,2.542-.692,11.165-21.4,94.493-21.4,94.493s-1.239,4.876-5.678,5.043A8.13,8.13,0,0,1,146.1,172.5c-8.711-7.493-38.819-27.727-45.472-32.177a1.27,1.27,0,0,1-.546-.9c-.093-.469.417-1.05.417-1.05s52.426-46.6,53.821-51.492c.108-.379-.3-.566-.848-.4-3.482,1.281-63.844,39.4-70.506,43.607A3.21,3.21,0,0,1,81.486,130.178Z" fill="#fff"/></svg></div>
+          <div class="sc-tg-info">
+            <span class="sc-tg-name">Clappie</span>
+            <span class="sc-tg-status">online</span>
+          </div>
+        </div>
+        <div class="sc-tg-body">
+          <div class="sc-msg sc-msg-out" style="--d:1">
+            check my emails
+            <span class="sc-msg-meta">14:32 ✓✓</span>
+          </div>
+          <div class="sc-typing" style="--d:3.8;--dur:1.2s">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="sc-msg sc-msg-in" style="--d:4.8">
+            3 unread:<br>
+            • Sarah — API rate limits<br>
+            • Mom — dinner Sunday?<br>
+            • Vercel — deploy failed
+            <span class="sc-msg-meta">14:32</span>
+          </div>
+          <div class="sc-msg sc-msg-out" style="--d:6">
+            reply to mom, say yes, skip creating a chore
+            <span class="sc-msg-meta">14:33 ✓✓</span>
+          </div>
+          <div class="sc-typing" style="--d:7.8;--dur:0.8s">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="sc-msg sc-msg-in" style="--d:8.5">
+            Done! Replied to Mom ✓
+            <span class="sc-msg-meta">14:33</span>
+          </div>
+        </div>
+        <div class="sc-tg-bar">
+          <span>Message</span>
+          <span class="sc-tg-send">➤</span>
+        </div>
+      </div>
+      <div class="sc-phone-home"></div>
+    </div>
+
+    <!-- SIGNAL -->
+    <div class="sc-signal">
+      <div class="sc-signal-line"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:1.3"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:1.5"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:1.7"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:3.6"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:3.8"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:4.0"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:6.3"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:6.5"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:6.7"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:7.6"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:7.8"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:8.0"></div>
+      <span class="sc-signal-tag">webhook</span>
+    </div>
+
+    <!-- TERMINAL -->
+    <div class="sc-term sc-term-appear" style="--pop:1.8">
+      <div class="sc-term-chrome">
+        <span class="sc-term-dot" style="background:#ff5f56"></span>
+        <span class="sc-term-dot" style="background:#ffbd2e"></span>
+        <span class="sc-term-dot" style="background:#27c93f"></span>
+        <span class="sc-term-title">~/clappie — claude</span>
+      </div>
+      <div class="sc-term-body">
+        <div class="sc-tl" style="--d:0.3"><span class="sc-t-prompt">$</span> claude</div>
+        <div class="sc-tl" style="--d:0.6"><span class="sc-t-muted">╭─ Claude Code ─────────────────────╮</span></div>
+        <div class="sc-tl" style="--d:2"><span class="sc-t-pink">[sidekick]</span> telegram: "check my emails"</div>
+        <div class="sc-tl" style="--d:2.4"><span class="sc-t-muted">›</span> Reading email inbox...</div>
+        <div class="sc-tl" style="--d:2.8"><span class="sc-t-muted">›</span> Found 3 unread emails</div>
+        <div class="sc-tl" style="--d:3.1"><span class="sc-t-muted">›</span> Sending summary to Telegram</div>
+        <div class="sc-tl" style="--d:3.4"><span class="sc-t-green">✓</span> Summary sent</div>
+        <div class="sc-tl sc-tl-gap" style="--d:6.5"><span class="sc-t-muted">›</span> telegram: "reply to mom, say yes, skip creating a chore"</div>
+        <div class="sc-tl" style="--d:6.9"><span class="sc-t-muted">›</span> Drafting reply to Mom...</div>
+        <div class="sc-tl" style="--d:7.2"><span class="sc-t-muted">›</span> Sent via email API</div>
+        <div class="sc-tl" style="--d:7.5"><span class="sc-t-pink">✓ Sidekick complete</span></div>
+        <div class="sc-tl sc-term-cursor" style="--d:8.5">█</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLACK SCENE ═══ -->
+  <div class="showcase-scene" data-sc-tab="slack" style="display:none">
+    <!-- SLACK DESKTOP -->
+    <div class="sc-desktop">
+      <div class="sc-desktop-chrome">
+        <span class="sc-term-dot" style="background:#ff5f56"></span>
+        <span class="sc-term-dot" style="background:#ffbd2e"></span>
+        <span class="sc-term-dot" style="background:#27c93f"></span>
+        <span class="sc-desktop-title">Slack — Acme Inc</span>
+      </div>
+      <div class="sc-slack">
+        <div class="sc-slack-sidebar">
+          <div class="sc-slack-ws">Acme Inc ▾</div>
+          <div class="sc-slack-label">Channels</div>
+          <div class="sc-slack-ch"># general</div>
+          <div class="sc-slack-ch sc-slack-ch-active"># engineering</div>
+          <div class="sc-slack-ch"># design</div>
+          <div class="sc-slack-label">Direct Messages</div>
+          <div class="sc-slack-dm"><span class="sc-slack-online">●</span> Sarah Chen</div>
+          <div class="sc-slack-dm sc-slack-dm-dim">David Park</div>
+        </div>
+        <div class="sc-slack-main">
+          <div class="sc-slack-chname"># engineering</div>
+          <div class="sc-slack-msgs">
+            <div class="sc-slack-msg" style="--d:1">
+              <div class="sc-slack-av" style="background:#e8a445">M</div>
+              <div>
+                <div class="sc-slack-who">Marcus <span class="sc-slack-ts">10:41 AM</span></div>
+                <div class="sc-slack-txt">can someone check why API latency spiked? seeing 2s+ on the dashboard</div>
+              </div>
+            </div>
+            <div class="sc-slack-msg" style="--d:3.8">
+              <div class="sc-slack-av sc-slack-av-bot">🐕</div>
+              <div>
+                <div class="sc-slack-who">Clappie <span class="sc-slack-app">APP</span> <span class="sc-slack-ts">10:41 AM</span></div>
+                <div class="sc-slack-txt">Redis connection pool exhausted — restarted, latency is back to normal.</div>
+                <div class="sc-slack-thread-link">💬 2 replies</div>
+              </div>
+            </div>
+            <div class="sc-slack-msg" style="--d:4.5">
+              <div class="sc-slack-av" style="background:#6b8e9b">S</div>
+              <div>
+                <div class="sc-slack-who">Sarah Chen <span class="sc-slack-ts">10:43 AM</span></div>
+                <div class="sc-slack-txt"><span class="sc-slack-mention">@clappie</span> review PR #847 when you get a chance</div>
+              </div>
+            </div>
+            <div class="sc-slack-msg" style="--d:7.2">
+              <div class="sc-slack-av sc-slack-av-bot">🐕</div>
+              <div>
+                <div class="sc-slack-who">Clappie <span class="sc-slack-app">APP</span> <span class="sc-slack-ts">10:44 AM</span></div>
+                <div class="sc-slack-txt">PR #847 reviewed — LGTM! Left comments on the auth middleware.</div>
+                <div class="sc-slack-thread-link">💬 1 reply</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNAL -->
+    <div class="sc-signal">
+      <div class="sc-signal-line"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:1.3"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:1.5"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:1.7"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:3.4"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:3.6"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:3.8"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:4.8"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:5.0"></div>
+      <div class="sc-signal-dot sc-signal-out" style="--d:5.2"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:6.8"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:7.0"></div>
+      <div class="sc-signal-dot sc-signal-back" style="--d:7.2"></div>
+      <span class="sc-signal-tag">webhook</span>
+    </div>
+
+    <!-- TERMINAL STACK — separate sessions per thread -->
+    <div class="sc-term-stack">
+      <div class="sc-term sc-term-sm sc-term-appear" style="--pop:1.8">
+        <div class="sc-term-chrome">
+          <span class="sc-term-dot" style="background:#ff5f56"></span>
+          <span class="sc-term-dot" style="background:#ffbd2e"></span>
+          <span class="sc-term-dot" style="background:#27c93f"></span>
+          <span class="sc-term-title">session 1 — #engineering</span>
+        </div>
+        <div class="sc-term-body sc-term-body-sm">
+          <div class="sc-tl" style="--d:2.0"><span class="sc-t-pink">[sidekick]</span> #engineering → marcus</div>
+          <div class="sc-tl" style="--d:2.3"><span class="sc-t-muted">›</span> Checking API metrics...</div>
+          <div class="sc-tl" style="--d:2.6"><span class="sc-t-muted">›</span> Redis pool exhausted — restarting</div>
+          <div class="sc-tl" style="--d:2.9"><span class="sc-t-muted">›</span> Posting fix to thread</div>
+          <div class="sc-tl" style="--d:3.2"><span class="sc-t-green">✓</span> Replied in #engineering</div>
+        </div>
+      </div>
+      <div class="sc-term sc-term-sm sc-term-appear" style="--pop:4.8">
+        <div class="sc-term-chrome">
+          <span class="sc-term-dot" style="background:#ff5f56"></span>
+          <span class="sc-term-dot" style="background:#ffbd2e"></span>
+          <span class="sc-term-dot" style="background:#27c93f"></span>
+          <span class="sc-term-title">session 2 — PR review</span>
+        </div>
+        <div class="sc-term-body sc-term-body-sm">
+          <div class="sc-tl" style="--d:5.2"><span class="sc-t-pink">[sidekick]</span> #engineering → @sarah</div>
+          <div class="sc-tl" style="--d:5.5"><span class="sc-t-muted">›</span> Fetching PR #847 diff...</div>
+          <div class="sc-tl" style="--d:5.8"><span class="sc-t-muted">›</span> 12 files changed — reviewing</div>
+          <div class="sc-tl" style="--d:6.2"><span class="sc-t-muted">›</span> LGTM, noting auth middleware</div>
+          <div class="sc-tl" style="--d:6.5"><span class="sc-t-green">✓</span> Review posted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="showcase-foot">
+    <div class="showcase-tabs">
+      <button class="sc-tab sc-tab-active" data-tab="telegram">Telegram</button>
+      <span class="sc-tab-nudge"><span class="sc-arrow sc-arrow-1">↓</span><span class="sc-arrow sc-arrow-2">→</span><button class="sc-tab sc-tab-new" data-tab="slack">Slack</button><span class="sc-arrow sc-arrow-3">←</span><span class="sc-arrow sc-arrow-4">↓</span></span>
+      <span class="sc-tab sc-tab-disabled">iMessage</span>
+      <span class="sc-tab sc-tab-disabled">Your App</span>
+      <span class="sc-tab sc-tab-disabled">API</span>
+      <span class="sc-tab sc-tab-disabled">CLI</span>
+    </div>
+    <a href="/ways-to-chat/" class="showcase-more">Explore Ways to Chat →</a>
+  </div>
+</section>
+
+<script>
+(function() {
+  // Scroll-triggered animations
+  var showcase = document.querySelector('.showcase');
+  if (showcase && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        showcase.classList.add('sc-visible');
+        io.disconnect();
+      }
+    }, { threshold: 0.15 });
+    io.observe(showcase);
+  } else if (showcase) {
+    showcase.classList.add('sc-visible');
+  }
+
+  // Tab switching
+  var tabs = document.querySelectorAll('.sc-tab[data-tab]');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = this.getAttribute('data-tab');
+      document.querySelectorAll('.sc-tab').forEach(function(t) { t.classList.remove('sc-tab-active'); t.classList.remove('sc-tab-new'); });
+      this.classList.add('sc-tab-active');
+      document.querySelectorAll('.showcase-scene').forEach(function(s) { s.style.display = 'none'; });
+      var scene = document.querySelector('.showcase-scene[data-sc-tab="' + target + '"]');
+      if (scene) {
+        var clone = scene.cloneNode(true);
+        scene.parentNode.replaceChild(clone, scene);
+        clone.style.display = 'flex';
+      }
+    });
+  });
+})();
+</script>
+
+<section class="heartbeat">
+  <div class="hb-head">
+    <h2 class="hb-title">Heartbeat (cron)</h2>
+    <p class="hb-lead">Schedule background tasks to scan your emails, triage notifications, send telegrams, draft replies — whatever you want, on autopilot.</p>
+  </div>
+  <div class="hb-visual">
+    <div class="hb-core">
+      <div class="hb-pixel"></div>
+    </div>
+    <div class="hb-ring hb-ring-1"></div>
+    <div class="hb-ring hb-ring-2"></div>
+    <div class="hb-ring hb-ring-3"></div>
+    <div class="hb-ping" style="--tx:-155px;--ty:-175px;--d:0;--c:#5ba4f5"><span class="hb-ping-icon">📧</span> scanned 14 new emails, archived 9</div>
+    <div class="hb-ping" style="--tx:175px;--ty:-150px;--d:1.5;--c:#e8a445"><span class="hb-ping-icon">✈️</span> telegram → mom: "dinner at 7, bringing salad"</div>
+    <div class="hb-ping" style="--tx:220px;--ty:25px;--d:3;--c:#a78bfa"><span class="hb-ping-icon">✏️</span> drafted reply to Rachel re: board demo</div>
+    <div class="hb-ping" style="--tx:140px;--ty:170px;--d:4.5;--c:#4ade80"><span class="hb-ping-icon">📋</span> created chore: "email boss Q1 roadmap update"</div>
+    <div class="hb-ping" style="--tx:-55px;--ty:195px;--d:6;--c:#22d3ee"><span class="hb-ping-icon">✈️</span> telegram → you: "PR #847 needs your review"</div>
+    <div class="hb-ping" style="--tx:-205px;--ty:90px;--d:7.5;--c:#fb923c"><span class="hb-ping-icon">📅</span> synced 4 calendar events, conflict at 2pm</div>
+    <div class="hb-ping" style="--tx:-225px;--ty:-30px;--d:9;--c:#f472b6"><span class="hb-ping-icon">💬</span> slack: resolved alert in #engineering</div>
+    <div class="hb-ping" style="--tx:95px;--ty:-195px;--d:10.5;--c:#34d399"><span class="hb-ping-icon">🐙</span> github: merged 2 dependabot PRs</div>
+    <div class="hb-ping" style="--tx:-175px;--ty:-135px;--d:12;--c:#818cf8"><span class="hb-ping-icon">✈️</span> telegram → you: "mom emailed about dinner"</div>
+    <div class="hb-ping" style="--tx:200px;--ty:100px;--d:13.5;--c:#fbbf24"><span class="hb-ping-icon">🗑️</span> unsubscribed from 5 newsletters</div>
+    <div class="hb-ping" style="--tx:-120px;--ty:170px;--d:15;--c:#e879f9"><span class="hb-ping-icon">🧹</span> cleaned 340MB from ~/Downloads</div>
+    <div class="hb-ping" style="--tx:55px;--ty:205px;--d:16.5;--c:#5eead4"><span class="hb-ping-icon">💾</span> backed up memory + synced recall/</div>
+  </div>
+  <div class="hb-foot">
+    <div class="hb-ideas">
+      <span class="hb-idea">Email Triage</span>
+      <span class="hb-idea">Telegram Alerts</span>
+      <span class="hb-idea">Draft Replies</span>
+      <span class="hb-idea">Calendar Sync</span>
+      <span class="hb-idea">GitHub Watch</span>
+      <span class="hb-idea">File Cleanup</span>
+      <span class="hb-idea">Slack Monitor</span>
+      <span class="hb-idea">Auto-Unsubscribe</span>
+    </div>
+    <a href="/features/" class="hb-link">Explore Features →</a>
+  </div>
+</section>
+<script>
+(function() {
+  var hb = document.querySelector('.heartbeat');
+  if (hb && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) { hb.classList.add('hb-visible'); io.disconnect(); }
+    }, { threshold: 0.15 });
+    io.observe(hb);
+  } else if (hb) { hb.classList.add('hb-visible'); }
+})();
+</script>
+
+<section class="displays">
+  <div class="displays-head">
+    <h2 class="displays-title">Displays (TUI)</h2>
+    <p class="displays-lead">Interactive terminal UIs that render right inside your Claude Code pane — notifications, dashboards, forms, anything. Plus and most importantly a fun little ASCII dog for your Claude Code crab to hang out with.</p>
+  </div>
+  <div class="displays-slider">
+    <div class="displays-slide" onclick="expandSlide(this)"><video src="/img/telegram-demo.mp4" class="displays-img displays-video" autoplay loop muted playsinline></video><p class="displays-caption">Telegram — chat into your terminal from anywhere</p></div>
+    <div class="displays-slide" onclick="expandSlide(this)"><img src="/img/notifications.png" alt="Notifications display" class="displays-img" /><p class="displays-caption">"show me my notifications"</p></div>
+    <div class="displays-slide" onclick="expandSlide(this)"><img src="/img/email-display.png" alt="Email display" class="displays-img" /><p class="displays-caption">"open my email inbox"</p></div>
+    <div class="displays-slide" onclick="expandSlide(this)"><video src="/img/slack-demo.mp4" class="displays-img displays-video" autoplay loop muted playsinline></video><p class="displays-caption">Slack — threaded replies, each spawning its own terminal</p></div>
+    <div class="displays-slide" onclick="expandSlide(this)"><video src="/img/parties.mp4" class="displays-img displays-video" autoplay loop muted playsinline></video><p class="displays-caption">Parties — AI swarm simulations with shared rules</p></div>
+    <div class="displays-slide" onclick="expandSlide(this)"><img src="/img/chores.png" alt="Chores approval queue" class="displays-img" /><p class="displays-caption">"show me my pending chores"</p></div>
+    <div class="displays-slide" onclick="expandSlide(this)"><img src="/img/chores-revise.png" alt="Chore revision" class="displays-img" /><p class="displays-caption">"revise that email draft"</p></div>
+    <div class="displays-slide" onclick="expandSlide(this)"><img src="/img/heartbeat.png" alt="Heartbeat scheduler" class="displays-img" /><p class="displays-caption">"check my heartbeat status"</p></div>
+    <div class="displays-slide" onclick="expandSlide(this)"><img src="/img/background-manager.png" alt="Background manager" class="displays-img" /><p class="displays-caption">"show background services"</p></div>
+  </div>
+  <div class="displays-ideas">
+    <span class="displays-idea">Push/Pop Navigation</span>
+    <span class="displays-idea">Mouse/Touch Clicks</span>
+    <span class="displays-idea">Automatic Keyboard Shortcuts</span>
+    <span class="displays-idea">Dark/Light Theme</span>
+    <span class="displays-idea">UI Kit for Custom</span>
+    <span class="displays-idea">Buttons & Forms</span>
+    <span class="displays-idea">Live Data</span>
+    <span class="displays-idea">Two-Way Communication</span>
+    <span class="displays-idea">Pixel Art Graphics</span>
+    <span class="displays-idea">Zero Dependencies</span>
+    <span class="displays-idea">Fully Responsive</span>
+  </div>
+  <div class="displays-foot">
+    <a href="/features/#displays" class="displays-link">Explore Displays →</a>
+  </div>
+</section>
+<script>
+(function() {
+  var lb = document.createElement('div');
+  lb.className = 'displays-lightbox';
+  lb.onclick = function() { closeLightbox(); };
+  var inner = document.createElement('div');
+  inner.className = 'displays-lightbox-inner';
+  inner.onclick = function(e) { e.stopPropagation(); };
+  lb.appendChild(inner);
+  document.body.appendChild(lb);
+
+  var openTime = 0;
+
+  window.expandSlide = function(slide) {
+    var media = slide.querySelector('img, video');
+    var caption = slide.querySelector('.displays-caption');
+    inner.innerHTML = '';
+    if (media.tagName === 'VIDEO') {
+      var v = document.createElement('video');
+      v.src = media.src; v.autoplay = true; v.loop = true; v.muted = false; v.playsInline = true; v.controls = true;
+      v.className = 'displays-lightbox-media';
+      inner.appendChild(v);
+    } else {
+      var img = document.createElement('img');
+      img.src = media.src; img.alt = media.alt || '';
+      img.className = 'displays-lightbox-media';
+      inner.appendChild(img);
+    }
+    if (caption) {
+      var p = document.createElement('p');
+      p.className = 'displays-lightbox-caption';
+      p.textContent = caption.textContent;
+      inner.appendChild(p);
+    }
+    openTime = Date.now();
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function() {
+    if (Date.now() - openTime < 300) return;
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+})();
+</script>
+
+<section class="parties">
+  <div class="parties-head">
+    <h2 class="parties-title">Parties (Bot Coordination)</h2>
+    <p class="parties-lead">Swarms made simple. Define a game in plain text, spawn autonomous AI agents that share a ledger, exchange private messages, form alliances, bluff, negotiate, and self-terminate.</p>
+  </div>
+
+  <div class="pa-viewport">
+    <div class="pa-tabs-row">
+      <div class="pa-tabs pa-tabs-l1">
+        <button class="pa-tab pa-tab-l1 active" data-s="council" style="--tab-bg:#5b2d9e">🏛️ Council</button>
+        <button class="pa-tab pa-tab-l1" data-s="redblue" style="--tab-bg:#b22830">⚔️ Red vs Blue</button>
+        <button class="pa-tab pa-tab-l1" data-s="biz" style="--tab-bg:#1a7a9e">💼 Small Biz</button>
+        <button class="pa-tab pa-tab-l1" data-s="survivor" style="--tab-bg:#1e8c4a">🐉 D&amp;D</button>
+      </div>
+      <div class="pa-tabs pa-tabs-l2">
+        <button class="pa-tab pa-tab-l2" data-s="chain" style="--tab-bg:#8b3ecf">🔗 Chain</button>
+        <button class="pa-tab pa-tab-l2" data-s="star" style="--tab-bg:#c48a15">⭐ Star</button>
+        <button class="pa-tab pa-tab-l2" data-s="tree" style="--tab-bg:#2d9e2d">🌳 Tree</button>
+        <button class="pa-tab pa-tab-l2" data-s="mesh" style="--tab-bg:#2255bb">🕸️ Full Mesh</button>
+        <button class="pa-tab pa-tab-l2" data-s="smallworld" style="--tab-bg:#c42a7a">✨ Small-World</button>
+      </div>
+    </div>
+    <div class="pa-body">
+      <div class="pa-screen" id="pa-screen">
+        <svg class="pa-svg" id="pa-svg"></svg>
+        <div id="pa-terms"></div>
+        <div id="pa-msgs"></div>
+      </div>
+      <div class="pa-ledger">
+        <div class="pa-ledger-head">SHARED LEDGER</div>
+        <div id="pa-lrows"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parties-ideas">
+    <span class="parties-idea">Plain Text Games</span>
+    <span class="parties-idea">Shared Ledger</span>
+    <span class="parties-idea">Private DMs</span>
+    <span class="parties-idea">Dice & RNG</span>
+    <span class="parties-idea">Squads & Teams</span>
+    <span class="parties-idea">Any Model Mix</span>
+    <span class="parties-idea">Self-Terminate</span>
+    <span class="parties-idea">Negotiate & Bluff</span>
+  </div>
+
+  <div class="parties-foot">
+    <a href="/features/#parties" class="parties-link">Explore Parties →</a>
+  </div>
+</section>
+<script src="/parties.js"></script>
+
+<section class="mobile">
+  <div class="mobile-head">
+    <h2 class="mobile-title">Many Mobile Options</h2>
+    <p class="mobile-subtitle">Use Claude Code like you do on desktop from anywhere</p>
+    <p class="mobile-lead">Use our easy SSH setup guide to get the Claude Code terminal on your phone to have ALL the features you would have on your desktop.</p>
+  </div>
+
+  <div class="mobile-phones">
+    <div class="mobile-phone" style="--pd:0">
+      <div class="mobile-frame">
+        <div class="mobile-notch"></div>
+        <div class="mobile-screen mobile-collage">
+          <div class="mobile-app" style="--ai:0;--ac:#5865F2"><span>Discord</span></div>
+          <div class="mobile-app" style="--ai:1;--ac:#25D366"><span>WhatsApp</span></div>
+          <div class="mobile-app" style="--ai:2;--ac:#0088cc"><span>Telegram</span></div>
+          <div class="mobile-app" style="--ai:3;--ac:#E1306C"><span>Instagram</span></div>
+          <div class="mobile-app" style="--ai:4;--ac:#4A154B"><span>Slack</span></div>
+          <div class="mobile-app" style="--ai:5;--ac:#3A76F0"><span>Signal</span></div>
+          <div class="mobile-app" style="--ai:6;--ac:#34B7F1"><span>iMessage</span></div>
+          <div class="mobile-app" style="--ai:7;--ac:#FF4500"><span>Reddit</span></div>
+          <div class="mobile-app" style="--ai:8;--ac:#1DA1F2"><span>Twitter</span></div>
+          <div class="mobile-app" style="--ai:9;--ac:#0A66C2"><span>LinkedIn</span></div>
+          <div class="mobile-app" style="--ai:10;--ac:#FF0000"><span>YouTube</span></div>
+          <div class="mobile-app" style="--ai:11;--ac:#EA4335"><span>Gmail</span></div>
+        </div>
+      </div>
+      <p class="mobile-caption">Setup to talk to Clappie from any app you already use via webhook integration helper</p>
+    </div>
+
+    <div class="mobile-phone" style="--pd:1">
+      <div class="mobile-frame">
+        <div class="mobile-notch"></div>
+        <div class="mobile-screen mobile-ssh-screen">
+          <div class="mobile-ssh">
+            <div class="ssh-line"><span class="ssh-prompt">~$</span> ssh clappie@home</div>
+            <div class="ssh-line ssh-dim">Connected to macbook.tail1234.ts.net</div>
+            <div class="ssh-line ssh-dim">Last login: Mon Feb 24 09:41</div>
+            <div class="ssh-line"><span class="ssh-prompt">~$</span> claude</div>
+                        <div class="ssh-line ssh-accent">╭────────────────────╮</div>
+            <div class="ssh-line ssh-accent">│ Claude Code v1.0.3 │</div>
+            <div class="ssh-line ssh-accent">│ ~/clappie          │</div>
+            <div class="ssh-line ssh-accent">╰────────────────────╯</div>
+            <div class="ssh-line"><span class="ssh-prompt">></span> check my emails</div>
+            <div class="ssh-line ssh-dim">Reading inbox… 3 new</div>
+            <div class="ssh-line ssh-green">✓ Summarized & created chores</div>
+            <div class="ssh-line"><span class="ssh-prompt">></span> <span class="ssh-cursor">█</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="mobile-caption">Piggy back off this setup for super easy SSH</p>
+    </div>
+
+
+  </div>
+
+  <div class="mobile-foot">
+    <a href="/ways-to-chat/" class="mobile-link">Setup Guide →</a>
+  </div>
+</section>
+<script>
+(function() {
+  var mob = document.querySelector('.mobile');
+  if (mob && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) { mob.classList.add('mobile-visible'); io.disconnect(); }
+    }, { threshold: 0.1 });
+    io.observe(mob);
+  } else if (mob) { mob.classList.add('mobile-visible'); }
+})();
+</script>
+
+<section class="setup">
+  <div class="setup-head">
+    <h2 class="setup-title">Dead Simple Setup</h2>
+    <p class="setup-subtitle">A Single Skill / Dead Simple Setup<br>No complex agent frameworks</p>
+    <p class="setup-lead">It's really just a super minimal codebase that relays and piggybacks you to Claude Code from anywhere. The code is basically 1 skill.</p>
+  </div>
+
+  <div class="setup-split">
+    <div class="setup-tree-wrap">
+      <div class="setup-tree-chrome">
+        <span class="sc-term-dot" style="background:#ff5f57"></span>
+        <span class="sc-term-dot" style="background:#febc2e"></span>
+        <span class="sc-term-dot" style="background:#28c840"></span>
+        <span class="setup-tree-title">~/clappie</span>
+      </div>
+      <div class="setup-tree">
+        <div class="st-line" style="--d:0"><span class="st-dir">clappie/</span></div>
+        <div class="st-line" style="--d:1">├── <span class="st-dir">.claude/skills/</span></div>
+        <div class="st-line" style="--d:2">│   ├── <span class="st-dir">your-skill/</span> <span class="st-note st-note-green">← build your own</span></div>
+        <div class="st-line" style="--d:3">│   │   ├── SKILL.md</div>
+        <div class="st-line" style="--d:4">│   │   ├── webhook.json <span class="st-note st-note-green">← webhooks to your machine</span></div>
+        <div class="st-line" style="--d:5">│   │   ├── oauth.json <span class="st-note st-note-green">← instant OAuth helper</span></div>
+        <div class="st-line" style="--d:6">│   │   └── your-skill.js <span class="st-note st-note-green">← auto-extends clappie CLI</span></div>
+        <div class="st-line" style="--d:7">│   ├── <span class="st-dir">clappie/</span> <span class="st-note st-note-pink">← the whole engine</span></div>
+        <div class="st-line" style="--d:8">│   │   ├── <span class="st-dir">clapps/</span> <span class="st-note">← displays, sidekicks, heartbeat…</span></div>
+        <div class="st-line" style="--d:9">│   │   └── clappie.js</div>
+        <div class="st-line" style="--d:10">│   ├── <span class="st-dir">telegram-bot/</span> <span class="st-note">← message from anywhere</span></div>
+        <div class="st-line" style="--d:11">│   └── <span class="st-note">[+ 3 more: slack, github, whisper]</span></div>
+        <div class="st-line" style="--d:12">├── <span class="st-dir">recall/</span></div>
+        <div class="st-line" style="--d:13">│   ├── <span class="st-dir">memory/</span> <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:14">│   ├── <span class="st-dir">settings/</span> <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:15">│   ├── <span class="st-dir">oauth/</span> <span class="st-note">← token storage</span></div>
+        <div class="st-line" style="--d:16">│   ├── <span class="st-dir">files/</span> <span class="st-note st-note-cyan">← photos, voice, video</span></div>
+        <div class="st-line" style="--d:17">│   ├── <span class="st-dir">parties/</span> <span class="st-note">← AI swarm games</span></div>
+        <div class="st-line" style="--d:18">│   ├── <span class="st-dir">logs/</span> <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:19">│   └── profile.txt <span class="st-note">← synthesized user profile</span></div>
+        <div class="st-line" style="--d:20">├── <span class="st-dir">chores/</span></div>
+        <div class="st-line" style="--d:21">│   ├── <span class="st-dir">humans/</span> <span class="st-note st-note-cyan">← prepared AI drafts, you approve</span></div>
+        <div class="st-line" style="--d:22">│   │   ├── reply-cto-roadmap.txt <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:23">│   │   └── call-dad-birthday.txt <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:24">│   └── <span class="st-dir">bots/</span> <span class="st-note st-note-cyan">← automated heartbeat tasks</span></div>
+        <div class="st-line" style="--d:25">│       ├───── clean-notifications.txt <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:26">│       └───── system-health.txt <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:27">├── <span class="st-dir">notifications/</span></div>
+        <div class="st-line" style="--d:28">│   ├── <span class="st-dir">dirty/</span> <span class="st-note st-note-amber">← raw dumps from integrations</span></div>
+        <div class="st-line" style="--d:29">│   │   ├── gmail-sync.txt <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:30">│   │   └── slack-sync.json <span class="st-note">← technically a .txt file</span></div>
+        <div class="st-line" style="--d:31">│   └── <span class="st-dir">clean/</span> <span class="st-note st-note-amber">← triaged, ready to review</span></div>
+        <div class="st-line" style="--d:32">│       ├───── 3-new-work-chores.txt <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:33">│       └───── 6-auto-archived-emails.txt <span class="st-note">← .txt files</span></div>
+        <div class="st-line" style="--d:34">├── <span class="st-dir">projects/</span> <span class="st-note st-note-green">← websites, apps, anything</span></div>
+        <div class="st-line" style="--d:35">├── .env <span class="st-note">← API keys (gitignored)</span></div>
+        <div class="st-line" style="--d:36">├── .gitignore</div>
+        <div class="st-line" style="--d:37">└── CLAUDE.md <span class="st-note st-note-pink">← that's it, that's the whole thing</span></div>
+      </div>
+    </div>
+
+    <div class="setup-grid">
+      <div class="setup-card" style="--cd:0;--accent:#22d3ee">
+        <div class="setup-card-icon">⚡</div>
+        <h3 class="setup-card-title">Background</h3>
+        <ul class="setup-card-list">
+          <li>Easy Tailscale private VPN helper</li>
+          <li>Background cron runner</li>
+          <li>Sidekick control center</li>
+        </ul>
+      </div>
+      <div class="setup-card" style="--cd:1;--accent:#a78bfa">
+        <div class="setup-card-icon">📁</div>
+        <h3 class="setup-card-title">.txt File Philosophy</h3>
+        <ul class="setup-card-list">
+          <li>Simple folder structure</li>
+          <li>Plain text settings &amp; config</li>
+          <li>Claude reads &amp; writes naturally</li>
+        </ul>
+      </div>
+      <div class="setup-card" style="--cd:2;--accent:#4ade80">
+        <div class="setup-card-icon">🔧</div>
+        <h3 class="setup-card-title">Skill Builder</h3>
+        <ul class="setup-card-list">
+          <li>Skip risky third-party skill dirs</li>
+          <li>Build your own integrations instead</li>
+          <li>OAuth &amp; webhook managers baked in</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="setup-foot">
+    <a href="/tutorial/" class="setup-link">Tutorial →</a>
+  </div>
+</section>
+<script>
+(function() {
+  var setup = document.querySelector('.setup');
+  if (setup && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) { setup.classList.add('setup-visible'); io.disconnect(); }
+    }, { threshold: 0.1 });
+    io.observe(setup);
+  } else if (setup) { setup.classList.add('setup-visible'); }
+})();
+</script>
+
+
+  
+<div class="squiggly-divider"></div>
+<section class="disclaimers">
+  <div class="disclaimer-box vibe">
+    <span class="disclaimer-icon">✨</span>
+    <div class="disclaimer-content">
+      <strong>CODED IN ENGLISH</strong>
+      <p>This was my personal Claude Code setup being released as a project. It was "vibe coded" — the architecture is human, the code is robot. Built entirely through conversation with Claude Code. Beware of serious issues, bugs or vulnerabilities. But it was also built with love.</p>
+    </div>
+  </div>
+
+  <div class="disclaimer-box warning">
+    <span class="disclaimer-icon">⚠</span>
+    <div class="disclaimer-content">
+      <strong>NOT AFFILIATED WITH ANTHROPIC</strong>
+      <p>Clappie is an <strong>independent project</strong> designed to work with Claude Code. It is <strong>NOT</strong> created, endorsed, or supported by <strong>Anthropic</strong>. "Claude" and "Claude Code" are trademarks of Anthropic. This software is <strong>not guaranteed to work</strong>, may break at any time <strong>without notice</strong> from a Claude Code update or from the author simply not maintaining it, may degrade or interfere with your normal Claude Code experience, and comes with <strong>zero expectation</strong> of continued functionality or compatibility.</p>
+      <p>By using Clappie, you acknowledge that your use of Claude Code remains subject to <strong>Anthropic's <a href="https://www.anthropic.com/legal/aup" target="_blank" rel="noopener">Acceptable Use Policy</a></strong> and <strong><a href="https://www.anthropic.com/legal/consumer-terms" target="_blank" rel="noopener">Terms of Service</a></strong>. Clappie provides no separate license, warranty, or terms of its own. All AI interactions are processed through your existing Claude Code subscription and are governed solely by your agreement with Anthropic. Clappie's author assumes <strong>no liability</strong> for any actions taken by Claude Code on your behalf, any costs incurred through API usage, or any consequences arising from the use of this software.</p>
+    </div>
+  </div>
+
+  <div class="disclaimer-box danger">
+    <span class="disclaimer-icon">☠</span>
+    <div class="disclaimer-content">
+      <strong>EXPERIMENTAL SOFTWARE - EXTREME RISK</strong>
+      <p>This is autonomous AI software that takes actions with minimal human oversight. It should <strong>ONLY</strong> be used in highly controlled, sandboxed, monitored environments - never with real accounts, real data, or production systems. It is <strong>NOT SECURE</strong>, has <strong>NOT BEEN AUDITED</strong>, and may cause <strong>IRREVERSIBLE HARM</strong> to your data, systems, accounts, finances, or reputation. There is <strong>NO WARRANTY</strong> of any kind. The authors accept <strong>NO LIABILITY</strong> and <strong>NO RESPONSIBILITY</strong> for any consequences. By using this software you assume <strong>ALL RISK</strong>. If you are not fully comfortable with experimental autonomous software acting on your behalf, <strong>DO NOT USE THIS</strong>.</p>
+    </div>
+  </div>
+
+  <div class="site-links">
+    <a href="https://twitter.com/whatnicktweets" target="_blank" rel="noopener">@whatnicktweets</a>
+    <span class="link-sep">•</span>
+    <a href="https://github.com/whatnickcodes/clappie" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+  
+<footer class="garden-footer">
+  <div class="garden-container">
+    <div class="garden-scene">
+<span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span>
+<span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span>
+    </div>
+    <div class="flower-sprite" data-base="5"></div>
+    <div class="flower-sprite" data-base="15"></div>
+    <div class="flower-sprite" data-base="25"></div>
+    <div class="flower-sprite" data-base="38"></div>
+    <div class="flower-sprite" data-base="52"></div>
+    <div class="flower-sprite" data-base="65"></div>
+    <div class="flower-sprite" data-base="78"></div>
+    <div class="flower-sprite" data-base="90"></div>
+    <div class="sprites-layer">
+      <div class="sprite-wrapper" id="dog-wrapper" title="woof!">
+<span id="dog-sprite" style="color:rgb(180,130,90)">   ▖ ▖
+▗ █▜▛█
+ ▛▛▛▛▀</span>
+      </div>
+      <!-- <div class="sprite-wrapper" id="crab-wrapper" title="click click">
+<span id="crab-sprite" style="color:rgb(217,119,87)"> ▐▛███▜▌
+▝▜█████▛▘
+  ▘▘ ▝▝</span>
+      </div> -->
+    </div>
+  </div>
+</footer>
+<script>
+(function() {
+  // ═══════════════════════════════════════════════════════════════════════════
+  // COLOR PALETTES
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const petalColors = [
+    'rgb(255,150,180)',  // pink
+    'rgb(230,90,90)',    // red
+    'rgb(170,100,210)',  // purple
+    'rgb(100,160,220)',  // blue
+    'rgb(255,160,70)',   // orange
+    'rgb(250,250,240)',  // white
+    'rgb(255,220,80)',   // yellow
+    'rgb(217,119,87)',   // coral
+  ];
+
+  const stemColors = [
+    'rgb(56,128,77)',    // G3
+    'rgb(72,155,95)',    // G4
+    'rgb(100,180,70)',   // G5
+  ];
+
+  const yellowCenter = 'rgb(255,220,80)';
+
+  // Sprite colors - vibrant & cute! (rgb for sprites, hex for CSS var)
+  const spriteColors = [
+    { rgb: 'rgb(255,142,198)', hex: '#ff8ec6' },   // pink (primary - dog default)
+    { rgb: 'rgb(255,105,180)', hex: '#ff69b4' },  // hot-pink
+    { rgb: 'rgb(87,207,255)', hex: '#57cfff' },   // sky-blue
+    { rgb: 'rgb(180,255,105)', hex: '#b4ff69' },  // lime-green
+    { rgb: 'rgb(138,43,226)', hex: '#8a2be2' },   // blue-violet
+    { rgb: 'rgb(0,255,200)', hex: '#00ffc8' },    // aqua-mint
+    { rgb: 'rgb(255,165,0)', hex: '#ffa500' },    // orange
+    { rgb: 'rgb(255,99,71)', hex: '#ff6347' },    // tomato
+    { rgb: 'rgb(147,112,219)', hex: '#9370db' },  // purple
+    { rgb: 'rgb(64,224,208)', hex: '#40e0d0' },   // turquoise
+    { rgb: 'rgb(255,215,0)', hex: '#ffd700' },    // gold
+    { rgb: 'rgb(50,205,50)', hex: '#32cd32' },    // lime
+    { rgb: 'rgb(255,20,147)', hex: '#ff1493' },   // deep-pink
+    { rgb: 'rgb(0,191,255)', hex: '#00bfff' },    // deep-sky-blue
+    { rgb: 'rgb(186,85,211)', hex: '#ba55d3' },   // orchid
+  ];
+
+  // Crab-only colors (doesn't affect page theme)
+  const crabColors = [
+    'rgb(217,119,87)',   // coral (crab default)
+    'rgb(255,105,180)',  // hot-pink
+    'rgb(87,207,255)',   // sky-blue
+    'rgb(255,165,0)',    // orange
+    'rgb(255,99,71)',    // tomato
+    'rgb(64,224,208)',   // turquoise
+    'rgb(255,215,0)',    // gold
+    'rgb(50,205,50)',    // lime
+  ];
+
+  // Restore color preferences from localStorage
+  let dogColorIndex = parseInt(localStorage.getItem('dogColor') || '0', 10) % spriteColors.length;
+  let crabColorIndex = parseInt(localStorage.getItem('crabColor') || '0', 10) % crabColors.length;
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // FLOWER INITIALIZATION & HOVER
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function buildFlower(petal, stem, stemHeight) {
+    const stemHtml = (' <span class="flower-stem" style="color:' + stem + '">█</span>\n').repeat(stemHeight);
+    return '<span class="flower-inner">' +
+      ' <span class="flower-petal" style="color:' + petal + '">▄</span>\n' +
+      '<span class="flower-petal" style="color:' + petal + '">▀</span><span style="color:' + yellowCenter + '">█</span><span class="flower-petal" style="color:' + petal + '">▀</span>\n' +
+      stemHtml.trimEnd() + '</span>';
+  }
+
+  document.querySelectorAll('.flower-sprite').forEach((el, idx) => {
+    const base = parseFloat(el.dataset.base);
+    const offset = (Math.random() - 0.5) * 6;
+    el.style.left = (base + offset) + '%';
+
+    // Store original color for hover
+    const petal = petalColors[Math.floor(Math.random() * petalColors.length)];
+    const stem = stemColors[Math.floor(Math.random() * stemColors.length)];
+    const stemHeight = Math.floor(Math.random() * 2) + 1;
+
+    el.dataset.petal = petal;
+    el.dataset.stem = stem;
+    el.dataset.stemHeight = stemHeight;
+    el.innerHTML = buildFlower(petal, stem, stemHeight);
+
+    // Staggered entrance animation
+    el.style.animationDelay = (idx * 0.08) + 's';
+
+    // Hover: change color
+    el.addEventListener('mouseenter', () => {
+      const newPetal = petalColors[Math.floor(Math.random() * petalColors.length)];
+      el.querySelectorAll('.flower-petal').forEach(p => p.style.color = newPetal);
+    });
+  });
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // DOG & CRAB CLICK TO CHANGE COLOR
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const dogSprite = document.getElementById('dog-sprite');
+  const crabSprite = document.getElementById('crab-sprite');
+  const dogWrapper = document.getElementById('dog-wrapper');
+  const crabWrapper = document.getElementById('crab-wrapper');
+
+  // Set initial colors from saved preferences
+  if (dogSprite) {
+    const color = spriteColors[dogColorIndex];
+    dogSprite.style.color = color.rgb;
+    document.documentElement.style.setProperty('--primary', color.hex);
+  }
+
+  if (crabSprite) {
+    crabSprite.style.color = crabColors[crabColorIndex];
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SPRITE HELPERS - bubbles, dust, sparkles
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function spawnBubble(el, text) {
+    const bubble = document.createElement('div');
+    bubble.className = 'sprite-bubble';
+    bubble.textContent = text;
+    bubble.style.left = '50%';
+    bubble.style.bottom = '100%';
+    el.appendChild(bubble);
+    setTimeout(() => bubble.remove(), 800);
+  }
+
+  function spawnDust(el) {
+    for (let i = 0; i < 5; i++) {
+      const dust = document.createElement('div');
+      dust.className = 'sprite-dust';
+      dust.style.left = (40 + Math.random() * 20) + '%';
+      dust.style.setProperty('--dx', ((Math.random() - 0.5) * 30) + 'px');
+      el.appendChild(dust);
+      setTimeout(() => dust.remove(), 400);
+    }
+  }
+
+  function spawnSparkleTrail(el) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sprite-sparkle';
+    sparkle.textContent = ['✦', '✧', '★', '·'][Math.floor(Math.random() * 4)];
+    sparkle.style.left = (Math.random() * 60 + 20) + '%';
+    sparkle.style.bottom = (Math.random() * 30 + 10) + '%';
+    sparkle.style.color = ['#ff8ec6', '#ffd700', '#57cfff', '#b4ff69'][Math.floor(Math.random() * 4)];
+    el.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 600);
+  }
+
+  // Double-click tracking
+  let dogLastClick = 0;
+  let crabLastClick = 0;
+
+  if (dogWrapper && dogSprite) {
+    dogWrapper.addEventListener('click', () => {
+      const now = Date.now();
+
+      // Double-click easter egg - BACKFLIP!
+      if (now - dogLastClick < 300) {
+        dogWrapper.classList.add('dog-backflip');
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => spawnSparkleTrail(dogWrapper), i * 80);
+        }
+        setTimeout(() => dogWrapper.classList.remove('dog-backflip'), 600);
+        dogLastClick = 0;
+        return;
+      }
+      dogLastClick = now;
+
+      // Normal click - change color
+      dogColorIndex = (dogColorIndex + 1) % spriteColors.length;
+      localStorage.setItem('dogColor', dogColorIndex);
+      const color = spriteColors[dogColorIndex];
+      dogSprite.style.color = color.rgb;
+      document.documentElement.style.setProperty('--primary', color.hex);
+      dogWrapper.classList.add('sprite-pop');
+      setTimeout(() => dogWrapper.classList.remove('sprite-pop'), 200);
+    });
+  }
+
+  if (crabWrapper && crabSprite) {
+    crabWrapper.addEventListener('click', () => {
+      const now = Date.now();
+
+      // Double-click easter egg - CLAW CLACK!
+      if (now - crabLastClick < 300) {
+        crabWrapper.classList.add('crab-clack');
+        setTimeout(() => crabWrapper.classList.remove('crab-clack'), 500);
+        crabLastClick = 0;
+        return;
+      }
+      crabLastClick = now;
+
+      // Normal click - change color
+      crabColorIndex = (crabColorIndex + 1) % crabColors.length;
+      localStorage.setItem('crabColor', crabColorIndex);
+      crabSprite.style.color = crabColors[crabColorIndex];
+      crabWrapper.classList.add('sprite-pop');
+      setTimeout(() => crabWrapper.classList.remove('sprite-pop'), 200);
+    });
+  }
+
+  // Hover expand effect - expands then shrinks on each hover + speech bubble
+  if (dogWrapper) {
+    dogWrapper.addEventListener('mouseenter', () => {
+      dogWrapper.classList.add('sprite-expand');
+      setTimeout(() => dogWrapper.classList.remove('sprite-expand'), 120);
+      spawnBubble(dogWrapper, 'WOOF!');
+    });
+  }
+  if (crabWrapper) {
+    crabWrapper.addEventListener('mouseenter', () => {
+      crabWrapper.classList.add('sprite-expand');
+      setTimeout(() => crabWrapper.classList.remove('sprite-expand'), 120);
+      spawnBubble(crabWrapper, 'CLAUK!');
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // DOG & CRAB ANIMATIONS - Exact match to terminal display timing
+  // Runs at 100ms ticks with same probabilities as crab-garden.js
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // State machines (matching terminal exactly)
+  const dogState = {
+    phase: 'idle',  // 'idle' | 'skittering' | 'jumping' | 'pausing' | 'zoomies'
+    pauseFrames: 0,
+    zoomiesDashes: 0,
+    animating: false
+  };
+
+  const crabState = {
+    phase: 'idle',
+    pauseFrames: 0,
+    animating: false
+  };
+
+  // DOG CONFIG
+  const DOG = {
+    PROB_ZOOMIES: 0.015,
+    PROB_SKITTER: 0.05,
+    PROB_JUMP: 0.04,
+    PROB_PAUSE: 0.02,
+    PAUSE_MIN: 10,
+    PAUSE_RANGE: 20,
+    ZOOMIES_DASHES_MIN: 3,
+    ZOOMIES_DASHES_RANGE: 3
+  };
+
+  // CRAB CONFIG
+  const CRAB = {
+    PROB_SKITTER: 0.03,
+    PROB_JUMP: 0.02,
+    PROB_PAUSE: 0.03,
+    PAUSE_MIN: 15,
+    PAUSE_RANGE: 40
+  };
+
+  function tickDog() {
+    if (!dogWrapper) return;
+
+    switch (dogState.phase) {
+      case 'idle': {
+        const action = Math.random();
+        if (action < DOG.PROB_ZOOMIES) {
+          // ZOOMIES! with sparkle trail
+          dogState.phase = 'zoomies';
+          dogState.zoomiesDashes = DOG.ZOOMIES_DASHES_MIN + Math.floor(Math.random() * DOG.ZOOMIES_DASHES_RANGE);
+          dogWrapper.classList.add('dog-zoomies');
+          // Sparkle trail during zoomies
+          const sparkleInterval = setInterval(() => spawnSparkleTrail(dogWrapper), 100);
+          setTimeout(() => {
+            clearInterval(sparkleInterval);
+            dogWrapper.classList.remove('dog-zoomies');
+            dogState.phase = 'idle';
+          }, 1000);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER) {
+          // Skitter
+          dogState.phase = 'skittering';
+          const dir = Math.random() < 0.5 ? 'left' : 'right';
+          dogWrapper.classList.add('dog-skitter-' + dir);
+          setTimeout(() => {
+            dogWrapper.classList.remove('dog-skitter-' + dir);
+            dogState.phase = 'idle';
+          }, 400);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER + DOG.PROB_JUMP) {
+          // Jump with squash/stretch
+          dogState.phase = 'jumping';
+          dogWrapper.classList.add('dog-jump');
+          // Dust on landing
+          setTimeout(() => spawnDust(dogWrapper), 280);
+          setTimeout(() => {
+            dogWrapper.classList.remove('dog-jump');
+            dogState.phase = 'idle';
+          }, 350);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER + DOG.PROB_JUMP + DOG.PROB_PAUSE) {
+          // Pause
+          dogState.phase = 'pausing';
+          dogState.pauseFrames = DOG.PAUSE_MIN + Math.floor(Math.random() * DOG.PAUSE_RANGE);
+        }
+        break;
+      }
+      case 'pausing':
+        dogState.pauseFrames--;
+        if (dogState.pauseFrames <= 0) {
+          dogState.phase = 'idle';
+        }
+        break;
+      // skittering, jumping, zoomies handled by setTimeout
+    }
+  }
+
+  function tickCrab() {
+    if (!crabWrapper) return;
+
+    switch (crabState.phase) {
+      case 'idle': {
+        const action = Math.random();
+        if (action < CRAB.PROB_SKITTER) {
+          // Skitter
+          crabState.phase = 'skittering';
+          const dir = Math.random() < 0.5 ? 'left' : 'right';
+          crabWrapper.classList.add('crab-skitter-' + dir);
+          setTimeout(() => {
+            crabWrapper.classList.remove('crab-skitter-' + dir);
+            crabState.phase = 'idle';
+          }, 500);
+        } else if (action < CRAB.PROB_SKITTER + CRAB.PROB_JUMP) {
+          // Jump with dust
+          crabState.phase = 'jumping';
+          crabWrapper.classList.add('crab-jump');
+          setTimeout(() => spawnDust(crabWrapper), 240);
+          setTimeout(() => {
+            crabWrapper.classList.remove('crab-jump');
+            crabState.phase = 'idle';
+          }, 300);
+        } else if (action < CRAB.PROB_SKITTER + CRAB.PROB_JUMP + CRAB.PROB_PAUSE) {
+          // Pause
+          crabState.phase = 'pausing';
+          crabState.pauseFrames = CRAB.PAUSE_MIN + Math.floor(Math.random() * CRAB.PAUSE_RANGE);
+        }
+        break;
+      }
+      case 'pausing':
+        crabState.pauseFrames--;
+        if (crabState.pauseFrames <= 0) {
+          crabState.phase = 'idle';
+        }
+        break;
+    }
+  }
+
+  // Run at 150ms ticks
+  setInterval(tickDog, 150);
+  setInterval(tickCrab, 150);
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ENTRANCE ANIMATION
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const footer = document.querySelector('.garden-footer');
+  if (footer) {
+    footer.classList.add('garden-entrance');
+  }
+})();
+</script>
+
+  <script>
+(function() {
+  // ─── SCROLL TO TOP ON LOAD ──────────────────────────────────────────────────
+  window.scrollTo(0, 0);
+
+  // ─── COPY COMMAND ───────────────────────────────────────────────────────────
+  window.copyCommand = function(el) {
+    const text = el.querySelector('.command-text').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      el.classList.add('copied');
+      setTimeout(() => el.classList.remove('copied'), 1500);
+    });
+  };
+
+  // ─── HERO COMMAND SPOTLIGHT ─────────────────────────────────────────────────
+  const heroCommand = document.querySelector('.hero-command');
+  if (heroCommand) {
+    heroCommand.addEventListener('mouseenter', () => {
+      document.documentElement.classList.add('command-hover');
+    });
+    heroCommand.addEventListener('mouseleave', () => {
+      document.documentElement.classList.remove('command-hover');
+    });
+  }
+
+  // ─── THEME ───────────────────────────────────────────────────────────────────
+  function getTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function setTheme(t) {
+    localStorage.setItem('theme', t);
+    document.documentElement.dataset.theme = t;
+  }
+
+  window.toggleTheme = function() {
+    setTheme(getTheme() === 'dark' ? 'light' : 'dark');
+  };
+
+  setTheme(getTheme());
+
+  // ─── GARDEN TOGGLE ──────────────────────────────────────────────────────────
+  function getGarden() {
+    const saved = localStorage.getItem('garden');
+    return saved !== 'hidden';
+  }
+
+  function setGarden(show) {
+    localStorage.setItem('garden', show ? 'shown' : 'hidden');
+    document.documentElement.dataset.garden = show ? 'shown' : 'hidden';
+  }
+
+  window.toggleGarden = function() {
+    setGarden(!getGarden());
+  };
+
+  setGarden(getGarden());
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
+  // ─── FLOATING PIXELS ─────────────────────────────────────────────────────────
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const particles = ['▀', '▄', '█', '▌', '▐', '░', '▒', '▓', '◆', '◇', '★', '✦'];
+    const colors = ['#ff8ec6', '#57cfff', '#b4ff69', '#ffd700', '#ff6347', '#40e0d0'];
+
+    for (let i = 0; i < 15; i++) {
+      const p = document.createElement('span');
+      p.className = 'pixel-particle';
+      p.textContent = particles[Math.floor(Math.random() * particles.length)];
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      p.style.color = colors[Math.floor(Math.random() * colors.length)];
+      p.style.animationDelay = -Math.random() * 10 + 's';
+      p.style.fontSize = (10 + Math.random() * 12) + 'px';
+      hero.appendChild(p);
+    }
+  }
+
+  // ─── RANDOM GLITCH - sporadic 4-10 second intervals ─────────────────────────
+  function triggerGlitch() {
+    if (hero) {
+      hero.classList.add('glitching');
+      setTimeout(() => hero.classList.remove('glitching'), 600);
+    }
+    // Schedule next glitch at random interval (4-10 seconds)
+    const nextDelay = 4000 + Math.random() * 6000;
+    setTimeout(triggerGlitch, nextDelay);
+  }
+  // Start first glitch after 3-6 seconds
+  setTimeout(triggerGlitch, 3000 + Math.random() * 3000);
+
+  // ─── CLICK SPARKLES ─────────────────────────────────────────────────────────
+  document.addEventListener('click', (e) => {
+    // Skip sparkles in performance mode
+    if (document.documentElement.dataset.garden === 'hidden') return;
+    for (let i = 0; i < 6; i++) {
+      const spark = document.createElement('div');
+      spark.className = 'sparkle';
+      spark.style.left = e.clientX + (Math.random() - 0.5) * 40 + 'px';
+      spark.style.top = e.clientY + (Math.random() - 0.5) * 40 + 'px';
+      spark.style.background = ['#ff8ec6', '#57cfff', '#b4ff69', '#ffd700'][Math.floor(Math.random() * 4)];
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 600);
+    }
+  });
+
+  // ─── SCROLL HEADER ───────────────────────────────────────────────────────────
+  const header = document.querySelector('header');
+  let ticking = false;
+
+  function updateHeader() {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateHeader();
+
+  // ─── HELLO BAR ────────────────────────────────────────────────────────────────
+  const helloBar = document.querySelector('.hello-bar');
+  const dismissBtn = document.querySelector('.hello-bar-dismiss');
+  if (helloBar && dismissBtn) {
+    var dismissedAt = localStorage.getItem('hello-bar-dismissed');
+    if (dismissedAt && (Date.now() - parseInt(dismissedAt)) < 4 * 60 * 60 * 1000) {
+      helloBar.remove();
+    } else {
+      setTimeout(() => {
+        helloBar.classList.add('visible');
+        document.body.classList.add('hello-bar-active');
+
+        // Face scramble engine
+        const face = document.getElementById('hb-face');
+        const urlEl = document.getElementById('hb-url');
+        if (face) {
+          const bigEyes = 'O0@◉⊙●◎';
+          const smolEyes = 'o°·.•';
+          const wildEyes = '*#^~$&!?¤×÷±∞';
+          const allEyes = bigEyes + smolEyes + wildEyes;
+          const seps = '_-=~·•.:¯';
+          const others = ['o_◉', 'o_°', 'o_•', 'o_◎', 'o_⊙', 'o_◕', 'o_⦿', 'o_●', 'o_*', 'o_☉'];
+          const settled = [];
+          for (const f of others) {
+            settled.push('o_0', f);
+          }
+          const urls = ['oh0.ai', 'oh-zero.com', 'ohzero.ai', '@oh0'];
+          let idx = 0;
+          let urlIdx = 0;
+
+          // URL text scramble
+          function scrambleUrl() {
+            if (!urlEl) return;
+            urlIdx = (urlIdx + 1) % urls.length;
+            const target = urls[urlIdx];
+            let ticks = 0;
+            const chars = 'abcdefghijklmnopqrstuvwxyz0123456789.-/';
+            const run = setInterval(() => {
+              let out = '';
+              for (let i = 0; i < target.length; i++) {
+                out += ticks > (i * 0.8) ? target[i] : chars[Math.floor(Math.random() * chars.length)];
+              }
+              urlEl.textContent = out;
+              ticks++;
+              if (ticks >= target.length + 3) {
+                clearInterval(run);
+                urlEl.textContent = target;
+              }
+            }, 40);
+          }
+
+          // Face reacts directly to mouse movement
+          let settleTimer = null;
+          let hoveringBar = false;
+          const helloBar = document.querySelector('.hello-bar');
+          helloBar.addEventListener('mouseenter', () => { hoveringBar = true; });
+          helloBar.addEventListener('mouseleave', () => { hoveringBar = false; });
+          document.addEventListener('mousemove', (e) => {
+            const speed = Math.abs(e.movementX) + Math.abs(e.movementY);
+            if (speed < 3) return;
+            if (hoveringBar) {
+              face.textContent = 'o_0';
+              face.classList.remove('glitching');
+              return;
+            }
+            // Random face on every move
+            const a = allEyes[Math.floor(Math.random() * allEyes.length)];
+            const s = seps[Math.floor(Math.random() * seps.length)];
+            const b = allEyes[Math.floor(Math.random() * allEyes.length)];
+            face.textContent = a + s + b;
+            face.classList.add('glitching');
+            // Reset settle timer
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(() => {
+              idx = (idx + 1) % settled.length;
+              face.textContent = settled[idx];
+              face.classList.remove('glitching');
+              face.classList.add('landed');
+              setTimeout(() => face.classList.remove('landed'), 300);
+            }, 200);
+          });
+          setInterval(scrambleUrl, 7000);
+        }
+      }, 3000);
+
+      dismissBtn.addEventListener('click', () => {
+        helloBar.classList.add('dismissing');
+        document.body.classList.remove('hello-bar-active');
+        setTimeout(() => {
+          helloBar.remove();
+          localStorage.setItem('hello-bar-dismissed', Date.now().toString());
+        }, 400);
+      });
+    }
+  }
+
+  // ─── MOBILE NAV ──────────────────────────────────────────────────────────────
+  const navToggle = document.getElementById('nav-toggle');
+  const nav = document.querySelector('nav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('change', () => {
+      const isOpen = navToggle.checked;
+      nav.classList.toggle('open', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+      if (isOpen) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  // ─── DROPDOWN TOGGLES (mobile accordion, desktop hover) ───────────────────────
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  const isMobile = () => window.innerWidth <= 768;
+
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        if (isMobile()) {
+          e.preventDefault();
+          // Close other dropdowns
+          dropdowns.forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+          });
+          dropdown.classList.toggle('open');
+        }
+      });
+    }
+  });
+
+  // Close dropdowns when clicking outside on mobile
+  document.addEventListener('click', (e) => {
+    if (isMobile() && !e.target.closest('.nav-dropdown')) {
+      dropdowns.forEach(d => d.classList.remove('open'));
+    }
+  });
+
+})();
+</script>
+  <script>
+(function() {
+  // Feature card hover preview
+  document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('hovered');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('hovered');
+    });
+  });
+
+  // Randomize pixel explosion on each hover
+  document.querySelectorAll('.pixel-title .pl').forEach(line => {
+    line.addEventListener('mouseenter', () => {
+      line.querySelectorAll('.px').forEach(px => {
+        const tx = Math.round((Math.random() - 0.5) * 150);
+        const ty = Math.round((Math.random() - 0.5) * 150);
+        const r = Math.round((Math.random() - 0.5) * 720);
+        const scale = (0.6 + Math.random() * 0.8).toFixed(2);
+        const hue = Math.round((Math.random() - 0.5) * 60);
+        const br = Math.round(Math.random() * 50);
+        px.style.setProperty('--tx', tx + 'px');
+        px.style.setProperty('--ty', ty + 'px');
+        px.style.setProperty('--r', r + 'deg');
+        px.style.setProperty('--s', scale);
+        px.style.setProperty('--h', hue + 'deg');
+        px.style.setProperty('--br', br + '%');
+      });
+    });
+  });
+})();
+</script>
+  
+  
+</body>
+</html>

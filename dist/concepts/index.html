@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en" data-page="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clappie - Turn Claude Code into a 24/7 autonomous personal agent with a single skill file. Terminal UIs, background tasks, phone integration, and more.">
+  <meta name="theme-color" content="#d97757">
+  <title>Concepts - Clappie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="aurora"></div>
+  <header>
+    <a href="/" class="logo" aria-label="Clappie home">
+  <span class="logo-dog">   ▖ ▖
+▗ █▜▛█
+ ▛▛▛▛▀</span>
+  <span class="logo-text">
+    <span class="logo-letter">C</span><span class="logo-letter">l</span><span class="logo-letter">a</span><span class="logo-letter">p</span><span class="logo-letter">p</span><span class="logo-letter">i</span><span class="logo-letter">e</span>
+  </span>
+</a>
+    <nav><a href="/get-started/">Get Started</a><a href="/features/">Features</a><a href="/ways-to-chat/">Ways to Chat</a><a href="/integrations/">Integrations</a><a href="/concepts/">Concepts</a><a href="/misc/">Misc</a><a href="https://github.com/whatnickcodes/clappie" target="_blank" rel="noopener">GitHub</a></nav>
+    <div class="header-right">
+      <button class="garden-toggle" onclick="toggleGarden()" aria-label="Toggle garden">
+  <span class="garden-shown">🌻</span>
+  <span class="garden-hidden">🌱</span>
+</button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+  <span class="toggle-light">━━━🌞</span>
+  <span class="toggle-dark">🌚•••</span>
+</button>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+  </header>
+  
+  <div class="tldr-wrapper"><div class="tldr"><div class="tldr-label">TLDR</div><p>The ideas behind Clappie.</p><ul><ul><li>AI that works while you sleep</li><li>Never leave the terminal</li><li>Human approval for risky stuff</li></ul></ul></div></div>
+  
+    <div class="docs-layout">
+      <div class="tree-wrapper">
+    <aside class="file-tree">
+      <div class="tree-header">
+        <span class="tree-title">File Structure</span>
+        <button class="tree-collapse" onclick="toggleTreeSidebar()" aria-label="Toggle tree">◀</button>
+      </div>
+      <div class="tree-content">
+        <div class="tree-item tree-dir" data-path="~/clappie/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">~/clappie/</span>
+        
+      </div><div class="tree-children" data-path="~/clappie/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">.claude/</span>
+        
+      </div><div class="tree-children" data-path="~/clappie/.claude/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">skills/</span>
+        
+      </div><div class="tree-children" data-path="~/clappie/.claude/skills/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/clappie/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">clappie/</span>
+        <a href="/" class="tree-link" onclick="event.stopPropagation()" title="View docs">🔗</a>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/clappie/"><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/SKILL.md" data-summary="Main skill instructions" onclick="showPreview('~/clappie/.claude/skills/clappie/SKILL.md', 'Main skill instructions')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">SKILL.md</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clappie.js" data-summary="CLI entry point" onclick="showPreview('~/clappie/.claude/skills/clappie/clappie.js', 'CLI entry point')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">clappie.js</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/whisper/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">whisper/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/whisper/"><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/whisper/whisper.js" data-summary="Audio transcription" onclick="showPreview('~/clappie/.claude/skills/whisper/whisper.js', 'Audio transcription')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">whisper.js</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/front/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">front/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/front/"><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/front/front.js" data-summary="Email integration" onclick="showPreview('~/clappie/.claude/skills/front/front.js', 'Email integration')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">front.js</span>
+          </div></div></div></div><div class="tree-item tree-dir" data-path="~/clappie/chores/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">chores/</span>
+        <a href="/chores" class="tree-link" onclick="event.stopPropagation()" title="View docs">🔗</a>
+      </div><div class="tree-children" data-path="~/clappie/chores/"><div class="tree-item tree-dir" data-path="~/clappie/chores/humans/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">humans/</span>
+        
+      </div><div class="tree-children" data-path="~/clappie/chores/humans/"><div class="tree-item tree-file" data-path="~/clappie/chores/humans/email-bob.txt" data-summary="Draft email to Bob about project" onclick="showPreview('~/clappie/chores/humans/email-bob.txt', 'Draft email to Bob about project')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">email-bob.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/chores/humans/review-pr.txt" data-summary="PR #142 needs review approval" onclick="showPreview('~/clappie/chores/humans/review-pr.txt', 'PR #142 needs review approval')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">review-pr.txt</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/chores/bots/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">bots/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/chores/bots/"><div class="tree-item tree-file" data-path="~/clappie/chores/bots/process-notifications.txt" data-summary="Triage notification sync" onclick="showPreview('~/clappie/chores/bots/process-notifications.txt', 'Triage notification sync')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">process-notifications.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/chores/bots/user-checkin.txt" data-summary="Periodic check-in prompt" onclick="showPreview('~/clappie/chores/bots/user-checkin.txt', 'Periodic check-in prompt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">user-checkin.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/chores/bots/email-sweep.txt" data-summary="Scan inbox for urgent items" onclick="showPreview('~/clappie/chores/bots/email-sweep.txt', 'Scan inbox for urgent items')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">email-sweep.txt</span>
+          </div></div></div><div class="tree-item tree-dir" data-path="~/clappie/notifications/" data-highlights="notifications" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">notifications/</span>
+        <a href="/notifications" class="tree-link" onclick="event.stopPropagation()" title="View docs">🔗</a>
+      </div><div class="tree-children" data-path="~/clappie/notifications/"><div class="tree-item tree-dir" data-path="~/clappie/notifications/clean/" data-highlights="clean,signals" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">clean/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/notifications/clean/"><div class="tree-item tree-file" data-path="~/clappie/notifications/clean/urgent-from-rachel.txt" data-summary="🚨 Board demo needs fix" onclick="showPreview('~/clappie/notifications/clean/urgent-from-rachel.txt', '🚨 Board demo needs fix')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">urgent-from-rachel.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/notifications/clean/pr-updates.txt" data-summary="GitHub activity digest" onclick="showPreview('~/clappie/notifications/clean/pr-updates.txt', 'GitHub activity digest')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">pr-updates.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/notifications/clean/family-dinner.txt" data-summary="Mom wants to know about Sunday" onclick="showPreview('~/clappie/notifications/clean/family-dinner.txt', 'Mom wants to know about Sunday')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">family-dinner.txt</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/notifications/dirty/" data-highlights="dirty,sync" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">dirty/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/notifications/dirty/"><div class="tree-item tree-file" data-path="~/clappie/notifications/dirty/gmail-dump.json" data-summary="Unprocessed Gmail sync" onclick="showPreview('~/clappie/notifications/dirty/gmail-dump.json', 'Unprocessed Gmail sync')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">gmail-dump.json</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/notifications/dirty/slack-events.json" data-summary="Slack webhook payload" onclick="showPreview('~/clappie/notifications/dirty/slack-events.json', 'Slack webhook payload')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">slack-events.json</span>
+          </div></div><div class="tree-item tree-file" data-path="~/clappie/notifications/instructions.txt" data-summary="Triage rules and preferences" onclick="showPreview('~/clappie/notifications/instructions.txt', 'Triage rules and preferences')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">instructions.txt</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">recall/</span>
+        <a href="/recall" class="tree-link" onclick="event.stopPropagation()" title="View docs">🔗</a>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/"><div class="tree-item tree-dir" data-path="~/clappie/recall/memory/" data-highlights="memory" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">memory/</span>
+        
+      </div><div class="tree-children" data-path="~/clappie/recall/memory/"><div class="tree-item tree-file" data-path="~/clappie/recall/memory/personal.txt" data-summary="Name, location, family" onclick="showPreview('~/clappie/recall/memory/personal.txt', 'Name, location, family')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">personal.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/memory/preferences.txt" data-summary="Likes, dislikes, opinions" onclick="showPreview('~/clappie/recall/memory/preferences.txt', 'Likes, dislikes, opinions')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">preferences.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/memory/work.txt" data-summary="Job, projects, clients" onclick="showPreview('~/clappie/recall/memory/work.txt', 'Job, projects, clients')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">work.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/memory/people.txt" data-summary="Contacts and relationships" onclick="showPreview('~/clappie/recall/memory/people.txt', 'Contacts and relationships')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">people.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/memory/technical.txt" data-summary="Coding style, tools, stack" onclick="showPreview('~/clappie/recall/memory/technical.txt', 'Coding style, tools, stack')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">technical.txt</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">logs/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/"><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/heartbeat/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">heartbeat/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/heartbeat/"><div class="tree-item tree-file" data-path="~/clappie/recall/logs/heartbeat/2026-02-03.txt" data-summary="Daily heartbeat log" onclick="showPreview('~/clappie/recall/logs/heartbeat/2026-02-03.txt', 'Daily heartbeat log')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">2026-02-03.txt</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/sidekicks/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">sidekicks/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/sidekicks/"><div class="tree-item tree-file" data-path="~/clappie/recall/logs/sidekicks/2026-02-03-1200-task.txt" data-summary="Background task log" onclick="showPreview('~/clappie/recall/logs/sidekicks/2026-02-03-1200-task.txt', 'Background task log')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">2026-02-03-1200-task.txt</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/chores/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">chores/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/chores/"><div class="tree-item tree-file" data-path="~/clappie/recall/logs/chores/2026-02-03-1045-email-bob.txt" data-summary="Completed chore" onclick="showPreview('~/clappie/recall/logs/chores/2026-02-03-1045-email-bob.txt', 'Completed chore')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">2026-02-03-1045-email-bob.txt</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/notifications/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">notifications/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/notifications/"><div class="tree-item tree-file" data-path="~/clappie/recall/logs/notifications/2026-02-03.txt" data-summary="Notification processing log" onclick="showPreview('~/clappie/recall/logs/notifications/2026-02-03.txt', 'Notification processing log')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">2026-02-03.txt</span>
+          </div></div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">settings/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/"><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/theme/" data-highlights="" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-icon">📁</span>
+        <span class="tree-name">theme/</span>
+        
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/theme/"><div class="tree-item tree-file" data-path="~/clappie/recall/settings/theme/mode.txt" data-summary="light | dark | system" onclick="showPreview('~/clappie/recall/settings/theme/mode.txt', 'light | dark | system')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">mode.txt</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/settings/theme/scene.txt" data-summary="on | off (header/footer toggle)" onclick="showPreview('~/clappie/recall/settings/theme/scene.txt', 'on | off (header/footer toggle)')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">scene.txt</span>
+          </div></div></div><div class="tree-item tree-file" data-path="~/clappie/recall/profile.txt" data-summary="Synthesized user profile" onclick="showPreview('~/clappie/recall/profile.txt', 'Synthesized user profile')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">profile.txt</span>
+          </div></div><div class="tree-item tree-file" data-path="~/clappie/CLAUDE.md" data-summary="Project instructions for Claude" onclick="showPreview('~/clappie/CLAUDE.md', 'Project instructions for Claude')">
+            <span class="tree-arrow"></span>
+            <span class="tree-icon">📄</span>
+            <span class="tree-name">CLAUDE.md</span>
+          </div></div>
+      </div>
+    </aside>
+  </div>
+      <div class="docs-main">
+        
+    <div class="content-tabs">
+      <button class="tab-btn active" data-tab="clean" onclick="switchTab('clean')">
+        <span class="tab-icon">✨</span> Cleaned (generated)
+      </button>
+      <button class="tab-btn" data-tab="dirty" onclick="switchTab('dirty')">
+        <span class="tab-icon">📝</span> Notes (messy)
+      </button>
+    </div>
+        <main>
+          
+    <div class="tab-content active" id="tab-clean">
+      <div class="page-content"><h1 id="concepts">Concepts</h1><p>
+<h2 id="24-7-ai"><a href="#24-7-ai">24/7 AI</a></h2><p>Coming soon.</p><h2 id="never-leave-terminal"><a href="#never-leave-terminal">Never Leave Terminal</a></h2><p>Coming soon.</p><h2 id="mobile-phone-os"><a href="#mobile-phone-os">Mobile Phone OS</a></h2><p>Coming soon.</p><h2 id="the-beauty-of-chores"><a href="#the-beauty-of-chores">The Beauty of Chores</a></h2><p>Coming soon.
+<p></div>
+    </div>
+    <div class="tab-content" id="tab-dirty">
+      <div class="dirty-box">- 24/7 AI (background work while you sleep, pings when urgent)
+- Never leave terminal (dynamic UIs, on-demand data)
+- Mobile phone OS (displays on phone, color e-ink dream)
+- The beauty of chores (AI drafts, human approves)
+</div>
+    </div>
+        </main>
+      </div>
+      
+      <div class="toc-wrapper">
+        <aside class="toc-sidebar">
+          <div class="toc-header">
+            <span class="toc-title">📑 On this page</span>
+          </div>
+          <nav class="toc-nav">
+            <a href="#24-7-ai" class="toc-item" data-id="24-7-ai">24/7 AI</a>
+          <a href="#never-leave-terminal" class="toc-item" data-id="never-leave-terminal">Never Leave Terminal</a>
+          <a href="#mobile-phone-os" class="toc-item" data-id="mobile-phone-os">Mobile Phone OS</a>
+          <a href="#the-beauty-of-chores" class="toc-item" data-id="the-beauty-of-chores">The Beauty of Chores</a>
+          </nav>
+        </aside>
+      </div>
+    </div>
+  
+  
+<div class="squiggly-divider"></div>
+<section class="disclaimers">
+  <div class="disclaimer-box vibe">
+    <span class="disclaimer-icon">✨</span>
+    <div class="disclaimer-content">
+      <strong>CODED IN ENGLISH</strong>
+      <p>This project was vibe coded — architected and built entirely through conversation with Claude Code. No manual coding. The architecture emerged from prompts. It's an experiment.</p>
+    </div>
+  </div>
+
+  <div class="disclaimer-box warning">
+    <span class="disclaimer-icon">⚠</span>
+    <div class="disclaimer-content">
+      <strong>NOT AFFILIATED WITH ANTHROPIC</strong>
+      <p>Clappie is an independent project designed to extend Claude Code with additional capabilities. It is <strong>NOT</strong> created, endorsed, or supported by Anthropic. "Claude" and "Claude Code" are trademarks of Anthropic. This software is not guaranteed to work, may break at any time without notice, may degrade or interfere with your normal Claude Code experience, and comes with zero expectation of continued functionality or compatibility.</p>
+    </div>
+  </div>
+
+  <div class="disclaimer-box danger">
+    <span class="disclaimer-icon">☠</span>
+    <div class="disclaimer-content">
+      <strong>EXPERIMENTAL SOFTWARE - EXTREME RISK</strong>
+      <p>This is autonomous AI software that takes actions with minimal human oversight. It should <strong>ONLY</strong> be used in highly controlled, sandboxed, monitored environments - never with real accounts, real data, or production systems. It is <strong>NOT SECURE</strong>, has <strong>NOT BEEN AUDITED</strong>, and may cause <strong>IRREVERSIBLE HARM</strong> to your data, systems, accounts, finances, or reputation. There is <strong>NO WARRANTY</strong> of any kind. The authors accept <strong>NO LIABILITY</strong> and <strong>NO RESPONSIBILITY</strong> for any consequences. By using this software you assume <strong>ALL RISK</strong>. If you are not fully comfortable with experimental autonomous software acting on your behalf, <strong>DO NOT USE THIS</strong>.</p>
+    </div>
+  </div>
+
+  <div class="site-links">
+    <a href="https://twitter.com/whatnicktweets" target="_blank" rel="noopener">@whatnicktweets</a>
+    <span class="link-sep">•</span>
+    <a href="https://github.com/whatnickcodes/clappie" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+  
+<footer class="garden-footer">
+  <div class="garden-container">
+    <div class="garden-scene">
+<span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span>
+<span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span>
+    </div>
+    <div class="flower-sprite" data-base="5"></div>
+    <div class="flower-sprite" data-base="15"></div>
+    <div class="flower-sprite" data-base="25"></div>
+    <div class="flower-sprite" data-base="38"></div>
+    <div class="flower-sprite" data-base="52"></div>
+    <div class="flower-sprite" data-base="65"></div>
+    <div class="flower-sprite" data-base="78"></div>
+    <div class="flower-sprite" data-base="90"></div>
+    <div class="sprites-layer">
+      <div class="sprite-wrapper" id="dog-wrapper" title="woof!">
+<span id="dog-sprite" style="color:rgb(180,130,90)">   ▖ ▖
+▗ █▜▛█
+ ▛▛▛▛▀</span>
+      </div>
+      <div class="sprite-wrapper" id="crab-wrapper" title="click click">
+<span id="crab-sprite" style="color:rgb(217,119,87)"> ▐▛███▜▌
+▝▜█████▛▘
+  ▘▘ ▝▝</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+(function() {
+  // ═══════════════════════════════════════════════════════════════════════════
+  // COLOR PALETTES
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const petalColors = [
+    'rgb(255,150,180)',  // pink
+    'rgb(230,90,90)',    // red
+    'rgb(170,100,210)',  // purple
+    'rgb(100,160,220)',  // blue
+    'rgb(255,160,70)',   // orange
+    'rgb(250,250,240)',  // white
+    'rgb(255,220,80)',   // yellow
+    'rgb(217,119,87)',   // coral
+  ];
+
+  const stemColors = [
+    'rgb(56,128,77)',    // G3
+    'rgb(72,155,95)',    // G4
+    'rgb(100,180,70)',   // G5
+  ];
+
+  const yellowCenter = 'rgb(255,220,80)';
+
+  // Sprite colors - vibrant & cute! (rgb for sprites, hex for CSS var)
+  const spriteColors = [
+    { rgb: 'rgb(255,142,198)', hex: '#ff8ec6' },   // pink (primary - dog default)
+    { rgb: 'rgb(255,105,180)', hex: '#ff69b4' },  // hot-pink
+    { rgb: 'rgb(87,207,255)', hex: '#57cfff' },   // sky-blue
+    { rgb: 'rgb(180,255,105)', hex: '#b4ff69' },  // lime-green
+    { rgb: 'rgb(138,43,226)', hex: '#8a2be2' },   // blue-violet
+    { rgb: 'rgb(0,255,200)', hex: '#00ffc8' },    // aqua-mint
+    { rgb: 'rgb(255,165,0)', hex: '#ffa500' },    // orange
+    { rgb: 'rgb(255,99,71)', hex: '#ff6347' },    // tomato
+    { rgb: 'rgb(147,112,219)', hex: '#9370db' },  // purple
+    { rgb: 'rgb(64,224,208)', hex: '#40e0d0' },   // turquoise
+    { rgb: 'rgb(255,215,0)', hex: '#ffd700' },    // gold
+    { rgb: 'rgb(50,205,50)', hex: '#32cd32' },    // lime
+    { rgb: 'rgb(255,20,147)', hex: '#ff1493' },   // deep-pink
+    { rgb: 'rgb(0,191,255)', hex: '#00bfff' },    // deep-sky-blue
+    { rgb: 'rgb(186,85,211)', hex: '#ba55d3' },   // orchid
+  ];
+
+  // Crab-only colors (doesn't affect page theme)
+  const crabColors = [
+    'rgb(217,119,87)',   // coral (crab default)
+    'rgb(255,105,180)',  // hot-pink
+    'rgb(87,207,255)',   // sky-blue
+    'rgb(255,165,0)',    // orange
+    'rgb(255,99,71)',    // tomato
+    'rgb(64,224,208)',   // turquoise
+    'rgb(255,215,0)',    // gold
+    'rgb(50,205,50)',    // lime
+  ];
+
+  // Restore color preferences from localStorage
+  let dogColorIndex = parseInt(localStorage.getItem('dogColor') || '0', 10) % spriteColors.length;
+  let crabColorIndex = parseInt(localStorage.getItem('crabColor') || '0', 10) % crabColors.length;
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // FLOWER INITIALIZATION & HOVER
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function buildFlower(petal, stem, stemHeight) {
+    const stemHtml = (' <span class="flower-stem" style="color:' + stem + '">█</span>\n').repeat(stemHeight);
+    return '<span class="flower-inner">' +
+      ' <span class="flower-petal" style="color:' + petal + '">▄</span>\n' +
+      '<span class="flower-petal" style="color:' + petal + '">▀</span><span style="color:' + yellowCenter + '">█</span><span class="flower-petal" style="color:' + petal + '">▀</span>\n' +
+      stemHtml.trimEnd() + '</span>';
+  }
+
+  document.querySelectorAll('.flower-sprite').forEach((el, idx) => {
+    const base = parseFloat(el.dataset.base);
+    const offset = (Math.random() - 0.5) * 6;
+    el.style.left = (base + offset) + '%';
+
+    // Store original color for hover
+    const petal = petalColors[Math.floor(Math.random() * petalColors.length)];
+    const stem = stemColors[Math.floor(Math.random() * stemColors.length)];
+    const stemHeight = Math.floor(Math.random() * 2) + 1;
+
+    el.dataset.petal = petal;
+    el.dataset.stem = stem;
+    el.dataset.stemHeight = stemHeight;
+    el.innerHTML = buildFlower(petal, stem, stemHeight);
+
+    // Staggered entrance animation
+    el.style.animationDelay = (idx * 0.08) + 's';
+
+    // Hover: change color
+    el.addEventListener('mouseenter', () => {
+      const newPetal = petalColors[Math.floor(Math.random() * petalColors.length)];
+      el.querySelectorAll('.flower-petal').forEach(p => p.style.color = newPetal);
+    });
+  });
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // DOG & CRAB CLICK TO CHANGE COLOR
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const dogSprite = document.getElementById('dog-sprite');
+  const crabSprite = document.getElementById('crab-sprite');
+  const dogWrapper = document.getElementById('dog-wrapper');
+  const crabWrapper = document.getElementById('crab-wrapper');
+
+  // Set initial colors from saved preferences
+  if (dogSprite) {
+    const color = spriteColors[dogColorIndex];
+    dogSprite.style.color = color.rgb;
+    document.documentElement.style.setProperty('--primary', color.hex);
+  }
+
+  if (crabSprite) {
+    crabSprite.style.color = crabColors[crabColorIndex];
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SPRITE HELPERS - bubbles, dust, sparkles
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function spawnBubble(el, text) {
+    const bubble = document.createElement('div');
+    bubble.className = 'sprite-bubble';
+    bubble.textContent = text;
+    bubble.style.left = '50%';
+    bubble.style.bottom = '100%';
+    el.appendChild(bubble);
+    setTimeout(() => bubble.remove(), 800);
+  }
+
+  function spawnDust(el) {
+    for (let i = 0; i < 5; i++) {
+      const dust = document.createElement('div');
+      dust.className = 'sprite-dust';
+      dust.style.left = (40 + Math.random() * 20) + '%';
+      dust.style.setProperty('--dx', ((Math.random() - 0.5) * 30) + 'px');
+      el.appendChild(dust);
+      setTimeout(() => dust.remove(), 400);
+    }
+  }
+
+  function spawnSparkleTrail(el) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sprite-sparkle';
+    sparkle.textContent = ['✦', '✧', '★', '·'][Math.floor(Math.random() * 4)];
+    sparkle.style.left = (Math.random() * 60 + 20) + '%';
+    sparkle.style.bottom = (Math.random() * 30 + 10) + '%';
+    sparkle.style.color = ['#ff8ec6', '#ffd700', '#57cfff', '#b4ff69'][Math.floor(Math.random() * 4)];
+    el.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 600);
+  }
+
+  // Double-click tracking
+  let dogLastClick = 0;
+  let crabLastClick = 0;
+
+  if (dogWrapper && dogSprite) {
+    dogWrapper.addEventListener('click', () => {
+      const now = Date.now();
+
+      // Double-click easter egg - BACKFLIP!
+      if (now - dogLastClick < 300) {
+        dogWrapper.classList.add('dog-backflip');
+        spawnBubble(dogWrapper, 'WOOF!');
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => spawnSparkleTrail(dogWrapper), i * 80);
+        }
+        setTimeout(() => dogWrapper.classList.remove('dog-backflip'), 600);
+        dogLastClick = 0;
+        return;
+      }
+      dogLastClick = now;
+
+      // Normal click - change color
+      dogColorIndex = (dogColorIndex + 1) % spriteColors.length;
+      localStorage.setItem('dogColor', dogColorIndex);
+      const color = spriteColors[dogColorIndex];
+      dogSprite.style.color = color.rgb;
+      document.documentElement.style.setProperty('--primary', color.hex);
+      dogWrapper.classList.add('sprite-pop');
+      setTimeout(() => dogWrapper.classList.remove('sprite-pop'), 200);
+    });
+  }
+
+  if (crabWrapper && crabSprite) {
+    crabWrapper.addEventListener('click', () => {
+      const now = Date.now();
+
+      // Double-click easter egg - CLAW CLACK!
+      if (now - crabLastClick < 300) {
+        crabWrapper.classList.add('crab-clack');
+        spawnBubble(crabWrapper, 'CLAUK!');
+        setTimeout(() => crabWrapper.classList.remove('crab-clack'), 500);
+        crabLastClick = 0;
+        return;
+      }
+      crabLastClick = now;
+
+      // Normal click - change color
+      crabColorIndex = (crabColorIndex + 1) % crabColors.length;
+      localStorage.setItem('crabColor', crabColorIndex);
+      crabSprite.style.color = crabColors[crabColorIndex];
+      crabWrapper.classList.add('sprite-pop');
+      setTimeout(() => crabWrapper.classList.remove('sprite-pop'), 200);
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // DOG & CRAB ANIMATIONS - Exact match to terminal display timing
+  // Runs at 100ms ticks with same probabilities as crab-garden.js
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // State machines (matching terminal exactly)
+  const dogState = {
+    phase: 'idle',  // 'idle' | 'skittering' | 'jumping' | 'pausing' | 'zoomies'
+    pauseFrames: 0,
+    zoomiesDashes: 0,
+    animating: false
+  };
+
+  const crabState = {
+    phase: 'idle',
+    pauseFrames: 0,
+    animating: false
+  };
+
+  // DOG CONFIG
+  const DOG = {
+    PROB_ZOOMIES: 0.015,
+    PROB_SKITTER: 0.05,
+    PROB_JUMP: 0.04,
+    PROB_PAUSE: 0.02,
+    PAUSE_MIN: 10,
+    PAUSE_RANGE: 20,
+    ZOOMIES_DASHES_MIN: 3,
+    ZOOMIES_DASHES_RANGE: 3
+  };
+
+  // CRAB CONFIG
+  const CRAB = {
+    PROB_SKITTER: 0.03,
+    PROB_JUMP: 0.02,
+    PROB_PAUSE: 0.03,
+    PAUSE_MIN: 15,
+    PAUSE_RANGE: 40
+  };
+
+  function tickDog() {
+    if (!dogWrapper) return;
+
+    switch (dogState.phase) {
+      case 'idle': {
+        const action = Math.random();
+        if (action < DOG.PROB_ZOOMIES) {
+          // ZOOMIES! with sparkle trail
+          dogState.phase = 'zoomies';
+          dogState.zoomiesDashes = DOG.ZOOMIES_DASHES_MIN + Math.floor(Math.random() * DOG.ZOOMIES_DASHES_RANGE);
+          dogWrapper.classList.add('dog-zoomies');
+          // Sparkle trail during zoomies
+          const sparkleInterval = setInterval(() => spawnSparkleTrail(dogWrapper), 100);
+          setTimeout(() => {
+            clearInterval(sparkleInterval);
+            dogWrapper.classList.remove('dog-zoomies');
+            dogState.phase = 'idle';
+          }, 1000);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER) {
+          // Skitter
+          dogState.phase = 'skittering';
+          const dir = Math.random() < 0.5 ? 'left' : 'right';
+          dogWrapper.classList.add('dog-skitter-' + dir);
+          setTimeout(() => {
+            dogWrapper.classList.remove('dog-skitter-' + dir);
+            dogState.phase = 'idle';
+          }, 400);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER + DOG.PROB_JUMP) {
+          // Jump with squash/stretch
+          dogState.phase = 'jumping';
+          dogWrapper.classList.add('dog-jump');
+          // Dust on landing
+          setTimeout(() => spawnDust(dogWrapper), 280);
+          setTimeout(() => {
+            dogWrapper.classList.remove('dog-jump');
+            dogState.phase = 'idle';
+          }, 350);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER + DOG.PROB_JUMP + DOG.PROB_PAUSE) {
+          // Pause
+          dogState.phase = 'pausing';
+          dogState.pauseFrames = DOG.PAUSE_MIN + Math.floor(Math.random() * DOG.PAUSE_RANGE);
+        }
+        break;
+      }
+      case 'pausing':
+        dogState.pauseFrames--;
+        if (dogState.pauseFrames <= 0) {
+          dogState.phase = 'idle';
+        }
+        break;
+      // skittering, jumping, zoomies handled by setTimeout
+    }
+  }
+
+  function tickCrab() {
+    if (!crabWrapper) return;
+
+    switch (crabState.phase) {
+      case 'idle': {
+        const action = Math.random();
+        if (action < CRAB.PROB_SKITTER) {
+          // Skitter
+          crabState.phase = 'skittering';
+          const dir = Math.random() < 0.5 ? 'left' : 'right';
+          crabWrapper.classList.add('crab-skitter-' + dir);
+          setTimeout(() => {
+            crabWrapper.classList.remove('crab-skitter-' + dir);
+            crabState.phase = 'idle';
+          }, 500);
+        } else if (action < CRAB.PROB_SKITTER + CRAB.PROB_JUMP) {
+          // Jump with dust
+          crabState.phase = 'jumping';
+          crabWrapper.classList.add('crab-jump');
+          setTimeout(() => spawnDust(crabWrapper), 240);
+          setTimeout(() => {
+            crabWrapper.classList.remove('crab-jump');
+            crabState.phase = 'idle';
+          }, 300);
+        } else if (action < CRAB.PROB_SKITTER + CRAB.PROB_JUMP + CRAB.PROB_PAUSE) {
+          // Pause
+          crabState.phase = 'pausing';
+          crabState.pauseFrames = CRAB.PAUSE_MIN + Math.floor(Math.random() * CRAB.PAUSE_RANGE);
+        }
+        break;
+      }
+      case 'pausing':
+        crabState.pauseFrames--;
+        if (crabState.pauseFrames <= 0) {
+          crabState.phase = 'idle';
+        }
+        break;
+    }
+  }
+
+  // Run at 150ms ticks
+  setInterval(tickDog, 150);
+  setInterval(tickCrab, 150);
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ENTRANCE ANIMATION
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const footer = document.querySelector('.garden-footer');
+  if (footer) {
+    footer.classList.add('garden-entrance');
+  }
+})();
+</script>
+
+  <script>
+(function() {
+  // ─── SCROLL TO TOP ON LOAD ──────────────────────────────────────────────────
+  window.scrollTo(0, 0);
+
+  // ─── COPY COMMAND ───────────────────────────────────────────────────────────
+  window.copyCommand = function(el) {
+    const text = el.querySelector('.command-text').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      el.classList.add('copied');
+      setTimeout(() => el.classList.remove('copied'), 1500);
+    });
+  };
+
+  // ─── HERO COMMAND SPOTLIGHT ─────────────────────────────────────────────────
+  const heroCommand = document.querySelector('.hero-command');
+  if (heroCommand) {
+    heroCommand.addEventListener('mouseenter', () => {
+      document.documentElement.classList.add('command-hover');
+    });
+    heroCommand.addEventListener('mouseleave', () => {
+      document.documentElement.classList.remove('command-hover');
+    });
+  }
+
+  // ─── THEME ───────────────────────────────────────────────────────────────────
+  function getTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function setTheme(t) {
+    localStorage.setItem('theme', t);
+    document.documentElement.dataset.theme = t;
+  }
+
+  window.toggleTheme = function() {
+    setTheme(getTheme() === 'dark' ? 'light' : 'dark');
+  };
+
+  setTheme(getTheme());
+
+  // ─── GARDEN TOGGLE ──────────────────────────────────────────────────────────
+  function getGarden() {
+    const saved = localStorage.getItem('garden');
+    return saved !== 'hidden';
+  }
+
+  function setGarden(show) {
+    localStorage.setItem('garden', show ? 'shown' : 'hidden');
+    document.documentElement.dataset.garden = show ? 'shown' : 'hidden';
+  }
+
+  window.toggleGarden = function() {
+    setGarden(!getGarden());
+  };
+
+  setGarden(getGarden());
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
+  // ─── FLOATING PIXELS ─────────────────────────────────────────────────────────
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const particles = ['▀', '▄', '█', '▌', '▐', '░', '▒', '▓', '◆', '◇', '★', '✦'];
+    const colors = ['#ff8ec6', '#57cfff', '#b4ff69', '#ffd700', '#ff6347', '#40e0d0'];
+
+    for (let i = 0; i < 15; i++) {
+      const p = document.createElement('span');
+      p.className = 'pixel-particle';
+      p.textContent = particles[Math.floor(Math.random() * particles.length)];
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      p.style.color = colors[Math.floor(Math.random() * colors.length)];
+      p.style.animationDelay = -Math.random() * 10 + 's';
+      p.style.fontSize = (10 + Math.random() * 12) + 'px';
+      hero.appendChild(p);
+    }
+  }
+
+  // ─── RANDOM GLITCH - sporadic 4-10 second intervals ─────────────────────────
+  function triggerGlitch() {
+    if (hero) {
+      hero.classList.add('glitching');
+      setTimeout(() => hero.classList.remove('glitching'), 600);
+    }
+    // Schedule next glitch at random interval (4-10 seconds)
+    const nextDelay = 4000 + Math.random() * 6000;
+    setTimeout(triggerGlitch, nextDelay);
+  }
+  // Start first glitch after 3-6 seconds
+  setTimeout(triggerGlitch, 3000 + Math.random() * 3000);
+
+  // ─── CLICK SPARKLES ─────────────────────────────────────────────────────────
+  document.addEventListener('click', (e) => {
+    // Skip sparkles in performance mode
+    if (document.documentElement.dataset.garden === 'hidden') return;
+    for (let i = 0; i < 6; i++) {
+      const spark = document.createElement('div');
+      spark.className = 'sparkle';
+      spark.style.left = e.clientX + (Math.random() - 0.5) * 40 + 'px';
+      spark.style.top = e.clientY + (Math.random() - 0.5) * 40 + 'px';
+      spark.style.background = ['#ff8ec6', '#57cfff', '#b4ff69', '#ffd700'][Math.floor(Math.random() * 4)];
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 600);
+    }
+  });
+
+  // ─── SCROLL HEADER ───────────────────────────────────────────────────────────
+  const header = document.querySelector('header');
+  let ticking = false;
+
+  function updateHeader() {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateHeader();
+
+  // ─── MOBILE NAV ──────────────────────────────────────────────────────────────
+  const navToggle = document.getElementById('nav-toggle');
+  const nav = document.querySelector('nav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('change', () => {
+      const isOpen = navToggle.checked;
+      nav.classList.toggle('open', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+      if (isOpen) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  // ─── DROPDOWN TOGGLES (mobile accordion, desktop hover) ───────────────────────
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  const isMobile = () => window.innerWidth <= 768;
+
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        if (isMobile()) {
+          e.preventDefault();
+          // Close other dropdowns
+          dropdowns.forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+          });
+          dropdown.classList.toggle('open');
+        }
+      });
+    }
+  });
+
+  // Close dropdowns when clicking outside on mobile
+  document.addEventListener('click', (e) => {
+    if (isMobile() && !e.target.closest('.nav-dropdown')) {
+      dropdowns.forEach(d => d.classList.remove('open'));
+    }
+  });
+})();
+</script>
+  
+  <script>
+(function() {
+  // Tab switching
+  window.switchTab = function(tab) {
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === tab);
+    });
+    document.querySelectorAll('.tab-content').forEach(content => {
+      content.classList.toggle('active', content.id === 'tab-' + tab);
+    });
+  };
+
+  // Sidebar collapse toggle
+  window.toggleTreeSidebar = function() {
+    const tree = document.querySelector('.file-tree');
+    const wrapper = document.querySelector('.tree-wrapper');
+    tree.classList.toggle('collapsed');
+    const isCollapsed = tree.classList.contains('collapsed');
+    const width = isCollapsed ? '50px' : '250px';
+    wrapper.style.width = width;
+    wrapper.style.minWidth = width;
+    tree.style.width = width;
+  };
+
+  // Folder toggle
+  window.toggleFolder = function(el) {
+    const path = el.dataset.path;
+    const children = document.querySelector('.tree-children[data-path="' + path + '"]');
+    const arrow = el.querySelector('.tree-arrow');
+    if (children) {
+      children.classList.toggle('collapsed');
+      arrow.textContent = children.classList.contains('collapsed') ? '▶' : '▼';
+    }
+  };
+
+  // JS-based sticky file tree
+  const tree = document.querySelector('.file-tree');
+  const wrapper = document.querySelector('.tree-wrapper');
+  const layout = document.querySelector('.docs-layout');
+  if (tree && wrapper && layout) {
+    const treeWidth = tree.offsetWidth;
+    wrapper.style.width = treeWidth + 'px';
+    wrapper.style.minWidth = treeWidth + 'px';
+    wrapper.style.flexShrink = '0';
+
+    let ticking = false;
+
+    function updateSticky() {
+      const layoutRect = layout.getBoundingClientRect();
+      const layoutBottom = layoutRect.bottom;
+      const viewportHeight = window.innerHeight;
+
+      if (layoutRect.top <= 0 && layoutBottom > viewportHeight) {
+        tree.style.position = 'fixed';
+        tree.style.top = '0';
+        tree.style.left = layoutRect.left + 'px';
+        tree.style.height = '100vh';
+        tree.style.width = treeWidth + 'px';
+        tree.classList.add('sticky');
+      } else if (layoutBottom <= viewportHeight && layoutRect.top <= 0) {
+        tree.style.position = 'absolute';
+        tree.style.top = 'auto';
+        tree.style.bottom = '0';
+        tree.style.left = '0';
+        tree.style.height = '100vh';
+        tree.style.width = treeWidth + 'px';
+        tree.classList.add('sticky');
+      } else {
+        tree.style.position = 'relative';
+        tree.style.top = 'auto';
+        tree.style.bottom = 'auto';
+        tree.style.left = 'auto';
+        tree.style.height = '100%';
+        tree.style.width = '';
+        tree.classList.remove('sticky');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateSticky);
+        ticking = true;
+      }
+    });
+    window.addEventListener('resize', updateSticky);
+    updateSticky();
+  }
+
+  // File preview modal with summary
+  window.showPreview = function(path, summary) {
+    let modal = document.getElementById('preview-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'preview-modal';
+      modal.className = 'preview-modal';
+      modal.innerHTML = '<div class="preview-backdrop" onclick="closePreview()"></div>' +
+        '<div class="preview-content">' +
+        '<div class="preview-header">' +
+        '<span class="preview-path"></span>' +
+        '<button class="preview-close" onclick="closePreview()">✕</button>' +
+        '</div>' +
+        '<div class="preview-summary"></div>' +
+        '<div class="preview-file-label">FILE CONTENTS</div>' +
+        '<pre class="preview-body"></pre>' +
+        '</div>';
+      document.body.appendChild(modal);
+    }
+
+    modal.querySelector('.preview-path').textContent = path;
+    modal.querySelector('.preview-summary').textContent = summary || '';
+    modal.querySelector('.preview-summary').style.display = summary ? 'block' : 'none';
+
+    // Demo content based on file type
+    let content = '';
+    if (path.includes('email')) {
+      content = 'Send this email to Bob:\n\nTo: bob@example.com\nSubject: Re: Project update\n\nHey Bob,\nThe project is on track.\nNick\n\n---\n[chore-meta]\nstatus: pending\ncreated: 2026-02-03 10:45\nicon: 📧';
+    } else if (path.includes('notification') || path.includes('clean/')) {
+      content = 'Rachel needs API fixed NOW\n\nVP Engineering emailed - board demo tomorrow.\nNeeds it working by EOD.\n\n---\n[meta]\nsource: email\ncreated: 2026-02-03 16:45\nicon: 🚨\nchore: reply-rachel';
+    } else if (path.includes('memory')) {
+      content = 'Prefers casual tone\nUses Bun over Node\nHas a cat named Mochi\nHates the name "downloads"\nWorks at startup in SF';
+    } else if (path.includes('heartbeat')) {
+      content = '[14:30] sidekick-cleanup ✓ cleaned 2 orphans\n[14:35] system-health ✓ all good\n[14:40] ssh-tunnel ⚡ was down, restarted\n[15:00] user-checkin ✓ sent';
+    } else {
+      content = '# ' + path.split('/').pop() + '\n\nExample file contents.\nThis is a demo preview.';
+    }
+
+    modal.querySelector('.preview-body').textContent = content;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closePreview = function() {
+    const modal = document.getElementById('preview-modal');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  // ESC to close preview
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePreview();
+  });
+
+  // Section-based highlighting
+  // Find all h2/h3 with ids and watch scroll position
+  const sections = document.querySelectorAll('h2[id], h3[id]');
+  const treeItems = document.querySelectorAll('.tree-item[data-highlights]');
+
+  function updateHighlights() {
+    let currentSection = '';
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 150) {
+        currentSection = section.id || section.textContent.toLowerCase().replace(/[^a-z0-9]/g, '-');
+      }
+    });
+
+    treeItems.forEach(item => {
+      const highlights = (item.dataset.highlights || '').split(',').filter(Boolean);
+      const isHighlighted = highlights.some(h => currentSection.includes(h));
+      item.classList.toggle('highlighted', isHighlighted);
+    });
+  }
+
+  window.addEventListener('scroll', updateHighlights);
+  updateHighlights();
+
+  // ─── TABLE OF CONTENTS SCROLL SPY ─────────────────────────────────────────────
+  const tocItems = document.querySelectorAll('.toc-item');
+  const tocHeadings = document.querySelectorAll('h2[id], h3[id]');
+
+  function updateTOC() {
+    if (!tocItems.length || !tocHeadings.length) return;
+
+    let currentId = '';
+
+    tocHeadings.forEach(heading => {
+      const rect = heading.getBoundingClientRect();
+      if (rect.top <= 120) {
+        currentId = heading.id;
+      }
+    });
+
+    tocItems.forEach(item => {
+      const isActive = item.dataset.id === currentId;
+      item.classList.toggle('active', isActive);
+    });
+  }
+
+  window.addEventListener('scroll', updateTOC, { passive: true });
+  updateTOC();
+
+  // Smooth scroll for TOC links
+  tocItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = item.dataset.id;
+      const target = document.getElementById(id);
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ─── TOC STICKY (mirrors file tree logic) ─────────────────────────────────────
+  const toc = document.querySelector('.toc-sidebar');
+  const tocWrapper = document.querySelector('.toc-wrapper');
+  if (toc && tocWrapper && layout) {
+    const tocWidth = toc.offsetWidth;
+    tocWrapper.style.width = tocWidth + 'px';
+    tocWrapper.style.minWidth = tocWidth + 'px';
+    tocWrapper.style.flexShrink = '0';
+
+    let tocTicking = false;
+
+    function updateTocSticky() {
+      const layoutRect = layout.getBoundingClientRect();
+      const layoutBottom = layoutRect.bottom;
+      const viewportHeight = window.innerHeight;
+
+      if (layoutRect.top <= 0 && layoutBottom > viewportHeight) {
+        // Fixed: stick to viewport
+        toc.style.position = 'fixed';
+        toc.style.top = '0';
+        toc.style.left = (layoutRect.right - tocWidth) + 'px';
+        toc.style.right = 'auto';
+        toc.style.height = '100vh';
+        toc.style.width = tocWidth + 'px';
+        toc.classList.add('sticky');
+      } else if (layoutBottom <= viewportHeight && layoutRect.top <= 0) {
+        // Absolute: stick to bottom of layout
+        toc.style.position = 'absolute';
+        toc.style.top = 'auto';
+        toc.style.bottom = '0';
+        toc.style.left = 'auto';
+        toc.style.right = '0';
+        toc.style.height = '100vh';
+        toc.style.width = tocWidth + 'px';
+        toc.classList.add('sticky');
+      } else {
+        // Static: normal flow
+        toc.style.position = 'relative';
+        toc.style.top = 'auto';
+        toc.style.bottom = 'auto';
+        toc.style.left = 'auto';
+        toc.style.right = 'auto';
+        toc.style.height = '100%';
+        toc.style.width = '';
+        toc.classList.remove('sticky');
+      }
+      tocTicking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!tocTicking) {
+        requestAnimationFrame(updateTocSticky);
+        tocTicking = true;
+      }
+    });
+    window.addEventListener('resize', updateTocSticky);
+    updateTocSticky();
+  }
+})();
+</script>
+</body>
+</html>

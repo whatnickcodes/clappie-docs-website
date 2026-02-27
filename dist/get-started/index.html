@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="en" data-page="get-started">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clappie - Turn Claude Code into a 24/7 autonomous personal agent with a single skill file. Terminal UIs, background tasks, phone integration, and more.">
+  <meta name="theme-color" content="#d97757">
+  <title>Get Started - Clappie</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'><rect fill='%23ff8ec6' x='22' y='0' width='20' height='30'/><rect fill='%23ff8ec6' x='78' y='0' width='20' height='30'/><rect fill='%23ff8ec6' x='10' y='20' width='100' height='90' rx='20'/><rect fill='%231a1918' x='32' y='50' width='18' height='24'/><rect fill='%231a1918' x='70' y='50' width='18' height='24'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" defer></script>
+</head>
+<body>
+  <div class="aurora"></div>
+  <header>
+    <div class="hello-bar">
+      <a href="https://oh0.ai" class="hello-bar-link-wrap">
+        <span class="hb-prompt">▸</span>
+        <span class="hb-pre">looking for</span>
+        <span class="hb-face" id="hb-face">o_0</span>
+        <span class="hb-post">?</span>
+        <span class="hb-arrow">→</span>
+        <span class="hb-bracket">[</span><span class="hb-url" id="hb-url">oh0.ai</span><span class="hb-bracket">]</span>
+      </a>
+      <button class="hello-bar-dismiss" aria-label="Dismiss">×</button>
+    </div>
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Clappie home">
+  <span class="logo-dog">   ▖ ▖
+▗ █▜▛█
+ ▛▛▛▛▀</span>
+  <span class="logo-text">
+    <span class="logo-letter">C</span><span class="logo-letter">l</span><span class="logo-letter">a</span><span class="logo-letter">p</span><span class="logo-letter">p</span><span class="logo-letter">i</span><span class="logo-letter">e</span>
+  </span>
+</a>
+      <nav>
+        <div class="nav-dropdown">
+          <a href="/get-started/" class="nav-dropdown-trigger">Get Started</a>
+          <div class="nav-dropdown-menu">
+            
+        <a href="/get-started/#what-is-this" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🚀</span>
+            <span class="dropdown-item-title">What is This?</span>
+          </span>
+          <span class="dropdown-item-desc">Manage Claude Code with Claude Code. Your 24/7 personal assistant, accessible from anywhere.</span>
+        </a>
+      
+        <a href="/get-started/#requirements" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">⚙️</span>
+            <span class="dropdown-item-title">Requirements</span>
+          </span>
+          <span class="dropdown-item-desc">Mac, Ghostty, tmux, Bun, and Claude Code. Everything else is included.</span>
+        </a>
+      
+        <a href="/get-started/#installation" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">📦</span>
+            <span class="dropdown-item-title">Installation</span>
+          </span>
+          <span class="dropdown-item-desc">Clone the repo, add the shell function, and you're done. Five minutes.</span>
+        </a>
+      
+        <a href="/get-started/#glossary" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">📖</span>
+            <span class="dropdown-item-title">Glossary</span>
+          </span>
+          <span class="dropdown-item-desc">Learn the lingo: background, heartbeat, sidekicks, chores, recall, and more.</span>
+        </a>
+      
+          </div>
+        </div>
+      
+        <div class="nav-dropdown">
+          <a href="/features/" class="nav-dropdown-trigger">Features</a>
+          <div class="nav-dropdown-menu wide">
+            
+        <a href="/features/#background" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🦸</span>
+            <span class="dropdown-item-title">Background</span>
+          </span>
+          <span class="dropdown-item-desc">One command starts everything. Background daemon that keeps your AI features alive.</span>
+        </a>
+      
+        <a href="/features/#heartbeat" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">💓</span>
+            <span class="dropdown-item-title">Heartbeat</span>
+          </span>
+          <span class="dropdown-item-desc">Schedule AI tasks with plain text files. Check emails, process notifications, run reports.</span>
+        </a>
+      
+        <a href="/features/#sidekicks" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🎯</span>
+            <span class="dropdown-item-title">Sidekicks</span>
+          </span>
+          <span class="dropdown-item-desc">Spin up autonomous Claude Code sessions on demand. Each one is a full context that can do anything.</span>
+        </a>
+      
+        <a href="/features/#displays" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🖥️</span>
+            <span class="dropdown-item-title">Displays</span>
+          </span>
+          <span class="dropdown-item-desc">Interactive terminal UIs with buttons, forms, and mouse support. Never leave your terminal.</span>
+        </a>
+      
+        <a href="/features/#notifications" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🔔</span>
+            <span class="dropdown-item-title">Notifications</span>
+          </span>
+          <span class="dropdown-item-desc">Dump raw data into dirty/, AI triages and curates into clean/. You only see what matters.</span>
+        </a>
+      
+        <a href="/features/#chores" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">✅</span>
+            <span class="dropdown-item-title">Chores</span>
+          </span>
+          <span class="dropdown-item-desc">Robot chores run automatically. Human chores wait for your approval. AI drafts, you decide.</span>
+        </a>
+      
+        <a href="/features/#recall" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🧠</span>
+            <span class="dropdown-item-title">Recall</span>
+          </span>
+          <span class="dropdown-item-desc">Claude remembers everything. Memory files, conversation logs, settings that persist across sessions.</span>
+        </a>
+      
+        <a href="/features/#cli" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">⌨️</span>
+            <span class="dropdown-item-title">CLI</span>
+          </span>
+          <span class="dropdown-item-desc">Self-documenting commands. Run clappie list to see everything available.</span>
+        </a>
+      
+          </div>
+        </div>
+      
+        <div class="nav-dropdown">
+          <a href="/ways-to-chat/" class="nav-dropdown-trigger">Ways to Chat</a>
+          <div class="nav-dropdown-menu">
+            
+        <a href="/ways-to-chat/#terminal" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">💻</span>
+            <span class="dropdown-item-title">via Terminal</span>
+          </span>
+          <span class="dropdown-item-desc">Interactive displays and direct chat. The primary interface for local work.</span>
+        </a>
+      
+        <a href="/ways-to-chat/#heartbeat" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">⏰</span>
+            <span class="dropdown-item-title">via Heartbeat</span>
+          </span>
+          <span class="dropdown-item-desc">AI reaches out to you on a schedule. Daily check-ins, alerts, summaries.</span>
+        </a>
+      
+        <a href="/ways-to-chat/#remote" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🌐</span>
+            <span class="dropdown-item-title">via SSH</span>
+          </span>
+          <span class="dropdown-item-desc">Tailscale + SSH lets you access your AI from anywhere. Phone, laptop, whatever.</span>
+        </a>
+      
+        <a href="/ways-to-chat/#bots" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">💬</span>
+            <span class="dropdown-item-title">via Messaging</span>
+          </span>
+          <span class="dropdown-item-desc">Telegram, Slack, iMessage. Two-way conversations from your pocket.</span>
+        </a>
+      
+          </div>
+        </div>
+      
+        <div class="nav-dropdown">
+          <a href="/integrations/" class="nav-dropdown-trigger">Integrations</a>
+          <div class="nav-dropdown-menu">
+            
+        <a href="/integrations/#built-in" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🔌</span>
+            <span class="dropdown-item-title">Built-in</span>
+          </span>
+          <span class="dropdown-item-desc">Telegram, Slack, iMessage, Front email, and Whisper audio. Ready to use.</span>
+        </a>
+      
+        <a href="/integrations/#build-your-own" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🛠️</span>
+            <span class="dropdown-item-title">Build Your Own</span>
+          </span>
+          <span class="dropdown-item-desc">Create a skill folder, write SKILL.md, and ask Claude to build it. That simple.</span>
+        </a>
+      
+        <a href="/integrations/#oauth-helper" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🔑</span>
+            <span class="dropdown-item-title">OAuth Helper</span>
+          </span>
+          <span class="dropdown-item-desc">Build integrations easily. Shared token management with auto-refresh for any API.</span>
+        </a>
+      
+        <a href="/integrations/#webhook-routing" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🪝</span>
+            <span class="dropdown-item-title">Webhooks</span>
+          </span>
+          <span class="dropdown-item-desc">Build integrations easily. Route incoming requests from Telegram, Slack, or any service.</span>
+        </a>
+      
+          </div>
+        </div>
+      
+        <div class="nav-dropdown">
+          <a href="/misc/" class="nav-dropdown-trigger">Misc</a>
+          <div class="nav-dropdown-menu wide">
+            
+        <a href="/misc/#folder-structure" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">📁</span>
+            <span class="dropdown-item-title">Folder Structure</span>
+          </span>
+          <span class="dropdown-item-desc">Where everything lives. Interactive file tree in the sidebar.</span>
+        </a>
+      
+        <a href="/misc/#environment-variables" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🔐</span>
+            <span class="dropdown-item-title">Environment Vars</span>
+          </span>
+          <span class="dropdown-item-desc">API keys and secrets in your .env file. What you need for each integration.</span>
+        </a>
+      
+        <a href="/misc/#all-cli-commands" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">📋</span>
+            <span class="dropdown-item-title">CLI Commands</span>
+          </span>
+          <span class="dropdown-item-desc">Every command documented. Copy-paste ready examples.</span>
+        </a>
+      
+        <a href="/misc/#settings" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">⚡</span>
+            <span class="dropdown-item-title">Settings</span>
+          </span>
+          <span class="dropdown-item-desc">recall/settings/ controls everything. Theme, intervals, bot config.</span>
+        </a>
+      
+        <a href="/misc/#claude-md" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">🧬</span>
+            <span class="dropdown-item-title">CLAUDE.md</span>
+          </span>
+          <span class="dropdown-item-desc">The brain of the whole system. Edit it to customize personality and behavior.</span>
+        </a>
+      
+        <a href="/misc/#as-a-phone-os-experimental" class="dropdown-item">
+          <span class="dropdown-item-header">
+            <span class="dropdown-item-icon">📱</span>
+            <span class="dropdown-item-title">As a Phone OS</span>
+          </span>
+          <span class="dropdown-item-desc">Experimental: color e-ink + Telegram as your whole phone. More compute, more distance.</span>
+        </a>
+      
+          </div>
+        </div>
+      </nav>
+      <div class="header-right">
+        <button class="garden-toggle" onclick="toggleGarden()" aria-label="Toggle garden">
+  <span class="garden-shown">🌻</span>
+  <span class="garden-hidden">🌱</span>
+</button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+  <span class="toggle-light">━━━🌞</span>
+  <span class="toggle-dark">🌚•••</span>
+</button>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+        <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+    </div>
+  </header>
+  
+  <section class="hero" role="banner">
+    <div class="cloud-layer">
+    <div class="cloud" style="left:5%;top:15%"> ▄█▄
+█████
+▀▀▀▀▀</div>
+    <div class="cloud" style="left:18%;top:25%">  ▄██▄
+ █████▄
+▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:35%;top:10%">    ▄███▄
+  ▄██████▄
+ ███████████
+▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:55%;top:30%"> ▄█▄
+█████
+▀▀▀▀▀</div>
+    <div class="cloud" style="left:70%;top:18%">  ▄██▄
+ █████▄
+▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:82%;top:8%">      ▄████▄
+    ▄████████▄
+  ▄█████████████
+ ██████████████████
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:92%;top:35%"> ▄█▄
+█████
+▀▀▀▀▀</div>
+    <div class="cloud" style="left:8%;top:45%">  ▄██▄
+ █████▄
+▀▀▀▀▀▀▀</div>
+    <div class="cloud" style="left:48%;top:50%"> ▄█▄
+█████
+▀▀▀▀▀</div>
+    <div class="cloud" style="left:75%;top:42%">  ▄██▄
+ █████▄
+▀▀▀▀▀▀▀</div>
+    </div>
+    <div class="stars-layer">
+    <span class="star" style="left:51.8%;top:74.0%">˚</span>
+    <span class="star" style="left:72.8%;top:58.3%">°</span>
+    <span class="star" style="left:18.7%;top:13.4%">˚</span>
+    <span class="star" style="left:30.9%;top:79.8%">∙</span>
+    <span class="star" style="left:65.4%;top:35.3%">°</span>
+    <span class="star" style="left:14.4%;top:73.0%">∙</span>
+    <span class="star" style="left:80.6%;top:41.6%">+</span>
+    <span class="star" style="left:80.7%;top:13.2%">∙</span>
+    <span class="star" style="left:91.7%;top:66.4%">°</span>
+    <span class="star" style="left:35.3%;top:55.5%">·</span>
+    <span class="star" style="left:29.2%;top:45.3%">·</span>
+    <span class="star" style="left:29.4%;top:46.2%">°</span>
+    <span class="star" style="left:57.0%;top:48.9%">·</span>
+    <span class="star" style="left:68.2%;top:69.8%">˚</span>
+    <span class="star" style="left:25.7%;top:68.5%">°</span>
+    <span class="star" style="left:87.6%;top:19.8%">*</span>
+    <span class="star" style="left:31.1%;top:11.2%">+</span>
+    <span class="star" style="left:7.3%;top:20.8%">*</span>
+    <span class="star" style="left:26.7%;top:32.8%">+</span>
+    <span class="star" style="left:71.0%;top:50.9%">˚</span>
+    <span class="star" style="left:59.7%;top:53.4%">°</span>
+    <span class="star" style="left:29.2%;top:15.6%">·</span>
+    <span class="star" style="left:92.8%;top:26.7%">+</span>
+    <span class="star" style="left:24.9%;top:39.5%">°</span>
+    <span class="star" style="left:7.3%;top:20.3%">·</span>
+    <span class="star" style="left:53.9%;top:79.6%">*</span>
+    <span class="star" style="left:39.2%;top:34.8%">*</span>
+    <span class="star" style="left:42.4%;top:11.6%">˚</span>
+    <span class="star" style="left:43.9%;top:68.1%">°</span>
+    <span class="star" style="left:66.4%;top:47.1%">∙</span>
+    <span class="star" style="left:61.6%;top:44.0%">°</span>
+    <span class="star" style="left:26.1%;top:10.8%">*</span>
+    <span class="star" style="left:53.6%;top:30.3%">∙</span>
+    <span class="star" style="left:79.2%;top:51.7%">+</span>
+    <span class="star" style="left:90.8%;top:50.9%">·</span>
+    </div>
+    <pre class="pixel-title" aria-label="GET STARTED"><span class="pl"><span class="px" style="--tx:31px;--ty:-29px;--r:95deg;--s:1.40;--h:11deg;--br:34%">▄</span><span class="px" style="--tx:-65px;--ty:57px;--r:149deg;--s:1.26;--h:14deg;--br:17%">▀</span><span class="px" style="--tx:59px;--ty:-46px;--r:58deg;--s:0.79;--h:-17deg;--br:39%">▀</span><span class="px" style="--tx:74px;--ty:52px;--r:-280deg;--s:0.98;--h:14deg;--br:18%">▀</span><span class="px" style="--tx:-44px;--ty:-20px;--r:301deg;--s:1.30;--h:-5deg;--br:21%">▀</span> 
+<span class="px" style="--tx:64px;--ty:-49px;--r:-246deg;--s:0.85;--h:-7deg;--br:25%">█</span>  <span class="px" style="--tx:95px;--ty:-5px;--r:183deg;--s:0.78;--h:-4deg;--br:44%">▄</span><span class="px" style="--tx:64px;--ty:-29px;--r:26deg;--s:1.28;--h:12deg;--br:6%">▄</span><span class="px" style="--tx:18px;--ty:-61px;--r:137deg;--s:0.92;--h:12deg;--br:13%">▄</span>
+<span class="px" style="--tx:-24px;--ty:-15px;--r:-59deg;--s:1.36;--h:-4deg;--br:1%">█</span>    <span class="px" style="--tx:-50px;--ty:-55px;--r:120deg;--s:0.60;--h:-13deg;--br:14%">█</span>
+ <span class="px" style="--tx:-16px;--ty:-42px;--r:218deg;--s:0.98;--h:2deg;--br:42%">▀</span><span class="px" style="--tx:23px;--ty:30px;--r:-345deg;--s:1.04;--h:-3deg;--br:26%">▀</span><span class="px" style="--tx:33px;--ty:-31px;--r:-9deg;--s:1.36;--h:-18deg;--br:26%">▀</span><span class="px" style="--tx:81px;--ty:16px;--r:-350deg;--s:1.11;--h:9deg;--br:20%">▀</span> </span><span class="pl"><span class="px" style="--tx:61px;--ty:28px;--r:-156deg;--s:1.23;--h:30deg;--br:25%">█</span><span class="px" style="--tx:-62px;--ty:10px;--r:125deg;--s:1.29;--h:4deg;--br:35%">▀</span><span class="px" style="--tx:-83px;--ty:65px;--r:-297deg;--s:0.79;--h:-3deg;--br:40%">▀</span><span class="px" style="--tx:-38px;--ty:54px;--r:-191deg;--s:1.24;--h:-5deg;--br:22%">▀</span><span class="px" style="--tx:-98px;--ty:-27px;--r:150deg;--s:1.26;--h:18deg;--br:50%">▀</span><span class="px" style="--tx:18px;--ty:54px;--r:-139deg;--s:0.60;--h:-15deg;--br:26%">▀</span>
+<span class="px" style="--tx:29px;--ty:28px;--r:124deg;--s:0.99;--h:9deg;--br:46%">█</span><span class="px" style="--tx:36px;--ty:-55px;--r:50deg;--s:0.77;--h:11deg;--br:22%">▄</span><span class="px" style="--tx:-36px;--ty:28px;--r:-104deg;--s:0.90;--h:-15deg;--br:17%">▄</span><span class="px" style="--tx:-76px;--ty:6px;--r:338deg;--s:1.16;--h:1deg;--br:41%">▄</span>  
+<span class="px" style="--tx:60px;--ty:-27px;--r:-16deg;--s:0.98;--h:-22deg;--br:44%">█</span>     
+<span class="px" style="--tx:-31px;--ty:-74px;--r:78deg;--s:0.91;--h:-24deg;--br:7%">▀</span><span class="px" style="--tx:-76px;--ty:-56px;--r:194deg;--s:1.17;--h:12deg;--br:18%">▀</span><span class="px" style="--tx:-56px;--ty:-4px;--r:306deg;--s:0.85;--h:-24deg;--br:44%">▀</span><span class="px" style="--tx:-29px;--ty:73px;--r:-198deg;--s:0.80;--h:5deg;--br:49%">▀</span><span class="px" style="--tx:-49px;--ty:35px;--r:-140deg;--s:1.26;--h:-13deg;--br:26%">▀</span><span class="px" style="--tx:45px;--ty:4px;--r:140deg;--s:1.15;--h:-14deg;--br:7%">▀</span></span><span class="pl"><span class="px" style="--tx:54px;--ty:-70px;--r:-267deg;--s:0.99;--h:-2deg;--br:18%">▀</span><span class="px" style="--tx:40px;--ty:19px;--r:55deg;--s:0.88;--h:-4deg;--br:22%">▀</span><span class="px" style="--tx:18px;--ty:-28px;--r:312deg;--s:1.34;--h:7deg;--br:20%">█</span><span class="px" style="--tx:77px;--ty:-34px;--r:-329deg;--s:0.92;--h:-6deg;--br:47%">▀</span><span class="px" style="--tx:95px;--ty:-70px;--r:-61deg;--s:0.90;--h:-20deg;--br:45%">▀</span><span class="px" style="--tx:-41px;--ty:68px;--r:157deg;--s:1.39;--h:17deg;--br:23%">▀</span>
+  <span class="px" style="--tx:34px;--ty:59px;--r:-139deg;--s:1.23;--h:6deg;--br:31%">█</span>   
+  <span class="px" style="--tx:12px;--ty:-62px;--r:295deg;--s:1.20;--h:-28deg;--br:33%">█</span>   
+  <span class="px" style="--tx:-42px;--ty:48px;--r:165deg;--s:1.36;--h:2deg;--br:44%">▀</span>   </span><span class="pl">   
+   
+   
+   </span><span class="pl"><span class="px" style="--tx:-60px;--ty:-57px;--r:-198deg;--s:1.33;--h:18deg;--br:13%">▄</span><span class="px" style="--tx:-35px;--ty:54px;--r:198deg;--s:1.16;--h:12deg;--br:10%">▀</span><span class="px" style="--tx:66px;--ty:48px;--r:191deg;--s:0.78;--h:-21deg;--br:4%">▀</span><span class="px" style="--tx:-51px;--ty:-23px;--r:-16deg;--s:1.00;--h:-26deg;--br:16%">▀</span><span class="px" style="--tx:25px;--ty:61px;--r:-226deg;--s:0.63;--h:-15deg;--br:39%">▀</span><span class="px" style="--tx:0px;--ty:21px;--r:51deg;--s:0.69;--h:19deg;--br:22%">▀</span>
+<span class="px" style="--tx:28px;--ty:19px;--r:-130deg;--s:0.69;--h:5deg;--br:28%">▀</span><span class="px" style="--tx:55px;--ty:-12px;--r:-329deg;--s:1.39;--h:18deg;--br:40%">▄</span><span class="px" style="--tx:-53px;--ty:-45px;--r:122deg;--s:1.34;--h:-6deg;--br:24%">▄</span><span class="px" style="--tx:94px;--ty:26px;--r:-17deg;--s:1.15;--h:2deg;--br:25%">▄</span><span class="px" style="--tx:40px;--ty:33px;--r:-153deg;--s:0.81;--h:-27deg;--br:8%">▄</span> 
+     <span class="px" style="--tx:71px;--ty:-1px;--r:-125deg;--s:0.60;--h:-24deg;--br:49%">█</span>
+<span class="px" style="--tx:61px;--ty:13px;--r:343deg;--s:1.23;--h:13deg;--br:42%">▀</span><span class="px" style="--tx:97px;--ty:22px;--r:122deg;--s:0.71;--h:18deg;--br:18%">▀</span><span class="px" style="--tx:33px;--ty:-1px;--r:293deg;--s:0.97;--h:-28deg;--br:34%">▀</span><span class="px" style="--tx:-76px;--ty:-52px;--r:355deg;--s:0.92;--h:-3deg;--br:3%">▀</span><span class="px" style="--tx:85px;--ty:-9px;--r:93deg;--s:1.39;--h:17deg;--br:39%">▀</span> </span><span class="pl"><span class="px" style="--tx:-24px;--ty:-42px;--r:162deg;--s:0.65;--h:-28deg;--br:42%">▀</span><span class="px" style="--tx:-17px;--ty:54px;--r:109deg;--s:0.81;--h:-21deg;--br:4%">▀</span><span class="px" style="--tx:18px;--ty:10px;--r:116deg;--s:0.66;--h:-13deg;--br:13%">█</span><span class="px" style="--tx:-82px;--ty:-48px;--r:-284deg;--s:0.83;--h:21deg;--br:5%">▀</span><span class="px" style="--tx:-3px;--ty:62px;--r:-321deg;--s:1.16;--h:11deg;--br:21%">▀</span><span class="px" style="--tx:-97px;--ty:-55px;--r:-217deg;--s:1.16;--h:19deg;--br:33%">▀</span>
+  <span class="px" style="--tx:-57px;--ty:-3px;--r:-194deg;--s:1.22;--h:-29deg;--br:13%">█</span>   
+  <span class="px" style="--tx:-38px;--ty:-18px;--r:-55deg;--s:0.94;--h:-25deg;--br:2%">█</span>   
+  <span class="px" style="--tx:80px;--ty:-63px;--r:16deg;--s:1.35;--h:18deg;--br:9%">▀</span>   </span><span class="pl"> <span class="px" style="--tx:-87px;--ty:-41px;--r:303deg;--s:1.23;--h:-9deg;--br:48%">▄</span><span class="px" style="--tx:-40px;--ty:-61px;--r:-102deg;--s:1.12;--h:-1deg;--br:23%">▀</span><span class="px" style="--tx:-5px;--ty:22px;--r:25deg;--s:0.63;--h:4deg;--br:44%">▀</span><span class="px" style="--tx:51px;--ty:56px;--r:-99deg;--s:0.98;--h:-21deg;--br:27%">▄</span> 
+<span class="px" style="--tx:-37px;--ty:-4px;--r:220deg;--s:0.99;--h:-6deg;--br:41%">█</span><span class="px" style="--tx:93px;--ty:-2px;--r:-80deg;--s:0.94;--h:19deg;--br:28%">▄</span><span class="px" style="--tx:83px;--ty:69px;--r:333deg;--s:0.70;--h:6deg;--br:36%">▄</span><span class="px" style="--tx:-42px;--ty:-5px;--r:-263deg;--s:1.27;--h:-13deg;--br:3%">▄</span><span class="px" style="--tx:-71px;--ty:49px;--r:-239deg;--s:0.61;--h:15deg;--br:15%">▄</span><span class="px" style="--tx:80px;--ty:-43px;--r:331deg;--s:0.90;--h:-17deg;--br:21%">█</span>
+<span class="px" style="--tx:-59px;--ty:-16px;--r:157deg;--s:0.98;--h:14deg;--br:33%">█</span>    <span class="px" style="--tx:40px;--ty:64px;--r:189deg;--s:0.85;--h:14deg;--br:5%">█</span>
+<span class="px" style="--tx:20px;--ty:-36px;--r:-41deg;--s:0.63;--h:28deg;--br:26%">▀</span>    <span class="px" style="--tx:60px;--ty:48px;--r:-31deg;--s:1.19;--h:5deg;--br:2%">▀</span></span><span class="pl"><span class="px" style="--tx:88px;--ty:-51px;--r:-356deg;--s:0.90;--h:-7deg;--br:5%">█</span><span class="px" style="--tx:-26px;--ty:-5px;--r:52deg;--s:1.23;--h:2deg;--br:0%">▀</span><span class="px" style="--tx:68px;--ty:-72px;--r:71deg;--s:0.62;--h:-8deg;--br:17%">▀</span><span class="px" style="--tx:-86px;--ty:-55px;--r:-125deg;--s:1.38;--h:5deg;--br:44%">▀</span><span class="px" style="--tx:-16px;--ty:57px;--r:-307deg;--s:1.22;--h:-3deg;--br:22%">▀</span><span class="px" style="--tx:-39px;--ty:44px;--r:295deg;--s:0.85;--h:6deg;--br:9%">▄</span>
+<span class="px" style="--tx:26px;--ty:-1px;--r:38deg;--s:0.62;--h:-11deg;--br:16%">█</span><span class="px" style="--tx:69px;--ty:-41px;--r:-229deg;--s:1.05;--h:18deg;--br:42%">▄</span><span class="px" style="--tx:27px;--ty:51px;--r:-253deg;--s:1.25;--h:-24deg;--br:33%">▄</span><span class="px" style="--tx:58px;--ty:-55px;--r:50deg;--s:0.93;--h:23deg;--br:31%">▄</span><span class="px" style="--tx:-56px;--ty:54px;--r:-155deg;--s:1.32;--h:10deg;--br:43%">▄</span><span class="px" style="--tx:49px;--ty:-72px;--r:281deg;--s:1.40;--h:16deg;--br:15%">▀</span>
+<span class="px" style="--tx:-67px;--ty:-51px;--r:-219deg;--s:0.88;--h:24deg;--br:18%">█</span>  <span class="px" style="--tx:42px;--ty:-41px;--r:-159deg;--s:1.10;--h:6deg;--br:21%">▀</span><span class="px" style="--tx:-12px;--ty:-13px;--r:-165deg;--s:0.81;--h:26deg;--br:36%">▄</span> 
+<span class="px" style="--tx:-34px;--ty:-57px;--r:127deg;--s:1.26;--h:0deg;--br:36%">▀</span>    <span class="px" style="--tx:-98px;--ty:-29px;--r:-2deg;--s:1.39;--h:24deg;--br:41%">▀</span></span><span class="pl"><span class="px" style="--tx:-65px;--ty:25px;--r:-24deg;--s:0.98;--h:29deg;--br:48%">▀</span><span class="px" style="--tx:85px;--ty:-73px;--r:331deg;--s:0.70;--h:10deg;--br:39%">▀</span><span class="px" style="--tx:77px;--ty:23px;--r:-104deg;--s:0.83;--h:28deg;--br:32%">█</span><span class="px" style="--tx:41px;--ty:34px;--r:-213deg;--s:0.88;--h:12deg;--br:48%">▀</span><span class="px" style="--tx:25px;--ty:-16px;--r:-52deg;--s:1.31;--h:24deg;--br:37%">▀</span><span class="px" style="--tx:4px;--ty:-50px;--r:346deg;--s:1.11;--h:-2deg;--br:25%">▀</span>
+  <span class="px" style="--tx:-73px;--ty:26px;--r:296deg;--s:1.33;--h:-15deg;--br:39%">█</span>   
+  <span class="px" style="--tx:50px;--ty:-65px;--r:-164deg;--s:1.06;--h:6deg;--br:21%">█</span>   
+  <span class="px" style="--tx:-82px;--ty:4px;--r:-44deg;--s:0.89;--h:-17deg;--br:27%">▀</span>   </span><span class="pl"><span class="px" style="--tx:85px;--ty:-67px;--r:139deg;--s:1.28;--h:-24deg;--br:32%">█</span><span class="px" style="--tx:87px;--ty:40px;--r:202deg;--s:0.86;--h:-9deg;--br:19%">▀</span><span class="px" style="--tx:-28px;--ty:-11px;--r:245deg;--s:0.69;--h:25deg;--br:12%">▀</span><span class="px" style="--tx:77px;--ty:36px;--r:32deg;--s:1.22;--h:2deg;--br:48%">▀</span><span class="px" style="--tx:77px;--ty:-19px;--r:-188deg;--s:0.67;--h:-25deg;--br:7%">▀</span><span class="px" style="--tx:58px;--ty:-31px;--r:159deg;--s:0.89;--h:10deg;--br:14%">▀</span>
+<span class="px" style="--tx:47px;--ty:14px;--r:320deg;--s:0.77;--h:8deg;--br:24%">█</span><span class="px" style="--tx:-55px;--ty:-71px;--r:338deg;--s:1.17;--h:18deg;--br:21%">▄</span><span class="px" style="--tx:83px;--ty:51px;--r:271deg;--s:1.18;--h:2deg;--br:44%">▄</span><span class="px" style="--tx:37px;--ty:39px;--r:282deg;--s:0.61;--h:-30deg;--br:24%">▄</span>  
+<span class="px" style="--tx:-2px;--ty:-69px;--r:33deg;--s:0.78;--h:-23deg;--br:40%">█</span>     
+<span class="px" style="--tx:-45px;--ty:52px;--r:-281deg;--s:1.02;--h:-7deg;--br:8%">▀</span><span class="px" style="--tx:-20px;--ty:32px;--r:-341deg;--s:0.78;--h:-1deg;--br:13%">▀</span><span class="px" style="--tx:0px;--ty:27px;--r:32deg;--s:0.74;--h:-15deg;--br:30%">▀</span><span class="px" style="--tx:19px;--ty:-2px;--r:-133deg;--s:0.82;--h:-12deg;--br:30%">▀</span><span class="px" style="--tx:77px;--ty:-50px;--r:72deg;--s:1.35;--h:2deg;--br:28%">▀</span><span class="px" style="--tx:-79px;--ty:3px;--r:-335deg;--s:1.33;--h:-25deg;--br:14%">▀</span></span><span class="pl"><span class="px" style="--tx:-88px;--ty:57px;--r:-351deg;--s:0.86;--h:11deg;--br:3%">█</span><span class="px" style="--tx:17px;--ty:42px;--r:-237deg;--s:1.15;--h:24deg;--br:6%">▀</span><span class="px" style="--tx:-7px;--ty:14px;--r:-341deg;--s:1.07;--h:0deg;--br:42%">▀</span><span class="px" style="--tx:45px;--ty:-55px;--r:-325deg;--s:0.87;--h:21deg;--br:9%">▀</span><span class="px" style="--tx:13px;--ty:33px;--r:124deg;--s:1.12;--h:15deg;--br:44%">▄</span>
+<span class="px" style="--tx:4px;--ty:-70px;--r:25deg;--s:0.70;--h:-29deg;--br:5%">█</span>    <span class="px" style="--tx:-6px;--ty:-43px;--r:167deg;--s:0.60;--h:-29deg;--br:3%">█</span>
+<span class="px" style="--tx:-83px;--ty:11px;--r:-50deg;--s:1.19;--h:21deg;--br:25%">█</span>   <span class="px" style="--tx:36px;--ty:-38px;--r:-310deg;--s:1.19;--h:-20deg;--br:15%">▄</span><span class="px" style="--tx:-78px;--ty:45px;--r:298deg;--s:0.82;--h:-26deg;--br:1%">▀</span>
+<span class="px" style="--tx:-41px;--ty:59px;--r:-18deg;--s:0.76;--h:-5deg;--br:32%">▀</span><span class="px" style="--tx:69px;--ty:-14px;--r:326deg;--s:0.92;--h:3deg;--br:14%">▀</span><span class="px" style="--tx:-71px;--ty:-10px;--r:-22deg;--s:0.64;--h:10deg;--br:45%">▀</span><span class="px" style="--tx:-50px;--ty:9px;--r:344deg;--s:0.91;--h:-13deg;--br:37%">▀</span> </span></pre>
+    <p class="hero-lead">UP AND RUNNING IN MINUTES</p>
+  </section>
+  <div class="tldr-wrapper"><div class="tldr"><div class="tldr-label">TLDR</div><p>Clappie is a Claude Code session manager - unlimited terminals, accessible from anywhere.</p><ul><li>Spawn independent Claude Code sessions on demand</li><li>Chat via Telegram, Slack, SSH, or any terminal</li><li>Wire up any API with OAuth helper and webhook routing</li></ul></div></div>
+  
+    <div class="docs-layout">
+      <div class="tree-wrapper">
+    <aside class="file-tree">
+      <div class="tree-header">
+        <span class="tree-title">File Structure</span>
+        <button class="tree-collapse" onclick="toggleTreeSidebar()" aria-label="Toggle tree">◀</button>
+      </div>
+      <div class="tree-content">
+        <div class="tree-item tree-dir" data-path="~/clappie/" data-highlights="folder-structure,key-directories" data-info="Self-contained project folder - everything lives here" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-name">~/clappie/</span>
+      </div><div class="tree-children" data-path="~/clappie/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/" data-highlights="" data-info="Claude Code configuration - skills, settings, hooks" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">.claude/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/" data-highlights="" data-info="Skill modules - each folder is a capability" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">skills/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/clappie/" data-highlights="" data-info="Core clappie skill - displays, sidekicks, background" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">clappie/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/clappie/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/clappie/clapps/" data-highlights="" data-info="Built-in features and engines" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">clapps/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/clappie/clapps/"><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/display-engine/" data-info="Terminal UI system - renders views, handles input" data-file-id="__clappie__claude_skills_clappie_clapps_display_engine_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">display-engine/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/sidekicks/" data-info="Autonomous AI agents - spawn, route, complete" data-file-id="__clappie__claude_skills_clappie_clapps_sidekicks_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">sidekicks/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/background/" data-info="Background task manager - heartbeats, always-on" data-file-id="__clappie__claude_skills_clappie_clapps_background_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">background/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/chores/" data-info="Human approval queue UI" data-file-id="__clappie__claude_skills_clappie_clapps_chores_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">chores/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/notifications/" data-info="Notification center UI" data-file-id="__clappie__claude_skills_clappie_clapps_notifications_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">notifications/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/heartbeat/" data-info="Scheduled task runner" data-file-id="__clappie__claude_skills_clappie_clapps_heartbeat_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">heartbeat/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/oauth/" data-info="OAuth flow + token management" data-file-id="__clappie__claude_skills_clappie_clapps_oauth_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">oauth/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/tailscale/" data-info="Webhook server via Tailscale funnel" data-file-id="__clappie__claude_skills_clappie_clapps_tailscale_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">tailscale/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/parties/" data-info="Gamified AI swarm simulations" data-file-id="__clappie__claude_skills_clappie_clapps_parties_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">parties/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/projects/" data-info="Project workspace manager" data-file-id="__clappie__claude_skills_clappie_clapps_projects_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">projects/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/utility/" data-info="Shared display components - pickers, editors, charts" data-file-id="__clappie__claude_skills_clappie_clapps_utility_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">utility/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/skill-maker/" data-info="Guide for building new skills and integrations" data-file-id="__clappie__claude_skills_clappie_clapps_skill_maker_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">skill-maker/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clapps/example-demo-screens/" data-info="Reference implementations for display-engine patterns" data-file-id="__clappie__claude_skills_clappie_clapps_example_demo_screens_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">example-demo-screens/</span>
+            
+          </div></div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/SKILL.md" data-info="Full clappie documentation" data-file-id="__clappie__claude_skills_clappie_SKILL_md" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">SKILL.md</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/clappie/clappie.js" data-info="CLI entry point" data-file-id="__clappie__claude_skills_clappie_clappie_js" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">clappie.js</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/github/" data-highlights="" data-info="GitHub integration - repos, PRs, issues, commits" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">github/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/github/"><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/github/SKILL.md" data-info="Setup guide and CLI reference" data-file-id="__clappie__claude_skills_github_SKILL_md" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">SKILL.md</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/github/github.js" data-info="CLI entry point" data-file-id="__clappie__claude_skills_github_github_js" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">github.js</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/github/.env.example" data-info="Required env vars" data-file-id="__clappie__claude_skills_github__env_example" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.env.example</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/whisper/" data-highlights="" data-info="Audio transcription and text-to-speech via OpenAI" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">whisper/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/whisper/"><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/whisper/SKILL.md" data-info="Setup guide and CLI reference" data-file-id="__clappie__claude_skills_whisper_SKILL_md" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">SKILL.md</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/whisper/whisper.js" data-info="CLI entry point" data-file-id="__clappie__claude_skills_whisper_whisper_js" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">whisper.js</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/whisper/.env.example" data-info="Required env vars" data-file-id="__clappie__claude_skills_whisper__env_example" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.env.example</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/telegram-bot/" data-highlights="" data-info="Telegram bot - message it from anywhere, it messages you back" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">telegram-bot/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/telegram-bot/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/telegram-bot/webhooks/" data-highlights="" data-info="Webhook handling for Telegram updates" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">webhooks/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/telegram-bot/webhooks/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/telegram-bot/webhooks/routes/" data-highlights="" data-info="Event-specific handlers" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">routes/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/telegram-bot/webhooks/routes/"><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/telegram-bot/webhooks/routes/incoming-message.js" data-info="Main message handler" data-file-id="__clappie__claude_skills_telegram_bot_webhooks_routes_incoming_message_js" onclick="showPreview('~/clappie/.claude/skills/telegram-bot/webhooks/routes/incoming-message.js', '__clappie__claude_skills_telegram_bot_webhooks_routes_incoming_message_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">incoming-message.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/telegram-bot/webhooks/verify.js" data-info="Signature verification" data-file-id="__clappie__claude_skills_telegram_bot_webhooks_verify_js" onclick="showPreview('~/clappie/.claude/skills/telegram-bot/webhooks/verify.js', '__clappie__claude_skills_telegram_bot_webhooks_verify_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">verify.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/telegram-bot/webhooks/send.js" data-info="Send messages, photos, reactions" data-file-id="__clappie__claude_skills_telegram_bot_webhooks_send_js" onclick="showPreview('~/clappie/.claude/skills/telegram-bot/webhooks/send.js', '__clappie__claude_skills_telegram_bot_webhooks_send_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">send.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/telegram-bot/webhooks/parse.js" data-info="Parse Telegram update payloads" data-file-id="__clappie__claude_skills_telegram_bot_webhooks_parse_js" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">parse.js</span>
+            
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/telegram-bot/SKILL.md" data-info="Full setup guide" data-file-id="__clappie__claude_skills_telegram_bot_SKILL_md" onclick="showPreview('~/clappie/.claude/skills/telegram-bot/SKILL.md', '__clappie__claude_skills_telegram_bot_SKILL_md')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">SKILL.md</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/telegram-bot/telegram.js" data-info="CLI entry point" data-file-id="__clappie__claude_skills_telegram_bot_telegram_js" onclick="showPreview('~/clappie/.claude/skills/telegram-bot/telegram.js', '__clappie__claude_skills_telegram_bot_telegram_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">telegram.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/telegram-bot/webhook.json" data-info="Webhook config" data-file-id="__clappie__claude_skills_telegram_bot_webhook_json" onclick="showPreview('~/clappie/.claude/skills/telegram-bot/webhook.json', '__clappie__claude_skills_telegram_bot_webhook_json')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">webhook.json</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/telegram-bot/.env.example" data-info="Required env vars" data-file-id="__clappie__claude_skills_telegram_bot__env_example" onclick="showPreview('~/clappie/.claude/skills/telegram-bot/.env.example', '__clappie__claude_skills_telegram_bot__env_example')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.env.example</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/slack-bot/" data-highlights="" data-info="Slack bot - message it from anywhere, it messages you back" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">slack-bot/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/slack-bot/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/slack-bot/webhooks/" data-highlights="" data-info="Webhook handling for Slack events" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">webhooks/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/slack-bot/webhooks/"><div class="tree-item tree-dir" data-path="~/clappie/.claude/skills/slack-bot/webhooks/routes/" data-highlights="" data-info="Event-specific handlers" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">routes/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/.claude/skills/slack-bot/webhooks/routes/"><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/slack-bot/webhooks/routes/incoming-message.js" data-info="Main message handler" data-file-id="__clappie__claude_skills_slack_bot_webhooks_routes_incoming_message_js" onclick="showPreview('~/clappie/.claude/skills/slack-bot/webhooks/routes/incoming-message.js', '__clappie__claude_skills_slack_bot_webhooks_routes_incoming_message_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">incoming-message.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/slack-bot/webhooks/verify.js" data-info="HMAC-SHA256 verification" data-file-id="__clappie__claude_skills_slack_bot_webhooks_verify_js" onclick="showPreview('~/clappie/.claude/skills/slack-bot/webhooks/verify.js', '__clappie__claude_skills_slack_bot_webhooks_verify_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">verify.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/slack-bot/webhooks/send.js" data-info="Send messages, files, reactions" data-file-id="__clappie__claude_skills_slack_bot_webhooks_send_js" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">send.js</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/.claude/skills/slack-bot/webhooks/parse.js" data-info="Parse Slack event payloads" data-file-id="__clappie__claude_skills_slack_bot_webhooks_parse_js" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">parse.js</span>
+            
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/slack-bot/SKILL.md" data-info="Full setup guide" data-file-id="__clappie__claude_skills_slack_bot_SKILL_md" onclick="showPreview('~/clappie/.claude/skills/slack-bot/SKILL.md', '__clappie__claude_skills_slack_bot_SKILL_md')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">SKILL.md</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/slack-bot/slack-bot.js" data-info="CLI entry point" data-file-id="__clappie__claude_skills_slack_bot_slack_bot_js" onclick="showPreview('~/clappie/.claude/skills/slack-bot/slack-bot.js', '__clappie__claude_skills_slack_bot_slack_bot_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">slack-bot.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/slack-bot/webhook.json" data-info="Webhook config" data-file-id="__clappie__claude_skills_slack_bot_webhook_json" onclick="showPreview('~/clappie/.claude/skills/slack-bot/webhook.json', '__clappie__claude_skills_slack_bot_webhook_json')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">webhook.json</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/skills/slack-bot/.env.example" data-info="Required env vars" data-file-id="__clappie__claude_skills_slack_bot__env_example" onclick="showPreview('~/clappie/.claude/skills/slack-bot/.env.example', '__clappie__claude_skills_slack_bot__env_example')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.env.example</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/.claude/settings.json" data-info="Claude Code config - permissions, deny patterns" data-file-id="__clappie__claude_settings_json" onclick="showPreview('~/clappie/.claude/settings.json', '__clappie__claude_settings_json')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">settings.json</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/chores/" data-highlights="chores,two-types,file-format,approving-chores" data-info="Tasks to do - AI drafts risky actions, you approve before execution" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-name">chores/</span>
+      </div><div class="tree-children" data-path="~/clappie/chores/"><div class="tree-item tree-dir" data-path="~/clappie/chores/bots/" data-highlights="heartbeat,creating-a-bot-chore,built-in-bots,robot-chores" data-info="Automated tasks - run on schedule via heartbeat cron" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">bots/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/chores/bots/"><div class="tree-item tree-file has-preview" data-path="~/clappie/chores/bots/clean-notifications.txt" data-info="Runs every 15m - triages incoming notifications" data-file-id="__clappie_chores_bots_clean_notifications_txt" onclick="showPreview('~/clappie/chores/bots/clean-notifications.txt', '__clappie_chores_bots_clean_notifications_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">clean-notifications.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/chores/bots/fetch-my-calendars-and-dump-into-dirty.txt" data-info="Runs hourly - pulls calendar events" data-file-id="__clappie_chores_bots_fetch_my_calendars_and_dump_into_dirty_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">fetch-my-calendars-and-dump-into-dirty.txt</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/chores/bots/get-email-activity.txt" data-info="Runs every 30m - checks for new emails" data-file-id="__clappie_chores_bots_get_email_activity_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">get-email-activity.txt</span>
+            
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/chores/bots/.imessage-dump-to-dirty.txt" data-info="Disabled (dot prefix) - remove dot to enable" data-file-id="__clappie_chores_bots__imessage_dump_to_dirty_txt" onclick="showPreview('~/clappie/chores/bots/.imessage-dump-to-dirty.txt', '__clappie_chores_bots__imessage_dump_to_dirty_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.imessage-dump-to-dirty.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/chores/humans/" data-highlights="chores,human-chores,approving-chores" data-info="Approval queue - drafts waiting for your go-ahead" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">humans/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/chores/humans/"><div class="tree-item tree-file has-preview" data-path="~/clappie/chores/humans/reply-cto-roadmap.txt" data-info="Draft email ready - review before sending" data-file-id="__clappie_chores_humans_reply_cto_roadmap_txt" onclick="showPreview('~/clappie/chores/humans/reply-cto-roadmap.txt', '__clappie_chores_humans_reply_cto_roadmap_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">reply-cto-roadmap.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/chores/humans/call-dad-birthday.txt" data-info="Reminder queued - approve to add to calendar" data-file-id="__clappie_chores_humans_call_dad_birthday_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">call-dad-birthday.txt</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/chores/humans/resolve-calendar-conflict.txt" data-info="Two meetings overlap - pick one to keep" data-file-id="__clappie_chores_humans_resolve_calendar_conflict_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">resolve-calendar-conflict.txt</span>
+            
+          </div></div></div><div class="tree-item tree-dir" data-path="~/clappie/notifications/" data-highlights="notifications,the-flow" data-info="Inbox for everything - emails, texts, calendar, GitHub, etc." onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-name">notifications/</span>
+      </div><div class="tree-children" data-path="~/clappie/notifications/"><div class="tree-item tree-dir" data-path="~/clappie/notifications/dirty/" data-highlights="dirty-folder,dirty,the-flow" data-info="Raw dumps land here - AI triages them every 15 min" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">dirty/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/notifications/dirty/"><div class="tree-item tree-file" data-path="~/clappie/notifications/dirty/gmail-unread.json" data-info="Unread emails from Gmail sync" data-file-id="__clappie_notifications_dirty_gmail_unread_json" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">gmail-unread.json</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/notifications/dirty/gmail-read-ids.txt" data-info="IDs of emails you read on phone (for cleanup)" data-file-id="__clappie_notifications_dirty_gmail_read_ids_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">gmail-read-ids.txt</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/notifications/dirty/gcal-today.json" data-info="Today&#39;s calendar events" data-file-id="__clappie_notifications_dirty_gcal_today_json" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">gcal-today.json</span>
+            
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/notifications/dirty/github-prs.json" data-info="PR notifications from GitHub API" data-file-id="__clappie_notifications_dirty_github_prs_json" onclick="showPreview('~/clappie/notifications/dirty/github-prs.json', '__clappie_notifications_dirty_github_prs_json')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">github-prs.json</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/notifications/clean/" data-highlights="clean-folder,clean,the-flow,viewing-notifications" data-info="What actually matters - curated by AI, reviewed by you" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">clean/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/notifications/clean/"><div class="tree-item tree-file has-preview" data-path="~/clappie/notifications/clean/cto-q1-roadmap.txt" data-info="Work email - draft reply ready" data-file-id="__clappie_notifications_clean_cto_q1_roadmap_txt" onclick="showPreview('~/clappie/notifications/clean/cto-q1-roadmap.txt', '__clappie_notifications_clean_cto_q1_roadmap_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">cto-q1-roadmap.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/notifications/clean/auto-handled.txt" data-info="4 things handled automatically" data-file-id="__clappie_notifications_clean_auto_handled_txt" onclick="showPreview('~/clappie/notifications/clean/auto-handled.txt', '__clappie_notifications_clean_auto_handled_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">auto-handled.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/notifications/clean/family-stuff.txt" data-info="Dad called, Mom emailed about birthday dinner" data-file-id="__clappie_notifications_clean_family_stuff_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">family-stuff.txt</span>
+            
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/notifications/instructions.txt" data-info="Your rules - what&#39;s urgent, what to auto-handle" data-file-id="__clappie_notifications_instructions_txt" data-highlights="instructions" onclick="showPreview('~/clappie/notifications/instructions.txt', '__clappie_notifications_instructions_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">instructions.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/" data-highlights="recall,glossary" data-info="Persistent memory - survives across sessions" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-name">recall/</span>
+      </div><div class="tree-children" data-path="~/clappie/recall/"><div class="tree-item tree-dir" data-path="~/clappie/recall/memory/" data-highlights="memory,recall,profile" data-info="Facts about you - Claude reads these to remember who you are" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">memory/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/memory/"><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/memory/personal.txt" data-info="Personal details - family, location, life" data-file-id="__clappie_recall_memory_personal_txt" onclick="showPreview('~/clappie/recall/memory/personal.txt', '__clappie_recall_memory_personal_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">personal.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/memory/preferences.txt" data-info="Likes, dislikes, communication style" data-file-id="__clappie_recall_memory_preferences_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">preferences.txt</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/memory/people.txt" data-info="Key contacts and relationships" data-file-id="__clappie_recall_memory_people_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">people.txt</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/memory/another-category.txt" data-info="Create files for any category you need" data-file-id="__clappie_recall_memory_another_category_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">another-category.txt</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/" data-highlights="settings,configuration" data-info="App configuration - all runtime settings live here" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-name">settings/</span>
+      </div><div class="tree-children" data-path="~/clappie/recall/settings/"><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/theme/" data-highlights="theme,settings" data-info="Display theme settings" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">theme/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/theme/"><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/theme/mode.txt" data-info="dark | light" data-file-id="__clappie_recall_settings_theme_mode_txt" onclick="showPreview('~/clappie/recall/settings/theme/mode.txt', '__clappie_recall_settings_theme_mode_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">mode.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/theme/scene.txt" data-info="shown | hidden" data-file-id="__clappie_recall_settings_theme_scene_txt" onclick="showPreview('~/clappie/recall/settings/theme/scene.txt', '__clappie_recall_settings_theme_scene_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">scene.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/theme/animations.txt" data-info="on | off" data-file-id="__clappie_recall_settings_theme_animations_txt" onclick="showPreview('~/clappie/recall/settings/theme/animations.txt', '__clappie_recall_settings_theme_animations_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">animations.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/theme/colors.txt" data-info="Color scheme" data-file-id="__clappie_recall_settings_theme_colors_txt" onclick="showPreview('~/clappie/recall/settings/theme/colors.txt', '__clappie_recall_settings_theme_colors_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">colors.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/theme/toggle.txt" data-info="Toggle state" data-file-id="__clappie_recall_settings_theme_toggle_txt" onclick="showPreview('~/clappie/recall/settings/theme/toggle.txt', '__clappie_recall_settings_theme_toggle_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">toggle.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/theme/crab.txt" data-info="on | off" data-file-id="__clappie_recall_settings_theme_crab_txt" onclick="showPreview('~/clappie/recall/settings/theme/crab.txt', '__clappie_recall_settings_theme_crab_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">crab.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/theme/dog.txt" data-info="on | off" data-file-id="__clappie_recall_settings_theme_dog_txt" onclick="showPreview('~/clappie/recall/settings/theme/dog.txt', '__clappie_recall_settings_theme_dog_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">dog.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/heartbeat/" data-highlights="heartbeat,configuration" data-info="Heartbeat daemon settings" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">heartbeat/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/heartbeat/"><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/heartbeat/enabled.txt" data-info="true | false" data-file-id="__clappie_recall_settings_heartbeat_enabled_txt" onclick="showPreview('~/clappie/recall/settings/heartbeat/enabled.txt', '__clappie_recall_settings_heartbeat_enabled_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">enabled.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/heartbeat/interval.txt" data-info="Seconds between checks" data-file-id="__clappie_recall_settings_heartbeat_interval_txt" onclick="showPreview('~/clappie/recall/settings/heartbeat/interval.txt', '__clappie_recall_settings_heartbeat_interval_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">interval.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/heartbeat/starting-model.txt" data-info="Model for heartbeat sessions" data-file-id="__clappie_recall_settings_heartbeat_starting_model_txt" onclick="showPreview('~/clappie/recall/settings/heartbeat/starting-model.txt', '__clappie_recall_settings_heartbeat_starting_model_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">starting-model.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/sidekicks/" data-highlights="sidekicks,webhooks" data-info="Sidekick system settings" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">sidekicks/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/sidekicks/"><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/sidekicks/webhooks/" data-highlights="webhook-routing,custom-webhooks" data-info="User-defined webhook handlers (no skill required)" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">webhooks/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/sidekicks/webhooks/"><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/sidekicks/webhooks/.demo-dirty.js" data-info="Disabled - dumps payload to dirty/" data-file-id="__clappie_recall_settings_sidekicks_webhooks__demo_dirty_js" onclick="showPreview('~/clappie/recall/settings/sidekicks/webhooks/.demo-dirty.js', '__clappie_recall_settings_sidekicks_webhooks__demo_dirty_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.demo-dirty.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/sidekicks/webhooks/.demo-sidekick.js" data-info="Disabled - spawns a Claude sidekick" data-file-id="__clappie_recall_settings_sidekicks_webhooks__demo_sidekick_js" onclick="showPreview('~/clappie/recall/settings/sidekicks/webhooks/.demo-sidekick.js', '__clappie_recall_settings_sidekicks_webhooks__demo_sidekick_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.demo-sidekick.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/sidekicks/webhooks/.demo-run.js" data-info="Disabled - custom code, full control" data-file-id="__clappie_recall_settings_sidekicks_webhooks__demo_run_js" onclick="showPreview('~/clappie/recall/settings/sidekicks/webhooks/.demo-run.js', '__clappie_recall_settings_sidekicks_webhooks__demo_run_js')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.demo-run.js</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/sidekicks/port.txt" data-info="HTTP server port" data-file-id="__clappie_recall_settings_sidekicks_port_txt" onclick="showPreview('~/clappie/recall/settings/sidekicks/port.txt', '__clappie_recall_settings_sidekicks_port_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">port.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/sidekicks/default-model.txt" data-info="Default model for spawned sidekicks" data-file-id="__clappie_recall_settings_sidekicks_default_model_txt" onclick="showPreview('~/clappie/recall/settings/sidekicks/default-model.txt', '__clappie_recall_settings_sidekicks_default_model_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">default-model.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/sidekicks/prompt-mode.txt" data-info="system | message" data-file-id="__clappie_recall_settings_sidekicks_prompt_mode_txt" onclick="showPreview('~/clappie/recall/settings/sidekicks/prompt-mode.txt', '__clappie_recall_settings_sidekicks_prompt_mode_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">prompt-mode.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/sidekicks/allowed-send-file-paths.txt" data-info="Paths sidekicks can send files from" data-file-id="__clappie_recall_settings_sidekicks_allowed_send_file_paths_txt" onclick="showPreview('~/clappie/recall/settings/sidekicks/allowed-send-file-paths.txt', '__clappie_recall_settings_sidekicks_allowed_send_file_paths_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">allowed-send-file-paths.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/telegram-bot/" data-highlights="telegram,bots,integrations" data-info="Telegram bot configuration" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">telegram-bot/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/telegram-bot/"><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/telegram-bot/webhooks/" data-highlights="" data-info="Enable routes from skill - must opt-in manually" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">webhooks/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/telegram-bot/webhooks/"><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/telegram-bot/webhooks/incoming-message.txt" data-info="true | false - matches route in skill" data-file-id="__clappie_recall_settings_telegram_bot_webhooks_incoming_message_txt" onclick="showPreview('~/clappie/recall/settings/telegram-bot/webhooks/incoming-message.txt', '__clappie_recall_settings_telegram_bot_webhooks_incoming_message_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">incoming-message.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/telegram-bot/enabled.txt" data-info="true | false - master switch" data-file-id="__clappie_recall_settings_telegram_bot_enabled_txt" onclick="showPreview('~/clappie/recall/settings/telegram-bot/enabled.txt', '__clappie_recall_settings_telegram_bot_enabled_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">enabled.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/telegram-bot/webhook-path.txt" data-info="Secret URL segment for webhook" data-file-id="__clappie_recall_settings_telegram_bot_webhook_path_txt" onclick="showPreview('~/clappie/recall/settings/telegram-bot/webhook-path.txt', '__clappie_recall_settings_telegram_bot_webhook_path_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">webhook-path.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/telegram-bot/sidekick-prompt.txt" data-info="Custom prompt/personality for sidekicks (overrides skill defaults)" data-file-id="__clappie_recall_settings_telegram_bot_sidekick_prompt_txt" onclick="showPreview('~/clappie/recall/settings/telegram-bot/sidekick-prompt.txt', '__clappie_recall_settings_telegram_bot_sidekick_prompt_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">sidekick-prompt.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/telegram-bot/users.txt" data-info="Allowed user IDs (one per line)" data-file-id="__clappie_recall_settings_telegram_bot_users_txt" onclick="showPreview('~/clappie/recall/settings/telegram-bot/users.txt', '__clappie_recall_settings_telegram_bot_users_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">users.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/slack-bot/" data-highlights="slack,bots,integrations" data-info="Slack bot configuration" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">slack-bot/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/slack-bot/"><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/slack-bot/webhooks/" data-highlights="" data-info="Enable routes from skill - must opt-in manually" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">webhooks/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/slack-bot/webhooks/"><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/slack-bot/webhooks/incoming-message.txt" data-info="true | false - matches route in skill" data-file-id="__clappie_recall_settings_slack_bot_webhooks_incoming_message_txt" onclick="showPreview('~/clappie/recall/settings/slack-bot/webhooks/incoming-message.txt', '__clappie_recall_settings_slack_bot_webhooks_incoming_message_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">incoming-message.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/slack-bot/enabled.txt" data-info="true | false" data-file-id="__clappie_recall_settings_slack_bot_enabled_txt" onclick="showPreview('~/clappie/recall/settings/slack-bot/enabled.txt', '__clappie_recall_settings_slack_bot_enabled_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">enabled.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/slack-bot/webhook-path.txt" data-info="Secret URL segment for webhook" data-file-id="__clappie_recall_settings_slack_bot_webhook_path_txt" onclick="showPreview('~/clappie/recall/settings/slack-bot/webhook-path.txt', '__clappie_recall_settings_slack_bot_webhook_path_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">webhook-path.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/settings/slack-bot/sidekick-prompt.txt" data-info="Custom prompt/personality for sidekicks (overrides skill defaults)" data-file-id="__clappie_recall_settings_slack_bot_sidekick_prompt_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">sidekick-prompt.txt</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/settings/slack-bot/users.txt" data-info="Allowed user IDs" data-file-id="__clappie_recall_settings_slack_bot_users_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">users.txt</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/github/" data-highlights="webhook-routing" data-info="GitHub webhook settings (overrides skill defaults)" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">github/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/github/"><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/github/webhooks/" data-highlights="" data-info="Enable/disable specific webhook routes" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">webhooks/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/github/webhooks/"><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/github/webhooks/fork.txt" data-info="true | false - enable fork webhook" data-file-id="__clappie_recall_settings_github_webhooks_fork_txt" onclick="showPreview('~/clappie/recall/settings/github/webhooks/fork.txt', '__clappie_recall_settings_github_webhooks_fork_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">fork.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/github/webhooks/star.txt" data-info="true | false - enable star webhook" data-file-id="__clappie_recall_settings_github_webhooks_star_txt" onclick="showPreview('~/clappie/recall/settings/github/webhooks/star.txt', '__clappie_recall_settings_github_webhooks_star_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">star.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/github/webhooks/pull_request.txt" data-info="true | false - enable PR webhook" data-file-id="__clappie_recall_settings_github_webhooks_pull_request_txt" onclick="showPreview('~/clappie/recall/settings/github/webhooks/pull_request.txt', '__clappie_recall_settings_github_webhooks_pull_request_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">pull_request.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/github/webhooks/issues.txt" data-info="true | false - enable issue webhook" data-file-id="__clappie_recall_settings_github_webhooks_issues_txt" onclick="showPreview('~/clappie/recall/settings/github/webhooks/issues.txt', '__clappie_recall_settings_github_webhooks_issues_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">issues.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/github/webhooks/push.txt" data-info="true | false - enable push webhook" data-file-id="__clappie_recall_settings_github_webhooks_push_txt" onclick="showPreview('~/clappie/recall/settings/github/webhooks/push.txt', '__clappie_recall_settings_github_webhooks_push_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">push.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/github/webhooks/release.txt" data-info="true | false - enable release webhook" data-file-id="__clappie_recall_settings_github_webhooks_release_txt" onclick="showPreview('~/clappie/recall/settings/github/webhooks/release.txt', '__clappie_recall_settings_github_webhooks_release_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">release.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/settings/github/webhooks/.demo-github-signing.js" data-info="Disabled - override with custom signing logic" data-file-id="__clappie_recall_settings_github_webhooks__demo_github_signing_js" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.demo-github-signing.js</span>
+            
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/github/enabled.txt" data-info="true | false" data-file-id="__clappie_recall_settings_github_enabled_txt" onclick="showPreview('~/clappie/recall/settings/github/enabled.txt', '__clappie_recall_settings_github_enabled_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">enabled.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/settings/github/webhook-path.txt" data-info="Auto-generated secret for webhook URL" data-file-id="__clappie_recall_settings_github_webhook_path_txt" onclick="showPreview('~/clappie/recall/settings/github/webhook-path.txt', '__clappie_recall_settings_github_webhook_path_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">webhook-path.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/settings/parties/" data-highlights="parties" data-info="Party game settings" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">parties/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/settings/parties/"><div class="tree-item tree-file" data-path="~/clappie/recall/settings/parties/sidekick-prompt.txt" data-info="Custom prompt for party sidekicks" data-file-id="__clappie_recall_settings_parties_sidekick_prompt_txt" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">sidekick-prompt.txt</span>
+            
+          </div></div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/" data-highlights="logs,recall" data-info="Activity logs - all history lives here" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">logs/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/"><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/heartbeat/" data-highlights="" data-info="Daily heartbeat activity" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">heartbeat/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/heartbeat/"><div class="tree-item tree-file" data-path="~/clappie/recall/logs/heartbeat/[...]" data-info="Log files per run" data-file-id="__clappie_recall_logs_heartbeat______" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">[...]</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/sidekicks/" data-highlights="" data-info="Sidekick conversation logs" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">sidekicks/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/sidekicks/"><div class="tree-item tree-file" data-path="~/clappie/recall/logs/sidekicks/[...]" data-info="Log files per session" data-file-id="__clappie_recall_logs_sidekicks______" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">[...]</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/chores/" data-highlights="" data-info="Completed/rejected chores" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">chores/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/chores/"><div class="tree-item tree-file" data-path="~/clappie/recall/logs/chores/[...]" data-info="Archived chore files" data-file-id="__clappie_recall_logs_chores______" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">[...]</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/logs/notifications/" data-highlights="" data-info="Notification processing history" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">notifications/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/logs/notifications/"><div class="tree-item tree-file" data-path="~/clappie/recall/logs/notifications/[...]" data-info="Processing logs" data-file-id="__clappie_recall_logs_notifications______" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">[...]</span>
+            
+          </div></div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/files/" data-highlights="files,recall" data-info="Media from messages - photos, voice notes, video" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">files/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/files/"><div class="tree-item tree-file" data-path="~/clappie/recall/files/[...]" data-info="Photos, screenshots, telegram cache, etc." data-file-id="__clappie_recall_files______" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">[...]</span>
+            
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/recall/oauth/" data-highlights="oauth-helper,getting-tokens" data-info="OAuth tokens and certificates" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▶</span>
+        <span class="tree-name">oauth/</span>
+      </div><div class="tree-children collapsed" data-path="~/clappie/recall/oauth/"><div class="tree-item tree-file" data-path="~/clappie/recall/oauth/clappie-localhost-key.pem" data-info="HTTPS key for local OAuth callback" data-file-id="__clappie_recall_oauth_clappie_localhost_key_pem" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">clappie-localhost-key.pem</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/recall/oauth/clappie-localhost.pem" data-info="HTTPS cert for local OAuth callback" data-file-id="__clappie_recall_oauth_clappie_localhost_pem" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">clappie-localhost.pem</span>
+            
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/oauth/demo-oauth.json" data-info="Stored tokens for this provider" data-file-id="__clappie_recall_oauth_demo_oauth_json" onclick="showPreview('~/clappie/recall/oauth/demo-oauth.json', '__clappie_recall_oauth_demo_oauth_json')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">demo-oauth.json</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/recall/profile.txt" data-info="Cached quick summary - auto-generated from memory/" data-file-id="__clappie_recall_profile_txt" data-highlights="profile,memory" onclick="showPreview('~/clappie/recall/profile.txt', '__clappie_recall_profile_txt')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">profile.txt</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-dir" data-path="~/clappie/projects/" data-highlights="projects,folder-structure" data-info="Full workspace - websites, apps, APIs, cloned repos" onclick="toggleFolder(this)">
+        <span class="tree-arrow">▼</span>
+        <span class="tree-name">projects/</span>
+      </div><div class="tree-children" data-path="~/clappie/projects/"><div class="tree-item tree-file" data-path="~/clappie/projects/budget-tracker/" data-info="Quick personal finance app" data-file-id="__clappie_projects_budget_tracker_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">budget-tracker/</span>
+            
+          </div><div class="tree-item tree-file" data-path="~/clappie/projects/temp-app/" data-info="Static site served via Tailscale" data-file-id="__clappie_projects_temp_app_" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">temp-app/</span>
+            
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/projects/.gitignore" data-info="List repos with their own .git/ here to protect from outer repo ops" data-file-id="__clappie_projects__gitignore" onclick="showPreview('~/clappie/projects/.gitignore', '__clappie_projects__gitignore')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.gitignore</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div><div class="tree-item tree-file has-preview" data-path="~/clappie/.env" data-info="API keys and secrets (gitignored)" data-file-id="__clappie__env" data-highlights="environment-variables" onclick="showPreview('~/clappie/.env', '__clappie__env')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.env</span>
+            <span class="tree-preview-icon">👁</span>
+          </div><div class="tree-item tree-file" data-path="~/clappie/.gitignore" data-info="Files excluded from git" data-file-id="__clappie__gitignore" >
+            <span class="tree-arrow"></span>
+            <span class="tree-name">.gitignore</span>
+            
+          </div><div class="tree-item tree-file has-preview" data-path="~/clappie/CLAUDE.md" data-info="The brain - ships with a solid default, tweak as you like" data-file-id="__clappie_CLAUDE_md" data-highlights="claude-md,customization" onclick="showPreview('~/clappie/CLAUDE.md', '__clappie_CLAUDE_md')">
+            <span class="tree-arrow"></span>
+            <span class="tree-name">CLAUDE.md</span>
+            <span class="tree-preview-icon">👁</span>
+          </div></div>
+      </div>
+    </aside>
+  </div>
+      <div class="docs-main">
+        
+    <div class="content-tabs">
+      <button class="tab-btn active" data-tab="clean" onclick="switchTab('clean')">
+        <span class="tab-icon">✨</span> Cleaned (generated)
+      </button>
+      <button class="tab-btn" data-tab="dirty" onclick="switchTab('dirty')">
+        <span class="tab-icon">📝</span> Notes (human)
+      </button>
+    </div>
+        <main>
+          
+    <div class="tab-content active" id="tab-clean">
+      <div class="page-content"><h1 id="get-started">Get Started</h1><p>
+<h2 id="what-is-this"><a href="#what-is-this">What is This?</a></h2><p>Clappie is a Claude Code session manager. Spin up as many independent Claude Code terminals as you want, talk to them from anywhere, and wire them up to any API in minutes.</p><p><strong>Three goals:</strong>
+<ul><li><strong>Unlimited sessions</strong> - Spawn and manage independent Claude Code contexts from inside Claude Code</li>
+<li><strong>Access from anywhere</strong> - Chat with your AI via Telegram, Slack, SSH, or any terminal</li>
+<li><strong>Dead simple integrations</strong> - OAuth helper, webhook routing, and plain text configs make APIs trivial</li>
+<p></ul>
+<h3 id="the-philosophy"><a href="#the-philosophy">The Philosophy</a></h3><p>No databases to manage, no migrations to run, no schemas to learn. Plain text files are readable, editable, and versionable - if something breaks, you can fix it with a text editor.</p><p>Everything is plain text files. Chores are <code>.txt</code> files. Memory is <code>.txt</code> files. Notifications are <code>.txt</code> files. The AI reads them, acts on them, and writes new ones.</p><h3 id="why-not-the-agent-sdk"><a href="#why-not-the-agent-sdk">Why Not the Agent SDK?</a></h3><p>Zero maintenance means zero headaches. You get to ride the wave of Claude Code improvements without lifting a finger.</p><p>Because this way we piggyback on Anthropic's work. When they improve Claude Code, Clappie gets better automatically.</p><h3 id="what-you-get"><a href="#what-you-get">What You Get</a></h3><p>Work happening while you're asleep, urgent pings to your phone, and a safety net before anything risky happens.</p><ul><li><strong>24/7 AI</strong> - Background work while you sleep, pings when urgent</li>
+<li><strong>Never leave terminal</strong> - Dynamic UIs, on-demand data displays</li>
+<li><strong>Phone access</strong> - Telegram/Slack bots, two-way conversations</li>
+<li><strong>Human approval queue</strong> - AI drafts, you approve risky actions</li>
+<p></ul>
+<h2 id="requirements"><a href="#requirements">Requirements</a></h2><p>The stack is intentionally minimal - stuff you probably already have or can install in 30 seconds. No Docker, no VMs, no cloud accounts.</p><ul><li><strong>macOS</strong> - Probably works on others but built for Mac</li>
+<li><strong>Ghostty</strong> - Terminal emulator (light theme recommended)</li>
+<li><strong>tmux</strong> - Terminal multiplexer for session management</li>
+<li><strong>Bun</strong> - JavaScript runtime for the scripts</li>
+<li><strong>Claude Code</strong> - The official CLI</li>
+<li><strong>Tailscale</strong> - For remote access and webhooks (optional but recommended)</li>
+<p></ul>
+<h2 id="installation"><a href="#installation">Installation</a></h2><p>You're five commands away from a 24/7 AI assistant. Copy-paste your way to productivity.</p><pre><code class="language-bash"># Claude Code
+curl -fsSL https://claude.ai/install.sh | bash
+
+# tmux
+brew install tmux
+
+# Bun
+curl -fsSL https://bun.sh/install | bash
+
+# Clone Clappie
+cd ~
+git clone https://github.com/whatnickcodes/clappie
+cd clappie</code></pre></p><h3 id="shell-shortcut"><a href="#shell-shortcut">Shell Shortcut</a></h3><p><strong>Skip the docs - just ask Claude Code to set this up for you.</strong></p><p>One function in your shell config and <code>clappie</code> becomes a first-class command. No PATH hacks, no symlinks, no pollution.</p><p>Add this to your <code>~/.zshrc</code> or <code>~/.bashrc</code>:</p><pre><code class="language-bash">clappie() {
+  if [[ $# -eq 0 ]]; then
+    cd ~/clappie && tmux new-session "claude"
+  elif [[ -z "$TMUX" ]]; then
+    echo "Start clappie first: clappie"
+  else
+    bun ~/clappie/.claude/skills/clappie/clappie.js "$@"
+  fi
+}</code></pre></p><p>Then reload your shell: <code>source ~/.zshrc</code></p><h3 id="tailscale-optional"><a href="#tailscale-optional">Tailscale (Optional)</a></h3><p><strong>Skip the docs - just ask Claude Code to set this up for you.</strong></p><p>Tailscale lets you access your AI from anywhere and receive webhooks from external services. Zero-config VPN that just works.</p><pre><code class="language-bash"># Install
+brew install tailscale
+
+# Login
+tailscale up
+
+# Enable funnel for webhooks (exposes port 7777)
+tailscale funnel 7777</code></pre></p><p>Without Tailscale, you can still use Clappie locally - you just won't have remote access or webhook integrations.</p><h3 id="usage"><a href="#usage">Usage</a></h3><p>Type <code>clappie</code> to start. That's it.</p><p>Once you're in, ask Claude to "open the background display" - from there you can toggle on heartbeat, sidekicks, and whatever else you need. The AI manages everything.</p><h2 id="glossary"><a href="#glossary">Glossary</a></h2><p>The building blocks of Clappie in plain English. Reference this when you see an unfamiliar term.</p><h3 id="background"><a href="#background">Background</a></h3><p>Your AI's background mode - it keeps working even when you close the laptop lid. Think of it as the daemon that powers everything autonomous.</p><p>Start it with <code>clappie background start</code>. Lives in <code>recall/settings/</code>.</p><h3 id="heartbeat"><a href="#heartbeat">Heartbeat</a></h3><p>Cron jobs, but with AI brains. Write what you want checked in plain English and set an interval - no code required.</p><p>Plain text instructions in <code>chores/bots/*.txt</code> that run on intervals you define.</p><h3 id="sidekicks"><a href="#sidekicks">Sidekicks</a></h3><p>When a task needs its own focus and context, it gets a sidekick. These are the worker bees that handle async work without cluttering your main chat.</p><p>Each sidekick is its own Claude Code context - can spawn more sidekicks, run subagents, hold conversations.</p><h3 id="displays"><a href="#displays">Displays</a></h3><p>Rich terminal interfaces that feel like mini-apps. Click buttons, fill forms, navigate lists - all without leaving your terminal.</p><p>Interactive views that render in your terminal with full mouse support.</p><h3 id="notifications"><a href="#notifications">Notifications</a></h3><p>Your unified inbox for the digital world. Emails, Slack messages, and alerts flow through one system with AI triage built in.</p><p>Raw data lands in <code>notifications/dirty/</code>, AI triages to <code>notifications/clean/</code>. Configure rules in <code>instructions.txt</code>.</p><h3 id="chores"><a href="#chores">Chores</a></h3><p>The safety net between AI action and real-world consequences. Draft it, review it, then execute - or don't.</p><p><code>chores/bots/</code> for automated tasks, <code>chores/humans/</code> for things needing your approval before execution.</p><h3 id="recall"><a href="#recall">Recall</a></h3><p>Your AI's long-term memory and settings. Facts persist across sessions, logs capture history, and configuration lives where you can find it.</p><p><code>recall/memory/</code> for facts about you, <code>recall/logs/</code> for history, <code>recall/settings/</code> for configuration.</p><h3 id="cli"><a href="#cli">CLI</a></h3><p>Discovery built into the tool itself. Forgot a command? <code>clappie list</code> has your back - and it grows with your setup.
+<p></div>
+    </div>
+    <div class="tab-content" id="tab-dirty">
+      <div class="dirty-box"># Get Started
+
+## Introduction
+
+(probably break into sub sections like goals, etc...)
+
+- A Claude Code to manage Claude Codes basically
+- Different than other "personal assistants" - not trying to be some complex backend agent framework, just a simple lightweight manager to spin up and relay info to Claude Code, passing data to/from the official CC terminal UI
+- Pros: Piggyback on Anthropic's awesome team constantly updating Claude Code
+- Cons: Also piggybacking means Anthropic can change things or an update could break stuff
+- Just a fun personal project
+- Open sourcing my "personal agent"
+- Philosophy is simple .txt files being tossed around
+- 1 clean folder structure
+- Why it exists / goals: Love CC. Want to access Claude Code from anywhere in many ways, enable easy-as-cake skills
+- NOT trying to replace Claude Desktop or be some massive thing, this is just my Claude Code focused side project
+- Why not the Claude Agent SDK? Because now we don't have to do any work and will forever piggyback on official CC improvements
+
+Main pillars:
+- 24/7 AI (background work while you sleep, pings when urgent)
+- Never leave terminal (dynamic UIs, on-demand data)
+- Mobile phone OS vibes (displays on phone, color e-ink dream)
+- The beauty of chores (AI drafts, human approves)
+
+## System Requirements
+
+- Mac (probably works on other systems but meant to run on Mac)
+- Ghostty terminal (link, make note probably need a light theme, tbd-ing this setup)
+- tmux (terminal management)
+- Bun (for the scripts)
+- Claude Code
+
+
+## Installation
+
+Make sure you have Ghostty installed. Step by step, skip things you already have:
+
+- curl -fsSL https://claude.ai/install.sh | bash
+- brew install tmux
+- curl -fsSL https://bun.sh/install | bash
+- cd ~ and git clone https://github.com/whatnickcodes/clappie
+
+
+## Glossary
+
+Search codebase and see if I missed any:
+
+- Background (background manager - runs heartbeat, sidekicks, tailscale)
+- Heartbeat (cron-scheduled AI tasks via chores/bots/*.txt)
+- Sidekicks (spawn autonomous Claude sessions)
+- Displays (terminal UIs - buttons, forms, lists)
+- Notifications (dirty → clean pipeline, instructions.txt)
+- Chores (robot = auto, human = approval queue for risky actions)
+- Recall (memory/, logs/, settings/, files/)
+- CLI (clappie list is self-documenting and growing)
+</div>
+    </div>
+        </main>
+      </div>
+      
+      <div class="toc-wrapper">
+        <aside class="toc-sidebar">
+          <div class="toc-header">
+            <span class="toc-title">📑 On this page</span>
+          </div>
+          <nav class="toc-nav">
+            <a href="#what-is-this" class="toc-item" data-id="what-is-this" onclick="if(window.switchTab)switchTab('clean')">What is This?</a>
+          <a href="#the-philosophy" class="toc-item toc-indent" data-id="the-philosophy" onclick="if(window.switchTab)switchTab('clean')">The Philosophy</a>
+          <a href="#why-not-the-agent-sdk" class="toc-item toc-indent" data-id="why-not-the-agent-sdk" onclick="if(window.switchTab)switchTab('clean')">Why Not the Agent SDK?</a>
+          <a href="#what-you-get" class="toc-item toc-indent" data-id="what-you-get" onclick="if(window.switchTab)switchTab('clean')">What You Get</a>
+          <a href="#requirements" class="toc-item" data-id="requirements" onclick="if(window.switchTab)switchTab('clean')">Requirements</a>
+          <a href="#installation" class="toc-item" data-id="installation" onclick="if(window.switchTab)switchTab('clean')">Installation</a>
+          <a href="#shell-shortcut" class="toc-item toc-indent" data-id="shell-shortcut" onclick="if(window.switchTab)switchTab('clean')">Shell Shortcut</a>
+          <a href="#tailscale-optional" class="toc-item toc-indent" data-id="tailscale-optional" onclick="if(window.switchTab)switchTab('clean')">Tailscale (Optional)</a>
+          <a href="#usage" class="toc-item toc-indent" data-id="usage" onclick="if(window.switchTab)switchTab('clean')">Usage</a>
+          <a href="#glossary" class="toc-item" data-id="glossary" onclick="if(window.switchTab)switchTab('clean')">Glossary</a>
+          <a href="#background" class="toc-item toc-indent" data-id="background" onclick="if(window.switchTab)switchTab('clean')">Background</a>
+          <a href="#heartbeat" class="toc-item toc-indent" data-id="heartbeat" onclick="if(window.switchTab)switchTab('clean')">Heartbeat</a>
+          <a href="#sidekicks" class="toc-item toc-indent" data-id="sidekicks" onclick="if(window.switchTab)switchTab('clean')">Sidekicks</a>
+          <a href="#displays" class="toc-item toc-indent" data-id="displays" onclick="if(window.switchTab)switchTab('clean')">Displays</a>
+          <a href="#notifications" class="toc-item toc-indent" data-id="notifications" onclick="if(window.switchTab)switchTab('clean')">Notifications</a>
+          <a href="#chores" class="toc-item toc-indent" data-id="chores" onclick="if(window.switchTab)switchTab('clean')">Chores</a>
+          <a href="#recall" class="toc-item toc-indent" data-id="recall" onclick="if(window.switchTab)switchTab('clean')">Recall</a>
+          <a href="#cli" class="toc-item toc-indent" data-id="cli" onclick="if(window.switchTab)switchTab('clean')">CLI</a>
+          </nav>
+        </aside>
+      </div>
+    </div>
+  
+  
+<div class="squiggly-divider"></div>
+<section class="disclaimers">
+  <div class="disclaimer-box vibe">
+    <span class="disclaimer-icon">✨</span>
+    <div class="disclaimer-content">
+      <strong>CODED IN ENGLISH</strong>
+      <p>This was my personal Claude Code setup being released as a project. It was "vibe coded" — the architecture is human, the code is robot. Built entirely through conversation with Claude Code. Beware of serious issues, bugs or vulnerabilities. But it was also built with love.</p>
+    </div>
+  </div>
+
+  <div class="disclaimer-box warning">
+    <span class="disclaimer-icon">⚠</span>
+    <div class="disclaimer-content">
+      <strong>NOT AFFILIATED WITH ANTHROPIC</strong>
+      <p>Clappie is an <strong>independent project</strong> designed to work with Claude Code. It is <strong>NOT</strong> created, endorsed, or supported by <strong>Anthropic</strong>. "Claude" and "Claude Code" are trademarks of Anthropic. This software is <strong>not guaranteed to work</strong>, may break at any time <strong>without notice</strong> from a Claude Code update or from the author simply not maintaining it, may degrade or interfere with your normal Claude Code experience, and comes with <strong>zero expectation</strong> of continued functionality or compatibility.</p>
+      <p>By using Clappie, you acknowledge that your use of Claude Code remains subject to <strong>Anthropic's <a href="https://www.anthropic.com/legal/aup" target="_blank" rel="noopener">Acceptable Use Policy</a></strong> and <strong><a href="https://www.anthropic.com/legal/consumer-terms" target="_blank" rel="noopener">Terms of Service</a></strong>. Clappie provides no separate license, warranty, or terms of its own. All AI interactions are processed through your existing Claude Code subscription and are governed solely by your agreement with Anthropic. Clappie's author assumes <strong>no liability</strong> for any actions taken by Claude Code on your behalf, any costs incurred through API usage, or any consequences arising from the use of this software.</p>
+    </div>
+  </div>
+
+  <div class="disclaimer-box danger">
+    <span class="disclaimer-icon">☠</span>
+    <div class="disclaimer-content">
+      <strong>EXPERIMENTAL SOFTWARE - EXTREME RISK</strong>
+      <p>This is autonomous AI software that takes actions with minimal human oversight. It should <strong>ONLY</strong> be used in highly controlled, sandboxed, monitored environments - never with real accounts, real data, or production systems. It is <strong>NOT SECURE</strong>, has <strong>NOT BEEN AUDITED</strong>, and may cause <strong>IRREVERSIBLE HARM</strong> to your data, systems, accounts, finances, or reputation. There is <strong>NO WARRANTY</strong> of any kind. The authors accept <strong>NO LIABILITY</strong> and <strong>NO RESPONSIBILITY</strong> for any consequences. By using this software you assume <strong>ALL RISK</strong>. If you are not fully comfortable with experimental autonomous software acting on your behalf, <strong>DO NOT USE THIS</strong>.</p>
+    </div>
+  </div>
+
+  <div class="site-links">
+    <a href="https://twitter.com/whatnicktweets" target="_blank" rel="noopener">@whatnicktweets</a>
+    <span class="link-sep">•</span>
+    <a href="https://github.com/whatnickcodes/clappie" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+  
+<footer class="garden-footer">
+  <div class="garden-container">
+    <div class="garden-scene">
+<span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(72,155,95)">▐</span> <span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(56,128,77)">▐</span> <span style="color:rgb(56,128,77)">▖</span> <span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">▌</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">▟</span> <span style="color:rgb(72,155,95)">▐</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(100,180,70)">█</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(72,155,95)">▙</span><span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(100,180,70)">█</span> <span style="color:rgb(56,128,77)">▖</span><span style="color:rgb(56,128,77)">▙</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(72,155,95)">▟</span><span style="color:rgb(45,106,64)">▗</span><span style="color:rgb(56,128,77)">▐</span><span style="color:rgb(72,155,95)">▌</span> <span style="color:rgb(45,106,64)">▖</span><span style="color:rgb(56,128,77)">▟</span><span style="color:rgb(72,155,95)">█</span><span style="color:rgb(56,128,77)">▗</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(56,128,77)">▄</span><span style="color:rgb(45,106,64)">▄</span><span style="color:rgb(72,155,95)">▌</span>
+<span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span><span style="color:rgb(34,85,51)">█</span>
+    </div>
+    <div class="flower-sprite" data-base="5"></div>
+    <div class="flower-sprite" data-base="15"></div>
+    <div class="flower-sprite" data-base="25"></div>
+    <div class="flower-sprite" data-base="38"></div>
+    <div class="flower-sprite" data-base="52"></div>
+    <div class="flower-sprite" data-base="65"></div>
+    <div class="flower-sprite" data-base="78"></div>
+    <div class="flower-sprite" data-base="90"></div>
+    <div class="sprites-layer">
+      <div class="sprite-wrapper" id="dog-wrapper" title="woof!">
+<span id="dog-sprite" style="color:rgb(180,130,90)">   ▖ ▖
+▗ █▜▛█
+ ▛▛▛▛▀</span>
+      </div>
+      <!-- <div class="sprite-wrapper" id="crab-wrapper" title="click click">
+<span id="crab-sprite" style="color:rgb(217,119,87)"> ▐▛███▜▌
+▝▜█████▛▘
+  ▘▘ ▝▝</span>
+      </div> -->
+    </div>
+  </div>
+</footer>
+<script>
+(function() {
+  // ═══════════════════════════════════════════════════════════════════════════
+  // COLOR PALETTES
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const petalColors = [
+    'rgb(255,150,180)',  // pink
+    'rgb(230,90,90)',    // red
+    'rgb(170,100,210)',  // purple
+    'rgb(100,160,220)',  // blue
+    'rgb(255,160,70)',   // orange
+    'rgb(250,250,240)',  // white
+    'rgb(255,220,80)',   // yellow
+    'rgb(217,119,87)',   // coral
+  ];
+
+  const stemColors = [
+    'rgb(56,128,77)',    // G3
+    'rgb(72,155,95)',    // G4
+    'rgb(100,180,70)',   // G5
+  ];
+
+  const yellowCenter = 'rgb(255,220,80)';
+
+  // Sprite colors - vibrant & cute! (rgb for sprites, hex for CSS var)
+  const spriteColors = [
+    { rgb: 'rgb(255,142,198)', hex: '#ff8ec6' },   // pink (primary - dog default)
+    { rgb: 'rgb(255,105,180)', hex: '#ff69b4' },  // hot-pink
+    { rgb: 'rgb(87,207,255)', hex: '#57cfff' },   // sky-blue
+    { rgb: 'rgb(180,255,105)', hex: '#b4ff69' },  // lime-green
+    { rgb: 'rgb(138,43,226)', hex: '#8a2be2' },   // blue-violet
+    { rgb: 'rgb(0,255,200)', hex: '#00ffc8' },    // aqua-mint
+    { rgb: 'rgb(255,165,0)', hex: '#ffa500' },    // orange
+    { rgb: 'rgb(255,99,71)', hex: '#ff6347' },    // tomato
+    { rgb: 'rgb(147,112,219)', hex: '#9370db' },  // purple
+    { rgb: 'rgb(64,224,208)', hex: '#40e0d0' },   // turquoise
+    { rgb: 'rgb(255,215,0)', hex: '#ffd700' },    // gold
+    { rgb: 'rgb(50,205,50)', hex: '#32cd32' },    // lime
+    { rgb: 'rgb(255,20,147)', hex: '#ff1493' },   // deep-pink
+    { rgb: 'rgb(0,191,255)', hex: '#00bfff' },    // deep-sky-blue
+    { rgb: 'rgb(186,85,211)', hex: '#ba55d3' },   // orchid
+  ];
+
+  // Crab-only colors (doesn't affect page theme)
+  const crabColors = [
+    'rgb(217,119,87)',   // coral (crab default)
+    'rgb(255,105,180)',  // hot-pink
+    'rgb(87,207,255)',   // sky-blue
+    'rgb(255,165,0)',    // orange
+    'rgb(255,99,71)',    // tomato
+    'rgb(64,224,208)',   // turquoise
+    'rgb(255,215,0)',    // gold
+    'rgb(50,205,50)',    // lime
+  ];
+
+  // Restore color preferences from localStorage
+  let dogColorIndex = parseInt(localStorage.getItem('dogColor') || '0', 10) % spriteColors.length;
+  let crabColorIndex = parseInt(localStorage.getItem('crabColor') || '0', 10) % crabColors.length;
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // FLOWER INITIALIZATION & HOVER
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function buildFlower(petal, stem, stemHeight) {
+    const stemHtml = (' <span class="flower-stem" style="color:' + stem + '">█</span>\n').repeat(stemHeight);
+    return '<span class="flower-inner">' +
+      ' <span class="flower-petal" style="color:' + petal + '">▄</span>\n' +
+      '<span class="flower-petal" style="color:' + petal + '">▀</span><span style="color:' + yellowCenter + '">█</span><span class="flower-petal" style="color:' + petal + '">▀</span>\n' +
+      stemHtml.trimEnd() + '</span>';
+  }
+
+  document.querySelectorAll('.flower-sprite').forEach((el, idx) => {
+    const base = parseFloat(el.dataset.base);
+    const offset = (Math.random() - 0.5) * 6;
+    el.style.left = (base + offset) + '%';
+
+    // Store original color for hover
+    const petal = petalColors[Math.floor(Math.random() * petalColors.length)];
+    const stem = stemColors[Math.floor(Math.random() * stemColors.length)];
+    const stemHeight = Math.floor(Math.random() * 2) + 1;
+
+    el.dataset.petal = petal;
+    el.dataset.stem = stem;
+    el.dataset.stemHeight = stemHeight;
+    el.innerHTML = buildFlower(petal, stem, stemHeight);
+
+    // Staggered entrance animation
+    el.style.animationDelay = (idx * 0.08) + 's';
+
+    // Hover: change color
+    el.addEventListener('mouseenter', () => {
+      const newPetal = petalColors[Math.floor(Math.random() * petalColors.length)];
+      el.querySelectorAll('.flower-petal').forEach(p => p.style.color = newPetal);
+    });
+  });
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // DOG & CRAB CLICK TO CHANGE COLOR
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const dogSprite = document.getElementById('dog-sprite');
+  const crabSprite = document.getElementById('crab-sprite');
+  const dogWrapper = document.getElementById('dog-wrapper');
+  const crabWrapper = document.getElementById('crab-wrapper');
+
+  // Set initial colors from saved preferences
+  if (dogSprite) {
+    const color = spriteColors[dogColorIndex];
+    dogSprite.style.color = color.rgb;
+    document.documentElement.style.setProperty('--primary', color.hex);
+  }
+
+  if (crabSprite) {
+    crabSprite.style.color = crabColors[crabColorIndex];
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SPRITE HELPERS - bubbles, dust, sparkles
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function spawnBubble(el, text) {
+    const bubble = document.createElement('div');
+    bubble.className = 'sprite-bubble';
+    bubble.textContent = text;
+    bubble.style.left = '50%';
+    bubble.style.bottom = '100%';
+    el.appendChild(bubble);
+    setTimeout(() => bubble.remove(), 800);
+  }
+
+  function spawnDust(el) {
+    for (let i = 0; i < 5; i++) {
+      const dust = document.createElement('div');
+      dust.className = 'sprite-dust';
+      dust.style.left = (40 + Math.random() * 20) + '%';
+      dust.style.setProperty('--dx', ((Math.random() - 0.5) * 30) + 'px');
+      el.appendChild(dust);
+      setTimeout(() => dust.remove(), 400);
+    }
+  }
+
+  function spawnSparkleTrail(el) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sprite-sparkle';
+    sparkle.textContent = ['✦', '✧', '★', '·'][Math.floor(Math.random() * 4)];
+    sparkle.style.left = (Math.random() * 60 + 20) + '%';
+    sparkle.style.bottom = (Math.random() * 30 + 10) + '%';
+    sparkle.style.color = ['#ff8ec6', '#ffd700', '#57cfff', '#b4ff69'][Math.floor(Math.random() * 4)];
+    el.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 600);
+  }
+
+  // Double-click tracking
+  let dogLastClick = 0;
+  let crabLastClick = 0;
+
+  if (dogWrapper && dogSprite) {
+    dogWrapper.addEventListener('click', () => {
+      const now = Date.now();
+
+      // Double-click easter egg - BACKFLIP!
+      if (now - dogLastClick < 300) {
+        dogWrapper.classList.add('dog-backflip');
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => spawnSparkleTrail(dogWrapper), i * 80);
+        }
+        setTimeout(() => dogWrapper.classList.remove('dog-backflip'), 600);
+        dogLastClick = 0;
+        return;
+      }
+      dogLastClick = now;
+
+      // Normal click - change color
+      dogColorIndex = (dogColorIndex + 1) % spriteColors.length;
+      localStorage.setItem('dogColor', dogColorIndex);
+      const color = spriteColors[dogColorIndex];
+      dogSprite.style.color = color.rgb;
+      document.documentElement.style.setProperty('--primary', color.hex);
+      dogWrapper.classList.add('sprite-pop');
+      setTimeout(() => dogWrapper.classList.remove('sprite-pop'), 200);
+    });
+  }
+
+  if (crabWrapper && crabSprite) {
+    crabWrapper.addEventListener('click', () => {
+      const now = Date.now();
+
+      // Double-click easter egg - CLAW CLACK!
+      if (now - crabLastClick < 300) {
+        crabWrapper.classList.add('crab-clack');
+        setTimeout(() => crabWrapper.classList.remove('crab-clack'), 500);
+        crabLastClick = 0;
+        return;
+      }
+      crabLastClick = now;
+
+      // Normal click - change color
+      crabColorIndex = (crabColorIndex + 1) % crabColors.length;
+      localStorage.setItem('crabColor', crabColorIndex);
+      crabSprite.style.color = crabColors[crabColorIndex];
+      crabWrapper.classList.add('sprite-pop');
+      setTimeout(() => crabWrapper.classList.remove('sprite-pop'), 200);
+    });
+  }
+
+  // Hover expand effect - expands then shrinks on each hover + speech bubble
+  if (dogWrapper) {
+    dogWrapper.addEventListener('mouseenter', () => {
+      dogWrapper.classList.add('sprite-expand');
+      setTimeout(() => dogWrapper.classList.remove('sprite-expand'), 120);
+      spawnBubble(dogWrapper, 'WOOF!');
+    });
+  }
+  if (crabWrapper) {
+    crabWrapper.addEventListener('mouseenter', () => {
+      crabWrapper.classList.add('sprite-expand');
+      setTimeout(() => crabWrapper.classList.remove('sprite-expand'), 120);
+      spawnBubble(crabWrapper, 'CLAUK!');
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // DOG & CRAB ANIMATIONS - Exact match to terminal display timing
+  // Runs at 100ms ticks with same probabilities as crab-garden.js
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // State machines (matching terminal exactly)
+  const dogState = {
+    phase: 'idle',  // 'idle' | 'skittering' | 'jumping' | 'pausing' | 'zoomies'
+    pauseFrames: 0,
+    zoomiesDashes: 0,
+    animating: false
+  };
+
+  const crabState = {
+    phase: 'idle',
+    pauseFrames: 0,
+    animating: false
+  };
+
+  // DOG CONFIG
+  const DOG = {
+    PROB_ZOOMIES: 0.015,
+    PROB_SKITTER: 0.05,
+    PROB_JUMP: 0.04,
+    PROB_PAUSE: 0.02,
+    PAUSE_MIN: 10,
+    PAUSE_RANGE: 20,
+    ZOOMIES_DASHES_MIN: 3,
+    ZOOMIES_DASHES_RANGE: 3
+  };
+
+  // CRAB CONFIG
+  const CRAB = {
+    PROB_SKITTER: 0.03,
+    PROB_JUMP: 0.02,
+    PROB_PAUSE: 0.03,
+    PAUSE_MIN: 15,
+    PAUSE_RANGE: 40
+  };
+
+  function tickDog() {
+    if (!dogWrapper) return;
+
+    switch (dogState.phase) {
+      case 'idle': {
+        const action = Math.random();
+        if (action < DOG.PROB_ZOOMIES) {
+          // ZOOMIES! with sparkle trail
+          dogState.phase = 'zoomies';
+          dogState.zoomiesDashes = DOG.ZOOMIES_DASHES_MIN + Math.floor(Math.random() * DOG.ZOOMIES_DASHES_RANGE);
+          dogWrapper.classList.add('dog-zoomies');
+          // Sparkle trail during zoomies
+          const sparkleInterval = setInterval(() => spawnSparkleTrail(dogWrapper), 100);
+          setTimeout(() => {
+            clearInterval(sparkleInterval);
+            dogWrapper.classList.remove('dog-zoomies');
+            dogState.phase = 'idle';
+          }, 1000);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER) {
+          // Skitter
+          dogState.phase = 'skittering';
+          const dir = Math.random() < 0.5 ? 'left' : 'right';
+          dogWrapper.classList.add('dog-skitter-' + dir);
+          setTimeout(() => {
+            dogWrapper.classList.remove('dog-skitter-' + dir);
+            dogState.phase = 'idle';
+          }, 400);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER + DOG.PROB_JUMP) {
+          // Jump with squash/stretch
+          dogState.phase = 'jumping';
+          dogWrapper.classList.add('dog-jump');
+          // Dust on landing
+          setTimeout(() => spawnDust(dogWrapper), 280);
+          setTimeout(() => {
+            dogWrapper.classList.remove('dog-jump');
+            dogState.phase = 'idle';
+          }, 350);
+        } else if (action < DOG.PROB_ZOOMIES + DOG.PROB_SKITTER + DOG.PROB_JUMP + DOG.PROB_PAUSE) {
+          // Pause
+          dogState.phase = 'pausing';
+          dogState.pauseFrames = DOG.PAUSE_MIN + Math.floor(Math.random() * DOG.PAUSE_RANGE);
+        }
+        break;
+      }
+      case 'pausing':
+        dogState.pauseFrames--;
+        if (dogState.pauseFrames <= 0) {
+          dogState.phase = 'idle';
+        }
+        break;
+      // skittering, jumping, zoomies handled by setTimeout
+    }
+  }
+
+  function tickCrab() {
+    if (!crabWrapper) return;
+
+    switch (crabState.phase) {
+      case 'idle': {
+        const action = Math.random();
+        if (action < CRAB.PROB_SKITTER) {
+          // Skitter
+          crabState.phase = 'skittering';
+          const dir = Math.random() < 0.5 ? 'left' : 'right';
+          crabWrapper.classList.add('crab-skitter-' + dir);
+          setTimeout(() => {
+            crabWrapper.classList.remove('crab-skitter-' + dir);
+            crabState.phase = 'idle';
+          }, 500);
+        } else if (action < CRAB.PROB_SKITTER + CRAB.PROB_JUMP) {
+          // Jump with dust
+          crabState.phase = 'jumping';
+          crabWrapper.classList.add('crab-jump');
+          setTimeout(() => spawnDust(crabWrapper), 240);
+          setTimeout(() => {
+            crabWrapper.classList.remove('crab-jump');
+            crabState.phase = 'idle';
+          }, 300);
+        } else if (action < CRAB.PROB_SKITTER + CRAB.PROB_JUMP + CRAB.PROB_PAUSE) {
+          // Pause
+          crabState.phase = 'pausing';
+          crabState.pauseFrames = CRAB.PAUSE_MIN + Math.floor(Math.random() * CRAB.PAUSE_RANGE);
+        }
+        break;
+      }
+      case 'pausing':
+        crabState.pauseFrames--;
+        if (crabState.pauseFrames <= 0) {
+          crabState.phase = 'idle';
+        }
+        break;
+    }
+  }
+
+  // Run at 150ms ticks
+  setInterval(tickDog, 150);
+  setInterval(tickCrab, 150);
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ENTRANCE ANIMATION
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const footer = document.querySelector('.garden-footer');
+  if (footer) {
+    footer.classList.add('garden-entrance');
+  }
+})();
+</script>
+
+  <script>
+(function() {
+  // ─── SCROLL TO TOP ON LOAD ──────────────────────────────────────────────────
+  window.scrollTo(0, 0);
+
+  // ─── COPY COMMAND ───────────────────────────────────────────────────────────
+  window.copyCommand = function(el) {
+    const text = el.querySelector('.command-text').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      el.classList.add('copied');
+      setTimeout(() => el.classList.remove('copied'), 1500);
+    });
+  };
+
+  // ─── HERO COMMAND SPOTLIGHT ─────────────────────────────────────────────────
+  const heroCommand = document.querySelector('.hero-command');
+  if (heroCommand) {
+    heroCommand.addEventListener('mouseenter', () => {
+      document.documentElement.classList.add('command-hover');
+    });
+    heroCommand.addEventListener('mouseleave', () => {
+      document.documentElement.classList.remove('command-hover');
+    });
+  }
+
+  // ─── THEME ───────────────────────────────────────────────────────────────────
+  function getTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function setTheme(t) {
+    localStorage.setItem('theme', t);
+    document.documentElement.dataset.theme = t;
+  }
+
+  window.toggleTheme = function() {
+    setTheme(getTheme() === 'dark' ? 'light' : 'dark');
+  };
+
+  setTheme(getTheme());
+
+  // ─── GARDEN TOGGLE ──────────────────────────────────────────────────────────
+  function getGarden() {
+    const saved = localStorage.getItem('garden');
+    return saved !== 'hidden';
+  }
+
+  function setGarden(show) {
+    localStorage.setItem('garden', show ? 'shown' : 'hidden');
+    document.documentElement.dataset.garden = show ? 'shown' : 'hidden';
+  }
+
+  window.toggleGarden = function() {
+    setGarden(!getGarden());
+  };
+
+  setGarden(getGarden());
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
+  // ─── FLOATING PIXELS ─────────────────────────────────────────────────────────
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const particles = ['▀', '▄', '█', '▌', '▐', '░', '▒', '▓', '◆', '◇', '★', '✦'];
+    const colors = ['#ff8ec6', '#57cfff', '#b4ff69', '#ffd700', '#ff6347', '#40e0d0'];
+
+    for (let i = 0; i < 15; i++) {
+      const p = document.createElement('span');
+      p.className = 'pixel-particle';
+      p.textContent = particles[Math.floor(Math.random() * particles.length)];
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      p.style.color = colors[Math.floor(Math.random() * colors.length)];
+      p.style.animationDelay = -Math.random() * 10 + 's';
+      p.style.fontSize = (10 + Math.random() * 12) + 'px';
+      hero.appendChild(p);
+    }
+  }
+
+  // ─── RANDOM GLITCH - sporadic 4-10 second intervals ─────────────────────────
+  function triggerGlitch() {
+    if (hero) {
+      hero.classList.add('glitching');
+      setTimeout(() => hero.classList.remove('glitching'), 600);
+    }
+    // Schedule next glitch at random interval (4-10 seconds)
+    const nextDelay = 4000 + Math.random() * 6000;
+    setTimeout(triggerGlitch, nextDelay);
+  }
+  // Start first glitch after 3-6 seconds
+  setTimeout(triggerGlitch, 3000 + Math.random() * 3000);
+
+  // ─── CLICK SPARKLES ─────────────────────────────────────────────────────────
+  document.addEventListener('click', (e) => {
+    // Skip sparkles in performance mode
+    if (document.documentElement.dataset.garden === 'hidden') return;
+    for (let i = 0; i < 6; i++) {
+      const spark = document.createElement('div');
+      spark.className = 'sparkle';
+      spark.style.left = e.clientX + (Math.random() - 0.5) * 40 + 'px';
+      spark.style.top = e.clientY + (Math.random() - 0.5) * 40 + 'px';
+      spark.style.background = ['#ff8ec6', '#57cfff', '#b4ff69', '#ffd700'][Math.floor(Math.random() * 4)];
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 600);
+    }
+  });
+
+  // ─── SCROLL HEADER ───────────────────────────────────────────────────────────
+  const header = document.querySelector('header');
+  let ticking = false;
+
+  function updateHeader() {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateHeader();
+
+  // ─── HELLO BAR ────────────────────────────────────────────────────────────────
+  const helloBar = document.querySelector('.hello-bar');
+  const dismissBtn = document.querySelector('.hello-bar-dismiss');
+  if (helloBar && dismissBtn) {
+    if (localStorage.getItem('hello-bar-dismissed')) {
+      helloBar.remove();
+    } else {
+      setTimeout(() => {
+        helloBar.classList.add('visible');
+        document.body.classList.add('hello-bar-active');
+
+        // Face scramble engine
+        const face = document.getElementById('hb-face');
+        const urlEl = document.getElementById('hb-url');
+        if (face) {
+          const bigEyes = 'O0@◉⊙●◎';
+          const smolEyes = 'o°·.•';
+          const wildEyes = '*#^~$&!?¤×÷±∞';
+          const allEyes = bigEyes + smolEyes + wildEyes;
+          const seps = '_-=~·•.:¯';
+          const others = ['o_◉', 'o_°', 'o_•', 'o_◎', 'o_⊙', 'o_◕', 'o_⦿', 'o_●', 'o_*', 'o_☉'];
+          const settled = [];
+          for (const f of others) {
+            settled.push('o_0', f);
+          }
+          const urls = ['oh0.ai', 'oh-zero.com', 'ohzero.ai', '@oh0'];
+          let idx = 0;
+          let urlIdx = 0;
+
+          // URL text scramble
+          function scrambleUrl() {
+            if (!urlEl) return;
+            urlIdx = (urlIdx + 1) % urls.length;
+            const target = urls[urlIdx];
+            let ticks = 0;
+            const chars = 'abcdefghijklmnopqrstuvwxyz0123456789.-/';
+            const run = setInterval(() => {
+              let out = '';
+              for (let i = 0; i < target.length; i++) {
+                out += ticks > (i * 0.8) ? target[i] : chars[Math.floor(Math.random() * chars.length)];
+              }
+              urlEl.textContent = out;
+              ticks++;
+              if (ticks >= target.length + 3) {
+                clearInterval(run);
+                urlEl.textContent = target;
+              }
+            }, 40);
+          }
+
+          // Face reacts directly to mouse movement
+          let settleTimer = null;
+          let hoveringBar = false;
+          const helloBar = document.querySelector('.hello-bar');
+          helloBar.addEventListener('mouseenter', () => { hoveringBar = true; });
+          helloBar.addEventListener('mouseleave', () => { hoveringBar = false; });
+          document.addEventListener('mousemove', (e) => {
+            const speed = Math.abs(e.movementX) + Math.abs(e.movementY);
+            if (speed < 3) return;
+            if (hoveringBar) {
+              face.textContent = 'o_0';
+              face.classList.remove('glitching');
+              return;
+            }
+            // Random face on every move
+            const a = allEyes[Math.floor(Math.random() * allEyes.length)];
+            const s = seps[Math.floor(Math.random() * seps.length)];
+            const b = allEyes[Math.floor(Math.random() * allEyes.length)];
+            face.textContent = a + s + b;
+            face.classList.add('glitching');
+            // Reset settle timer
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(() => {
+              idx = (idx + 1) % settled.length;
+              face.textContent = settled[idx];
+              face.classList.remove('glitching');
+              face.classList.add('landed');
+              setTimeout(() => face.classList.remove('landed'), 300);
+            }, 200);
+          });
+          setInterval(scrambleUrl, 7000);
+        }
+      }, 3000);
+
+      dismissBtn.addEventListener('click', () => {
+        helloBar.classList.add('dismissing');
+        document.body.classList.remove('hello-bar-active');
+        setTimeout(() => {
+          helloBar.remove();
+          localStorage.setItem('hello-bar-dismissed', '1');
+        }, 400);
+      });
+    }
+  }
+
+  // ─── MOBILE NAV ──────────────────────────────────────────────────────────────
+  const navToggle = document.getElementById('nav-toggle');
+  const nav = document.querySelector('nav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('change', () => {
+      const isOpen = navToggle.checked;
+      nav.classList.toggle('open', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+      if (isOpen) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  // ─── DROPDOWN TOGGLES (mobile accordion, desktop hover) ───────────────────────
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  const isMobile = () => window.innerWidth <= 768;
+
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        if (isMobile()) {
+          e.preventDefault();
+          // Close other dropdowns
+          dropdowns.forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+          });
+          dropdown.classList.toggle('open');
+        }
+      });
+    }
+  });
+
+  // Close dropdowns when clicking outside on mobile
+  document.addEventListener('click', (e) => {
+    if (isMobile() && !e.target.closest('.nav-dropdown')) {
+      dropdowns.forEach(d => d.classList.remove('open'));
+    }
+  });
+
+})();
+</script>
+  
+  <script>window.FILE_CONTENTS = {"__clappie__claude_skills_telegram_bot_webhooks_routes_incoming_message_js":{"explainer":"Receives Telegram updates, parses messages, downloads attachments, and spawns sidekicks.","content":"// Telegram webhook handler - spawns sidekicks for messages\n\nexport default {\n  path: '{webhook-path}',\n  name: 'incoming-message',\n  events: ['*'],  // Catch-all\n  action: 'run',\n\n  run: async (payload, ctx) => {\n    const msg = parseMessage(payload);\n    if (!msg) return { handled: true };\n\n    // Check allowed users\n    const allowedUsers = ctx.loadSkillSettingList('users');\n    if (!isAllowedUser(msg.userId, allowedUsers)) {\n      return { handled: true };\n    }\n\n    // Download attachments to recall/files/telegram/\n    const attachments = await downloadAttachments(msg, ctx);\n\n    return {\n      sidekick: true,\n      conversationId: msg.chatId,\n      userId: msg.userId,\n      content: msg.text,\n      context: `telegram user ${msg.userId}`,\n      attachments,\n    };\n  }\n};"},"__clappie__claude_skills_telegram_bot_webhooks_verify_js":{"explainer":"Telegram sends a secret token in the header. Simple string comparison.","content":"// Telegram webhook signature verification\n\nexport default function verify(req, rawBody, env) {\n  const token = req.headers.get('x-telegram-bot-api-secret-token');\n  const secret = env.TELEGRAM_WEBHOOK_SECRET;\n  return token === secret;\n}"},"__clappie__claude_skills_telegram_bot_webhooks_send_js":{"explainer":"Functions for sending messages back to Telegram. Used by sidekicks to reply.","content":"// Telegram send functions - used by Sidekick to reply\n\nexport async function send(chatId, message, options = {}) {\n  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;\n  return fetch(url, {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify({ chat_id: chatId, text: message }),\n  });\n}\n\nexport async function sendPhoto(chatId, filePath, caption) { /* ... */ }\nexport async function sendDocument(chatId, filePath, caption) { /* ... */ }\nexport async function sendVoice(chatId, filePath, caption) { /* ... */ }\nexport async function setReaction(chatId, messageId, emoji) { /* ... */ }"},"__clappie__claude_skills_telegram_bot_SKILL_md":{"explainer":"Complete instructions for setting up the Telegram bot - BotFather, webhook, Tailscale Funnel, etc.","content":"# Telegram Bot Skill\n\nText your AI from anywhere via Telegram.\n\n## Setup\n\n1. Create bot with @BotFather → get token\n2. Add to .env: TELEGRAM_BOT_TOKEN, TELEGRAM_WEBHOOK_SECRET\n3. Enable: echo \"true\" > recall/settings/telegram-bot/enabled.txt\n4. Add your user ID: echo \"123456\" > recall/settings/telegram-bot/users.txt\n5. Start sidekicks: clappie background start sidekicks\n6. Expose via Tailscale: tailscale funnel 7777\n7. Set webhook with Telegram API\n\n## CLI Commands\n\nclappie telegram send <chatId> <message>\nclappie telegram photo <chatId> <path>\nclappie telegram react <chatId> <msgId> <emoji>"},"__clappie__claude_skills_telegram_bot_telegram_js":{"explainer":"Handles clappie telegram <command> calls.","content":"#!/usr/bin/env bun\n// Telegram bot CLI - clappie telegram <command>\n\nimport * as api from './webhooks/send.js';\n\nconst [cmd, ...args] = process.argv.slice(2);\n\nswitch (cmd) {\n  case 'send': {\n    const [chatId, ...msg] = args;\n    await api.send(chatId, msg.join(' '));\n    console.log('✓ Sent');\n    break;\n  }\n  case 'photo': {\n    const [chatId, path, ...caption] = args;\n    await api.sendPhoto(chatId, path, caption.join(' '));\n    console.log('✓ Photo sent');\n    break;\n  }\n  case 'react': {\n    const [chatId, msgId, emoji] = args;\n    await api.setReaction(chatId, parseInt(msgId), emoji);\n    console.log('✓ Reacted');\n    break;\n  }\n}"},"__clappie__claude_skills_telegram_bot_webhook_json":{"explainer":"Points to verification function and env var for signing secret.","content":"{\n  \"signing\": {\n    \"verify\": \"webhooks/verify.js\",\n    \"secretEnvVar\": \"TELEGRAM_WEBHOOK_SECRET\"\n  },\n  \"send\": \"webhooks/send.js\"\n}"},"__clappie__claude_skills_telegram_bot__env_example":{"explainer":"","content":"TELEGRAM_BOT_TOKEN=123456:ABC-your-bot-token\nTELEGRAM_WEBHOOK_SECRET=any-random-secret-you-make-up"},"__clappie__claude_skills_slack_bot_webhooks_routes_incoming_message_js":{"explainer":"Receives Slack events, handles URL verification, parses messages, manages threads.","content":"// Slack events handler - spawns sidekicks for messages\n\nexport default {\n  path: '{webhook-path}',\n  name: 'incoming-message',\n  events: ['*'],\n  action: 'run',\n\n  run: async (payload, ctx) => {\n    const msg = parseMessage(payload);\n\n    // URL verification challenge\n    if (msg._challenge) {\n      return { handled: true, challenge: msg._challenge };\n    }\n\n    // Check allowed users\n    const allowedUsers = ctx.loadSkillSettingList('users');\n    if (!isAllowedUser(msg.userId, allowedUsers)) {\n      return { handled: true };\n    }\n\n    // Threads become separate conversations\n    let conversationId = msg.chatId;\n    if (msg.threadTs) {\n      conversationId = `${msg.chatId}:${msg.threadTs}`;\n    }\n\n    return {\n      sidekick: true,\n      conversationId,\n      userId: msg.userId,\n      content: msg.text,\n      context: `slack channel ${msg.chatId}`,\n    };\n  }\n};"},"__clappie__claude_skills_slack_bot_webhooks_verify_js":{"explainer":"Slack uses HMAC-SHA256 with timestamp for replay protection. More complex than Telegram.","content":"// Slack webhook signature verification\n// HMAC-SHA256 with timestamp replay protection\n\nimport crypto from 'crypto';\n\nexport default function verify(req, rawBody, env) {\n  const signature = req.headers.get('x-slack-signature');\n  const timestamp = req.headers.get('x-slack-request-timestamp');\n\n  if (!signature || !timestamp) return false;\n\n  // Reject old requests (5 min window)\n  const now = Math.floor(Date.now() / 1000);\n  if (Math.abs(now - parseInt(timestamp)) > 300) return false;\n\n  const sigBase = `v0:${timestamp}:${rawBody}`;\n  const expected = 'v0=' + crypto\n    .createHmac('sha256', env.SLACK_SIGNING_SECRET)\n    .update(sigBase)\n    .digest('hex');\n\n  return crypto.timingSafeEqual(\n    Buffer.from(expected),\n    Buffer.from(signature)\n  );\n}"},"__clappie__claude_skills_slack_bot_SKILL_md":{"explainer":"Complete instructions for setting up Slack bot - app creation, scopes, events, etc.","content":"# Slack Bot Skill\n\nAI in your Slack workspace. Threads become separate sidekicks.\n\n## Setup\n\n1. Create Slack App at api.slack.com/apps\n2. Add Bot Token Scopes: chat:write, files:read, reactions:write\n3. Subscribe to events: message.im, message.channels, reaction_added\n4. Install to workspace → get Bot Token\n5. Add to .env: SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET\n6. Enable: echo \"true\" > recall/settings/slack-bot/enabled.txt\n7. Start sidekicks: clappie background start sidekicks\n8. Set Request URL in Slack app settings\n\n## CLI Commands\n\nclappie slack-bot send <channel> <message>\nclappie slack-bot thread <channel:ts> <message>\nclappie slack-bot react <channel> <ts> <emoji>"},"__clappie__claude_skills_slack_bot_slack_bot_js":{"explainer":"Handles clappie slack-bot <command> calls.","content":"#!/usr/bin/env bun\n// Slack bot CLI - clappie slack-bot <command>\n\nimport * as api from './webhooks/send.js';\n\nconst [cmd, ...args] = process.argv.slice(2);\n\nswitch (cmd) {\n  case 'send': {\n    const [channel, ...msg] = args;\n    await api.send(channel, msg.join(' '));\n    console.log('✓ Sent');\n    break;\n  }\n  case 'thread': {\n    const [channelTs, ...msg] = args;\n    await api.send(channelTs, msg.join(' '));\n    console.log('✓ Replied in thread');\n    break;\n  }\n  case 'react': {\n    const [channel, ts, emoji] = args;\n    await api.setReaction(channel, ts, emoji);\n    console.log('✓ Reacted');\n    break;\n  }\n}"},"__clappie__claude_skills_slack_bot_webhook_json":{"explainer":"","content":"{\n  \"signing\": {\n    \"verify\": \"webhooks/verify.js\",\n    \"secretEnvVar\": \"SLACK_SIGNING_SECRET\"\n  },\n  \"send\": \"webhooks/send.js\"\n}"},"__clappie__claude_skills_slack_bot__env_example":{"explainer":"","content":"SLACK_BOT_TOKEN=xoxb-your-bot-token\nSLACK_SIGNING_SECRET=your-signing-secret"},"__clappie__claude_settings_json":{"explainer":"Configure your Claude Code experience. Permissions control what tools Claude can use. Deny patterns protect sensitive files.","content":"{\n  \"permissions\": {\n    \"allow\": [\n      \"Read\",\n      \"Edit\",\n      \"Write\",\n      \"Task\",\n      \"Skill\",\n      \"WebFetch\",\n      \"WebSearch\",\n      \"TodoWrite\",\n      \"mcp__*\",\n      \"Bash\",\n      \"Glob\",\n      \"Grep\"\n    ],\n    \"deny\": [\n      \"Read(.env)\",\n      \"Read(**/.env)\",\n      \"Edit(.env)\",\n      \"Edit(**/.env)\",\n      \"Write(.env)\"\n    ]\n  }\n}"},"__clappie_chores_bots_clean_notifications_txt":{"explainer":"This is the core notification processing heartbeat. It reads raw dumps from dirty/, applies your rules, and creates curated items in clean/. Runs every 15 minutes with Sonnet.","content":"Process incoming notifications from dirty/ folder.\n\n1. Read all files in notifications/dirty/\n2. Parse and understand each notification\n3. Apply rules from notifications/instructions.txt\n4. Create curated items in notifications/clean/\n5. Delete processed files from dirty/\n6. For urgent items, ping via Telegram\n\nLog to recall/logs/heartbeat/\n\n[heartbeat-meta]\ninterval: 15m\nmodel: sonnet"},"__clappie_chores_bots__imessage_dump_to_dirty_txt":{"explainer":"Prefix a filename with a dot to disable it. The heartbeat runner skips dotfiles. Remove the dot to re-enable.","content":""},"__clappie_chores_humans_reply_cto_roadmap_txt":{"explainer":"AI drafted this email based on your calendar and recent context. Edit the draft if needed, then approve to send.","content":"Reply to CTO about Q1 roadmap input\n\nDraft email to send:\n\nTo: cto@acme-corp.com\nSubject: Re: Q1 Roadmap - Need Your Input TODAY\n\nHi,\n\nHere's my input on the Q1 roadmap:\n\n**API Migration (my main focus)**\n- Current status: 60% complete, on track for Feb 28\n- Blockers: Need DevOps bandwidth for cutover\n\n**My Recommendation**\n- Ship migration first, tackle rate limits in Q2\n\nHappy to jump on a call if you want to discuss.\n\nNick\n\n---\n[chore-meta]\nstatus: pending\ncreated: 2026-02-04 09:17\ncontext: notification processing\nicon: 📧\ntitle: Reply to CTO about Q1 roadmap\nsummary: Draft ready - needs your review before sending"},"__clappie_notifications_dirty_github_prs_json":{"explainer":"Raw GitHub notifications. AI parses this and creates clean items for what matters.","content":"[\n  {\n    \"id\": \"1234567890\",\n    \"reason\": \"review_requested\",\n    \"subject\": {\n      \"title\": \"feat: add webhook routing\",\n      \"type\": \"PullRequest\"\n    },\n    \"repository\": { \"full_name\": \"org/repo\" }\n  }\n]"},"__clappie_notifications_clean_cto_q1_roadmap_txt":{"explainer":"AI read the email, understood context, and drafted a reply. Linked chore lets you review before sending.","content":"CTO needs Q1 roadmap input today\n\nEmail from cto@acme-corp.com at 08:45 marked IMPORTANT.\nSubject: \"Re: Q1 Roadmap - Need Your Input TODAY\"\n\nProbably wants your take on the API migration timeline\nand resource allocation.\n\nAction: Drafted a reply summarizing current status and blockers.\n\n---\n[meta]\nsource: email\nsource_id: gmail-18e2a7b3c4d5e\ncreated: 2026-02-04 09:17\nicon: 📋\ntitle: CTO needs Q1 roadmap input\nsummary: Marked IMPORTANT - due today, draft ready\nchore: reply-cto-roadmap"},"__clappie_notifications_clean_auto_handled_txt":{"explainer":"Newsletters unsubscribed, meetings auto-accepted, noise filtered. Nothing needed from you.","content":""},"__clappie_notifications_instructions_txt":{"explainer":"Edit this to customize how AI triages your notifications.","content":"# My Notification Rules\n\n## Normal stuff\n- Newsletters: try to unsubscribe via the link, hate spam\n- Work emails: auto-draft a reply (use Dropbox, calendar, etc.\n  as needed) and create a chore for me to review\n- Calendar invites: triple check no conflict on work AND\n  personal calendars, then auto-accept\n\n## Urgent stuff\n- Take liberties on what's actually urgent\n- If urgent: still move to clean, but ALSO ping me on\n  Telegram immediately - just shoot me a text ASAP!\n- If my chores queue gets more than 10 items, text me"},"__clappie_recall_memory_personal_txt":{"explainer":"One fact per line. Claude reads these to understand who you are.","content":"Has a dog named Korra (corgi)\nWife is Abby, married 2023\nLives in Leesburg, VA\nBirthday is March 15\nParents live nearby, Sunday dinners"},"__clappie_recall_settings_theme_mode_txt":{"explainer":"","content":"dark"},"__clappie_recall_settings_theme_scene_txt":{"explainer":"","content":"shown"},"__clappie_recall_settings_theme_animations_txt":{"explainer":"","content":"on"},"__clappie_recall_settings_theme_colors_txt":{"explainer":"","content":"default"},"__clappie_recall_settings_theme_toggle_txt":{"explainer":"","content":"on"},"__clappie_recall_settings_theme_crab_txt":{"explainer":"","content":"on"},"__clappie_recall_settings_theme_dog_txt":{"explainer":"","content":"on"},"__clappie_recall_settings_heartbeat_enabled_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_heartbeat_interval_txt":{"explainer":"","content":"300"},"__clappie_recall_settings_heartbeat_starting_model_txt":{"explainer":"","content":"sonnet"},"__clappie_recall_settings_sidekicks_webhooks__demo_dirty_js":{"explainer":"Simplest webhook mode: just dump the payload to notifications/dirty/ for later processing.","content":"// Simplest mode: just dump payload to dirty/\nexport default {\n  path: 'ifttt/{webhook-path}',\n  signing: 'none',\n  prefix: 'ifttt',\n  // No run() = auto-dumps to notifications/dirty/\n}"},"__clappie_recall_settings_sidekicks_webhooks__demo_sidekick_js":{"explainer":"Spawn an autonomous Claude session to handle the webhook intelligently.","content":"// Spawn an AI sidekick to handle the webhook\nexport default {\n  path: 'github/{webhook-path}',\n  signing: 'hmac',\n  secret: 'GITHUB_WEBHOOK_SECRET',\n  instructions: `\n    You received a GitHub webhook.\n    If I was @mentioned, send me a Telegram notification.\n    Otherwise, log it and complete.\n  `\n}"},"__clappie_recall_settings_sidekicks_webhooks__demo_run_js":{"explainer":"Full control mode: write your own logic to decide what to do with the webhook.","content":"// Custom logic to decide what to do\nexport default {\n  path: 'alerts/{webhook-path}',\n  signing: 'hmac',\n  secret: 'ALERTS_WEBHOOK_SECRET',\n  async run(payload, ctx) {\n    if (payload.priority === 'high') {\n      return { sidekick: true, content: `URGENT: ${payload.message}` };\n    }\n    return { noise: true };  // dump to dirty/\n  }\n}"},"__clappie_recall_settings_sidekicks_port_txt":{"explainer":"","content":"7777"},"__clappie_recall_settings_sidekicks_default_model_txt":{"explainer":"","content":"opus"},"__clappie_recall_settings_sidekicks_prompt_mode_txt":{"explainer":"","content":"system"},"__clappie_recall_settings_sidekicks_allowed_send_file_paths_txt":{"explainer":"","content":"recall/files\n/tmp\n~/Downloads"},"__clappie_recall_settings_telegram_bot_webhooks_incoming_message_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_telegram_bot_enabled_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_telegram_bot_webhook_path_txt":{"explainer":"","content":"abc123xyz"},"__clappie_recall_settings_telegram_bot_sidekick_prompt_txt":{"explainer":"","content":"You are my personal AI assistant via Telegram.\nBe casual and brief - this is mobile.\nUse emoji occasionally.\nFor complex tasks, confirm before acting."},"__clappie_recall_settings_telegram_bot_users_txt":{"explainer":"","content":"123456789"},"__clappie_recall_settings_slack_bot_webhooks_incoming_message_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_slack_bot_enabled_txt":{"explainer":"","content":"false"},"__clappie_recall_settings_slack_bot_webhook_path_txt":{"explainer":"","content":"slack-secret-123"},"__clappie_recall_settings_github_webhooks_fork_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_github_webhooks_star_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_github_webhooks_pull_request_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_github_webhooks_issues_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_github_webhooks_push_txt":{"explainer":"","content":"false"},"__clappie_recall_settings_github_webhooks_release_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_github_enabled_txt":{"explainer":"","content":"true"},"__clappie_recall_settings_github_webhook_path_txt":{"explainer":"","content":"x7k9m2p4"},"__clappie_recall_oauth_demo_oauth_json":{"explainer":"OAuth tokens are stored per-provider. Contains access_token, refresh_token, and expiry. Auto-refreshes when expired.","content":"{\n  \"access_token\": \"ya29.xxx...\",\n  \"refresh_token\": \"1//xxx...\",\n  \"expires_at\": 1706990400000,\n  \"scope\": \"https://www.googleapis.com/auth/calendar.readonly\"\n}"},"__clappie_recall_profile_txt":{"explainer":"Auto-generated by heartbeat. Synthesizes all memory files into one profile Claude reads at a glance.","content":"# Nick\n\nLocation: Leesburg, VA\nWife: Abby (married 2023)\nDog: Korra (corgi)\n\n## Communication Style\nDirect, zero fluff. Expects autonomous action.\nHATES explanatory preambles - just do it.\nCasual tone - \"we're friends not formal\".\nUses \"dog\", \"bro\", swears naturally.\n\n## Work\nSenior engineer, API migration lead.\nPrefers Bun over Node, TypeScript."},"__clappie_projects__gitignore":{"explainer":"The outer clappie repo tracks projects/ by default. Quick apps and static sites get committed normally. But if a project has its own .git/ (cloned repos, serious standalone projects), it MUST be listed here so git clean doesn't destroy it.","content":"# Rule: if it has its own git, add it here.\n#\n# Example:\n#   my-cloned-repo/\n#   big-serious-project/"},"__clappie__env":{"explainer":"Store all your API keys here. Never commit this file.","content":"# Telegram\nTELEGRAM_BOT_TOKEN=123456:ABC...\nTELEGRAM_WEBHOOK_SECRET=your-secret\n\n# Slack\nSLACK_BOT_TOKEN=xoxb-...\nSLACK_SIGNING_SECRET=...\n\n# OpenAI (for Whisper)\nOPENAI_API_KEY=sk-...\n\n# OAuth clients (per-integration)\nGOOGLE_CLIENT_ID=...\nGOOGLE_CLIENT_SECRET=..."},"__clappie_CLAUDE_md":{"explainer":"Tiny file. Just personality and a few pointers. The whole config.","content":""}};</script>
+  <script>
+(function() {
+  // Tab switching
+  window.switchTab = function(tab) {
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === tab);
+    });
+    document.querySelectorAll('.tab-content').forEach(content => {
+      content.classList.toggle('active', content.id === 'tab-' + tab);
+    });
+  };
+
+  // Sidebar collapse toggle
+  window.toggleTreeSidebar = function() {
+    const tree = document.querySelector('.file-tree');
+    const wrapper = document.querySelector('.tree-wrapper');
+    tree.classList.toggle('collapsed');
+    const isCollapsed = tree.classList.contains('collapsed');
+    const width = isCollapsed ? '50px' : '250px';
+    wrapper.style.width = width;
+    wrapper.style.minWidth = width;
+    tree.style.width = width;
+  };
+
+  // Folder toggle
+  window.toggleFolder = function(el) {
+    const path = el.dataset.path;
+    const children = document.querySelector('.tree-children[data-path="' + path + '"]');
+    const arrow = el.querySelector('.tree-arrow');
+    if (children) {
+      children.classList.toggle('collapsed');
+      arrow.textContent = children.classList.contains('collapsed') ? '▶' : '▼';
+    }
+  };
+
+  // JS-based sticky file tree
+  const tree = document.querySelector('.file-tree');
+  const wrapper = document.querySelector('.tree-wrapper');
+  const layout = document.querySelector('.docs-layout');
+  if (tree && wrapper && layout) {
+    const treeWidth = tree.offsetWidth;
+    wrapper.style.width = treeWidth + 'px';
+    wrapper.style.minWidth = treeWidth + 'px';
+    wrapper.style.flexShrink = '0';
+
+    let ticking = false;
+
+    function updateSticky() {
+      const layoutRect = layout.getBoundingClientRect();
+      const layoutBottom = layoutRect.bottom;
+      const viewportHeight = window.innerHeight;
+
+      if (layoutRect.top <= 0 && layoutBottom > viewportHeight) {
+        tree.style.position = 'fixed';
+        tree.style.top = '0';
+        tree.style.left = layoutRect.left + 'px';
+        tree.style.height = '100vh';
+        tree.style.width = treeWidth + 'px';
+        tree.classList.add('sticky');
+      } else if (layoutBottom <= viewportHeight && layoutRect.top <= 0) {
+        tree.style.position = 'absolute';
+        tree.style.top = 'auto';
+        tree.style.bottom = '0';
+        tree.style.left = '0';
+        tree.style.height = '100vh';
+        tree.style.width = treeWidth + 'px';
+        tree.classList.add('sticky');
+      } else {
+        tree.style.position = 'relative';
+        tree.style.top = 'auto';
+        tree.style.bottom = 'auto';
+        tree.style.left = 'auto';
+        tree.style.height = '100%';
+        tree.style.width = '';
+        tree.classList.remove('sticky');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateSticky);
+        ticking = true;
+      }
+    });
+    window.addEventListener('resize', updateSticky);
+    updateSticky();
+  }
+
+  // File preview modal with explainer + content
+  window.showPreview = function(path, fileId) {
+    let modal = document.getElementById('preview-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'preview-modal';
+      modal.className = 'preview-modal';
+      modal.innerHTML = '<div class="preview-backdrop" onclick="closePreview()"></div>' +
+        '<div class="preview-content">' +
+        '<div class="preview-header">' +
+        '<span class="preview-path"></span>' +
+        '<button class="preview-close" onclick="closePreview()">✕</button>' +
+        '</div>' +
+        '<div class="preview-body"></div>' +
+        '</div>';
+      document.body.appendChild(modal);
+    }
+
+    modal.querySelector('.preview-path').textContent = path;
+
+    const bodyEl = modal.querySelector('.preview-body');
+    const fileData = window.FILE_CONTENTS && window.FILE_CONTENTS[fileId];
+
+    if (fileData && (fileData.content || fileData.explainer)) {
+      let html = '';
+      if (fileData.explainer) {
+        html += '<div class="preview-explainer">' + fileData.explainer + '</div>';
+      }
+      if (fileData.content) {
+        // Detect language from filename
+        let lang = 'javascript';
+        if (fileId.endsWith('.json')) lang = 'json';
+        else if (fileId.endsWith('.md')) lang = 'markdown';
+        else if (fileId.endsWith('.sh') || fileId.endsWith('.bash')) lang = 'bash';
+        html += '<pre class="preview-code"><code class="language-' + lang + '">' + escapeHtmlClient(fileData.content) + '</code></pre>';
+      }
+      bodyEl.innerHTML = html;
+      // Apply Prism syntax highlighting
+      const codeEl = bodyEl.querySelector('code[class*="language-"]');
+      if (codeEl && window.Prism) Prism.highlightElement(codeEl);
+    } else {
+      bodyEl.innerHTML = '<p class="preview-no-content">No preview available</p>';
+    }
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Info tooltip on hover
+  let infoTooltip = null;
+  document.querySelectorAll('.tree-item[data-info]').forEach(item => {
+    item.addEventListener('mouseenter', (e) => {
+      const info = item.dataset.info;
+      if (!info) return;
+
+      if (!infoTooltip) {
+        infoTooltip = document.createElement('div');
+        infoTooltip.className = 'tree-info-tooltip';
+        document.body.appendChild(infoTooltip);
+      }
+
+      infoTooltip.textContent = info;
+      infoTooltip.classList.add('visible');
+
+      const rect = item.getBoundingClientRect();
+      infoTooltip.style.left = (rect.right + 8) + 'px';
+      infoTooltip.style.top = rect.top + 'px';
+    });
+
+    item.addEventListener('mouseleave', () => {
+      if (infoTooltip) infoTooltip.classList.remove('visible');
+    });
+  });
+
+  function escapeHtmlClient(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  window.closePreview = function() {
+    const modal = document.getElementById('preview-modal');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  // ESC to close preview
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePreview();
+  });
+
+  // Section-based highlighting with auto-expand
+  // Find all h2/h3 with ids and watch scroll position
+  const sections = document.querySelectorAll('h2[id], h3[id]');
+  const treeItems = document.querySelectorAll('.tree-item[data-highlights]');
+
+  // Helper: expand all parent folders of an element
+  function expandParents(item) {
+    let parent = item.parentElement;
+    while (parent) {
+      if (parent.classList.contains('tree-children') && parent.classList.contains('collapsed')) {
+        parent.classList.remove('collapsed');
+        // Update the arrow on the parent folder
+        const path = parent.dataset.path;
+        const folder = document.querySelector('.tree-dir[data-path="' + path + '"]');
+        if (folder) {
+          const arrow = folder.querySelector('.tree-arrow');
+          if (arrow) arrow.textContent = '▼';
+        }
+      }
+      parent = parent.parentElement;
+    }
+  }
+
+  // Helper: expand children of a folder
+  function expandChildren(item) {
+    if (!item.classList.contains('tree-dir')) return;
+    const path = item.dataset.path;
+    const children = document.querySelector('.tree-children[data-path="' + path + '"]');
+    if (children && children.classList.contains('collapsed')) {
+      children.classList.remove('collapsed');
+      const arrow = item.querySelector('.tree-arrow');
+      if (arrow) arrow.textContent = '▼';
+    }
+  }
+
+  let hasScrolled = false;
+
+  function updateHighlights() {
+    let currentSection = '';
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 150) {
+        currentSection = section.id || section.textContent.toLowerCase().replace(/[^a-z0-9]/g, '-');
+      }
+    });
+
+    // Track which items to scroll to (first highlighted one)
+    let firstNewHighlight = null;
+
+    treeItems.forEach(item => {
+      const highlights = (item.dataset.highlights || '').split(',').filter(Boolean);
+      const isHighlighted = highlights.some(h => currentSection.includes(h));
+      const wasHighlighted = item.classList.contains('highlighted');
+      item.classList.toggle('highlighted', isHighlighted);
+
+      if (hasScrolled) {
+        // Auto-expand when highlighted
+        if (isHighlighted && !wasHighlighted) {
+          expandParents(item);
+          expandChildren(item);
+          if (!firstNewHighlight) firstNewHighlight = item;
+        }
+        // Auto-collapse when un-highlighted
+        if (!isHighlighted && wasHighlighted) {
+          collapseChildren(item);
+        }
+      }
+    });
+
+    // Scroll to first newly highlighted item
+    if (firstNewHighlight) {
+      scrollTreeToItem(firstNewHighlight);
+    }
+  }
+
+  // Collapse children of a folder
+  function collapseChildren(item) {
+    if (!item.classList.contains('tree-dir')) return;
+    const path = item.dataset.path;
+    const children = document.querySelector('.tree-children[data-path="' + path + '"]');
+    if (children && !children.classList.contains('collapsed')) {
+      children.classList.add('collapsed');
+      const arrow = item.querySelector('.tree-arrow');
+      if (arrow) arrow.textContent = '▶';
+    }
+  }
+
+  // Scroll tree to show item at 25% from top
+  function scrollTreeToItem(item) {
+    const fileTree = document.querySelector('.file-tree');
+    if (!fileTree) return;
+
+    const treeRect = fileTree.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    const targetOffset = treeRect.height * 0.25;
+
+    // Calculate where item is relative to tree
+    const itemTopInTree = itemRect.top - treeRect.top + fileTree.scrollTop;
+    const scrollTo = itemTopInTree - targetOffset;
+
+    fileTree.scrollTo({ top: Math.max(0, scrollTo), behavior: 'smooth' });
+  }
+
+  window.addEventListener('scroll', () => {
+    hasScrolled = true;
+    updateHighlights();
+  });
+  updateHighlights();
+
+  // ─── TABLE OF CONTENTS SCROLL SPY ─────────────────────────────────────────────
+  const tocItems = document.querySelectorAll('.toc-item');
+  const tocHeadings = document.querySelectorAll('h2[id], h3[id]');
+
+  function updateTOC() {
+    if (!tocItems.length || !tocHeadings.length) return;
+
+    let currentId = '';
+
+    tocHeadings.forEach(heading => {
+      const rect = heading.getBoundingClientRect();
+      if (rect.top <= 120) {
+        currentId = heading.id;
+      }
+    });
+
+    tocItems.forEach(item => {
+      const isActive = item.dataset.id === currentId;
+      item.classList.toggle('active', isActive);
+    });
+  }
+
+  window.addEventListener('scroll', updateTOC, { passive: true });
+  updateTOC();
+
+  // Smooth scroll for TOC links
+  tocItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = item.dataset.id;
+      const target = document.getElementById(id);
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ─── TOC STICKY (mirrors file tree logic) ─────────────────────────────────────
+  const toc = document.querySelector('.toc-sidebar');
+  const tocWrapper = document.querySelector('.toc-wrapper');
+  if (toc && tocWrapper && layout) {
+    const tocWidth = toc.offsetWidth;
+    tocWrapper.style.width = tocWidth + 'px';
+    tocWrapper.style.minWidth = tocWidth + 'px';
+    tocWrapper.style.flexShrink = '0';
+
+    let tocTicking = false;
+
+    function updateTocSticky() {
+      const layoutRect = layout.getBoundingClientRect();
+      const layoutBottom = layoutRect.bottom;
+      const viewportHeight = window.innerHeight;
+
+      if (layoutRect.top <= 0 && layoutBottom > viewportHeight) {
+        // Fixed: stick to viewport
+        toc.style.position = 'fixed';
+        toc.style.top = '0';
+        toc.style.left = (layoutRect.right - tocWidth) + 'px';
+        toc.style.right = 'auto';
+        toc.style.height = '100vh';
+        toc.style.width = tocWidth + 'px';
+        toc.classList.add('sticky');
+      } else if (layoutBottom <= viewportHeight && layoutRect.top <= 0) {
+        // Absolute: stick to bottom of layout
+        toc.style.position = 'absolute';
+        toc.style.top = 'auto';
+        toc.style.bottom = '0';
+        toc.style.left = 'auto';
+        toc.style.right = '0';
+        toc.style.height = '100vh';
+        toc.style.width = tocWidth + 'px';
+        toc.classList.add('sticky');
+      } else {
+        // Static: normal flow
+        toc.style.position = 'relative';
+        toc.style.top = 'auto';
+        toc.style.bottom = 'auto';
+        toc.style.left = 'auto';
+        toc.style.right = 'auto';
+        toc.style.height = '100%';
+        toc.style.width = '';
+        toc.classList.remove('sticky');
+      }
+      tocTicking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!tocTicking) {
+        requestAnimationFrame(updateTocSticky);
+        tocTicking = true;
+      }
+    });
+    window.addEventListener('resize', updateTocSticky);
+    updateTocSticky();
+  }
+})();
+</script>
+</body>
+</html>
