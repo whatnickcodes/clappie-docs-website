@@ -2342,25 +2342,69 @@ function extractTLDR(content) {
   return { tldr: '', content };
 }
 
+const PAGE_META = {
+  'Home': {
+    description: 'Turn Claude Code into a 24/7 personal agent you can text from your phone. Emails, sidekicks, crons, TUI displays — one skill file, zero infrastructure.',
+    path: '',
+  },
+  'Tutorial': {
+    description: 'Go from zero to a working Clappie setup in 10 steps. Install the skill, connect Telegram, spawn your first sidekick, and start chatting with your terminal.',
+    path: 'tutorial',
+  },
+  'Features': {
+    description: 'Sidekicks, displays, chores, heartbeat, parties, memory, projects — everything Clappie adds to Claude Code, explained.',
+    path: 'features',
+  },
+  'Ways to Chat': {
+    description: 'Talk to your Claude Code terminal from Telegram, Slack, SSH, or the web. Set up bots, heartbeat crons, and remote access.',
+    path: 'ways-to-chat',
+  },
+  'Integrations': {
+    description: 'Connect Clappie to GitHub, Telegram, Slack, Front, iMessage, and more. Build your own integrations with the skill maker.',
+    path: 'integrations',
+  },
+  'Reference': {
+    description: 'Folder structure, CLI commands, configuration options, and technical reference for Clappie.',
+    path: 'misc',
+  },
+  'Get Started': {
+    description: 'Quick start guide for Clappie. Clone the repo, install the skill, and get your personal agent running in minutes.',
+    path: 'get-started',
+  },
+  'Concepts': {
+    description: 'Core concepts behind Clappie — how skills, displays, sidekicks, chores, and the heartbeat system work together.',
+    path: 'concepts',
+  },
+};
+
+const DEFAULT_DESCRIPTION = 'Clappie turns Claude Code into a 24/7 personal agent. Manage terminals, spawn sidekicks, and chat from your phone.';
+
 const html = (title, content, pageName = null, isHomepage = false, hasNotes = false, dirtyContent = '', toc = '') => {
   const { tldr, content: mainContent } = extractTLDR(content);
+  const meta = PAGE_META[title] || {};
+  const description = meta.description || DEFAULT_DESCRIPTION;
+  const pagePath = meta.path != null ? meta.path : (pageName || title.toLowerCase().replace(/\s+/g, '-'));
+  const canonicalUrl = pagePath ? `https://clappie.ai/${pagePath}/` : 'https://clappie.ai/';
+  const pageTitle = isHomepage ? 'Clappie — Turn Claude Code into a 24/7 Personal Agent' : `${title} — Clappie Docs`;
   return `<!DOCTYPE html>
 <html lang="en"${isHomepage ? ' class="homepage"' : ''} data-page="${pageName || ''}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Turn Claude Code into a 24/7 mobile personal agent. Emails, manage, and access from your phone — all from one skill file.">
+  <meta name="description" content="${description}">
   <meta name="theme-color" content="#d97757">
-  <meta property="og:title" content="${title} - Clappie">
-  <meta property="og:description" content="Turn Claude Code into a 24/7 mobile personal agent. Emails, manage, and access from your phone — all from one skill file.">
+  <link rel="canonical" href="${canonicalUrl}">
+  <meta property="og:title" content="${pageTitle}">
+  <meta property="og:description" content="${description}">
   <meta property="og:image" content="https://clappie.ai/img/share.png">
-  <meta property="og:url" content="https://clappie.ai">
-  <meta property="og:type" content="website">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:type" content="${isHomepage ? 'website' : 'article'}">
+  <meta property="og:site_name" content="Clappie">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${title} - Clappie">
-  <meta name="twitter:description" content="Turn Claude Code into a 24/7 mobile personal agent. Emails, manage, and access from your phone — all from one skill file.">
+  <meta name="twitter:title" content="${pageTitle}">
+  <meta name="twitter:description" content="${description}">
   <meta name="twitter:image" content="https://clappie.ai/img/share.png">
-  <title>${title} - Clappie</title>
+  <title>${pageTitle}</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'><rect fill='%23ff8ec6' x='22' y='0' width='20' height='30'/><rect fill='%23ff8ec6' x='78' y='0' width='20' height='30'/><rect fill='%23ff8ec6' x='10' y='20' width='100' height='90' rx='20'/><rect fill='%231a1918' x='32' y='50' width='18' height='24'/><rect fill='%231a1918' x='70' y='50' width='18' height='24'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
