@@ -1,4 +1,4 @@
-# Clappie Docs
+# Clappie Docs 🐕
 
 ![Clappie](hero.png)
 
