@@ -2464,6 +2464,7 @@ const html = (title, content, pageName = null, isHomepage = false, hasNotes = fa
   ${isHomepage ? homepageScript : ''}
   ${!isHomepage ? generateFileContentsScript() : ''}
   ${!isHomepage ? docsScript : ''}
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e4ee3332eab94b28b5d2d8d5a0d9c775"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>`;
 };
